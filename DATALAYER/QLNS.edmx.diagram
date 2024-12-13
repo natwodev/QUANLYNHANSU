@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="09aedb13ed40472b86087a65c6eafc82" Name="Diagram1" ZoomLevel="62">
+        <EntityTypeShape EntityType="QLNHANSUModel.BANGCONG" Width="1.5" PointX="8.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHANSUModel.BAOHIEM" Width="1.5" PointX="5.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHANSUModel.BOPHAN" Width="1.5" PointX="0.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHANSUModel.CHUCVU" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHANSUModel.DANTOC" Width="1.5" PointX="0.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHANSUModel.HOPDONG" Width="1.5" PointX="5.25" PointY="13.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHANSUModel.KHENTHUONG_KYLUAT" Width="1.5" PointX="5.25" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHANSUModel.LOAICA" Width="1.5" PointX="6" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHANSUModel.LOAICONG" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHANSUModel.NHANVIEN" Width="1.5" PointX="3" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHANSUModel.NHANVIEN_PHU" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHANSUModel.PHONGBAN" Width="1.5" PointX="0.75" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHANSUModel.PHUCAP" Width="1.5" PointX="6" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHANSUModel.TANGCA" Width="1.5" PointX="8.25" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHANSUModel.TRINHDO" Width="1.5" PointX="0.75" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLNHANSUModel.UNGLUONG" Width="1.5" PointX="5.25" PointY="27.125" IsExpanded="true" />
+        <AssociationConnector Association="QLNHANSUModel.FK__BANGCONG__IDLC__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNHANSUModel.FK__BANGCONG__MANV__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNHANSUModel.FK__BAOHIEM__MANV__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNHANSUModel.FK__NHANVIEN__IDBP__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNHANSUModel.FK__NHANVIEN__IDCV__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNHANSUModel.FK__NHANVIEN__IDDT__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNHANSUModel.FK__HOPDONG__MANV__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNHANSUModel.FK__KHENTHUONG__MANV__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNHANSUModel.FK__TANGCA__IDLOAICA__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNHANSUModel.FK__NHANVIEN__IDPB__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNHANSUModel.FK__NHANVIEN__IDTD__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNHANSUModel.FK__NHANVIEN_P__MANV__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNHANSUModel.FK__TANGCA__MANV__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNHANSUModel.FK__UNGLUONG__MANV__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="QLNHANSUModel.FK__NHANVIEN_P__IDPC__5070F446" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
