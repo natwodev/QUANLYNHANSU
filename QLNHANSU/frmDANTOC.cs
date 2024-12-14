@@ -16,10 +16,9 @@ namespace QLNHANSU
         public frmDANTOC()
         {
             InitializeComponent();
-            _showhide(true);
         }
 
-        void _showhide(bool kt)
+        void _showHide(bool kt)
         {
             barButtonItem1.Enabled = kt;
             barButtonItem2.Enabled = kt;
@@ -28,10 +27,11 @@ namespace QLNHANSU
             barButtonItem5.Enabled = !kt;
             barButtonItem6.Enabled = kt;
             barButtonItem7.Enabled = kt;
+
         }
         private void frmDANTOC_Load(object sender, EventArgs e)
         {
-
+            _showHide(true);
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -61,10 +61,15 @@ namespace QLNHANSU
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.Close(); //đóng form dân tộc
+            this.Close();
         }
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
