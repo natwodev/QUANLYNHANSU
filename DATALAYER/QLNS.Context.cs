@@ -38,7 +38,9 @@ namespace DATALAYER
         public virtual DbSet<NHANVIEN_PHU> NHANVIEN_PHU { get; set; }
         public virtual DbSet<PHONGBAN> PHONGBANs { get; set; }
         public virtual DbSet<PHUCAP> PHUCAPs { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TANGCA> TANGCAs { get; set; }
+        public virtual DbSet<TONGIAO> TONGIAOs { get; set; }
         public virtual DbSet<TRINHDO> TRINHDOes { get; set; }
         public virtual DbSet<UNGLUONG> UNGLUONGs { get; set; }
     }

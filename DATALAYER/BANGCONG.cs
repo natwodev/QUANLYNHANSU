@@ -14,7 +14,7 @@ namespace DATALAYER
     
     public partial class BANGCONG
     {
-        public int MANV { get; set; }
+        public string MANV { get; set; }
         public Nullable<int> NAM { get; set; }
         public Nullable<int> THANG { get; set; }
         public System.DateTime NGAY { get; set; }

@@ -14,13 +14,13 @@ namespace DATALAYER
     
     public partial class UNGLUONG
     {
-        public int ID { get; set; }
+        public int IDUL { get; set; }
         public Nullable<int> NAM { get; set; }
         public Nullable<int> THANG { get; set; }
         public Nullable<System.DateTime> NGAY { get; set; }
         public Nullable<double> SOTIEN { get; set; }
         public string TRANGTHAI { get; set; }
-        public Nullable<int> MANV { get; set; }
+        public string MANV { get; set; }
     
         public virtual NHANVIEN NHANVIEN { get; set; }
     }

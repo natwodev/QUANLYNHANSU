@@ -26,7 +26,7 @@ namespace DATALAYER
             this.UNGLUONGs = new HashSet<UNGLUONG>();
         }
     
-        public int MANV { get; set; }
+        public string MANV { get; set; }
         public string HOTEN { get; set; }
         public Nullable<bool> GIOITINH { get; set; }
         public Nullable<System.DateTime> NGAYSINH { get; set; }
@@ -39,6 +39,7 @@ namespace DATALAYER
         public Nullable<int> IDCV { get; set; }
         public Nullable<int> IDTD { get; set; }
         public Nullable<int> IDDT { get; set; }
+        public Nullable<int> IDTG { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BANGCONG> BANGCONGs { get; set; }
@@ -53,6 +54,7 @@ namespace DATALAYER
         public virtual ICollection<KHENTHUONG_KYLUAT> KHENTHUONG_KYLUAT { get; set; }
         public virtual PHONGBAN PHONGBAN { get; set; }
         public virtual TRINHDO TRINHDO { get; set; }
+        public virtual TONGIAO TONGIAO { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NHANVIEN_PHU> NHANVIEN_PHU { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

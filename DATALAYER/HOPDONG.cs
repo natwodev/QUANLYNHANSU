@@ -22,7 +22,7 @@ namespace DATALAYER
         public string LOAIHD { get; set; }
         public string THOIHAN { get; set; }
         public Nullable<double> HESOLUONG { get; set; }
-        public Nullable<int> MANV { get; set; }
+        public string MANV { get; set; }
     
         public virtual NHANVIEN NHANVIEN { get; set; }
     }

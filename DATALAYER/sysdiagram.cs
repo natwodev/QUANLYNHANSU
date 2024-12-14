@@ -12,14 +12,12 @@ namespace DATALAYER
     using System;
     using System.Collections.Generic;
     
-    public partial class BAOHIEM
+    public partial class sysdiagram
     {
-        public int IDBH { get; set; }
-        public Nullable<System.DateTime> NGAYCAP { get; set; }
-        public string NOICAP { get; set; }
-        public string NOIDUNG { get; set; }
-        public string MANV { get; set; }
-    
-        public virtual NHANVIEN NHANVIEN { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

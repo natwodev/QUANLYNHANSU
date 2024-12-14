@@ -14,12 +14,12 @@ namespace DATALAYER
     
     public partial class TANGCA
     {
-        public int ID { get; set; }
+        public int IDTC { get; set; }
         public Nullable<int> NAM { get; set; }
         public Nullable<int> THANG { get; set; }
         public Nullable<System.DateTime> NGAY { get; set; }
         public Nullable<double> SOGIO { get; set; }
-        public Nullable<int> MANV { get; set; }
+        public string MANV { get; set; }
         public Nullable<int> IDLOAICA { get; set; }
     
         public virtual LOAICA LOAICA { get; set; }

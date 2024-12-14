@@ -14,11 +14,11 @@ namespace DATALAYER
     
     public partial class KHENTHUONG_KYLUAT
     {
-        public int ID { get; set; }
+        public int IDKTKL { get; set; }
         public Nullable<int> SOTK { get; set; }
         public string NOIDUNG { get; set; }
         public Nullable<System.DateTime> NGAY { get; set; }
-        public Nullable<int> MANV { get; set; }
+        public string MANV { get; set; }
         public string LOAI { get; set; }
     
         public virtual NHANVIEN NHANVIEN { get; set; }

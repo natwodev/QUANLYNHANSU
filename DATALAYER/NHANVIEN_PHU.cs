@@ -14,8 +14,8 @@ namespace DATALAYER
     
     public partial class NHANVIEN_PHU
     {
-        public int ID { get; set; }
-        public Nullable<int> MANV { get; set; }
+        public int IDNVP { get; set; }
+        public string MANV { get; set; }
         public Nullable<int> IDPC { get; set; }
         public Nullable<System.DateTime> NGAY { get; set; }
         public string NOIDUNG { get; set; }
