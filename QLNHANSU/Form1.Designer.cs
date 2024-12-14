@@ -343,6 +343,7 @@
             this.Name = "Form1";
             this.Ribbon = this.ribbonControl1;
             this.Text = "Phần Mềm Quản Lý Nhân Sự";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).EndInit();

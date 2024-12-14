@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="dbDANTOC.cs" />
     <Compile Include="dbTRINHDO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

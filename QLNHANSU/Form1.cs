@@ -16,6 +16,10 @@ namespace QLNHANSU
             InitializeComponent();
             this.IsMdiContainer = true; // Form này sẽ là MDI Parent
         }
+        private void Form1_Load(object sender, EventArgs e)
+        {
+           ribbonControl1.SelectedPage = ribbonPage2; //hiển page nhân sự 
+        }
         void openForm(Type typeForm)
         {
             foreach(var frm in MdiChildren)
@@ -47,10 +51,7 @@ namespace QLNHANSU
             
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void ribbonControl1_Click(object sender, EventArgs e)
         {

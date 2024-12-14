@@ -8,16 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DATALAYER;
+using BUSINESSLAYER;
 
 namespace QLNHANSU
 {
     public partial class frmDANTOC : DevExpress.XtraEditors.XtraForm
     {
+      
         public frmDANTOC()
         {
             InitializeComponent();
         }
-
+        dbDANTOC _dantoc;
+        bool _them;
+        int _id;
         void _showHide(bool kt)
         {
             barButtonItem1.Enabled = kt;
@@ -27,35 +32,61 @@ namespace QLNHANSU
             barButtonItem5.Enabled = !kt;
             barButtonItem6.Enabled = kt;
             barButtonItem7.Enabled = kt;
+            textEdit1.Enabled = !kt;
 
         }
         private void frmDANTOC_Load(object sender, EventArgs e)
         {
+            _them = false;
+            _dantoc = new dbDANTOC();
             _showHide(true);
+             loadData();
         }
 
+        void loadData()
+        {
+            gridControl1.DataSource = _dantoc.getList();
+            gridView1.OptionsBehavior.Editable = false;
+        }
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            _them = true;
+            _showHide(false); //thêm
+            textEdit1.Text= string.Empty;
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            _them = false;
+            _showHide(false);//sửa
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (MessageBox.Show("Có muốn xóa không ?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
+            {
+                _dantoc.Delete(_id);
+                loadData();
+                //MessageBox.Show("Xóa thành công", "Thống báo", MessageBoxButtons.OK);
+            }
+           
 
+            //xóa
         }
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            SaveData();
+            loadData();
+            _them = false;
+            _showHide(true);//lưu
 
         }
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            _them = false;
+            _showHide(true);//hủy
 
         }
 
@@ -72,6 +103,32 @@ namespace QLNHANSU
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void textEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+        void SaveData()
+        {
+            if (_them)
+            {
+                DANTOC dt = new DANTOC();
+                dt.TENDT = textEdit1.Text;
+                _dantoc.Add(dt);
+            }
+            else
+            {
+                var dt = _dantoc.getItem(_id);
+                dt.TENDT = textEdit1.Text;
+                _dantoc.Update(dt);
+            }
+        }
+
+        private void gridView1_Click(object sender, EventArgs e)
+        {
+            _id = int.Parse(gridView1.GetFocusedRowCellValue("IDDT").ToString());
+            textEdit1.Text = gridView1.GetFocusedRowCellValue("TENDT").ToString();
         }
     }
 }

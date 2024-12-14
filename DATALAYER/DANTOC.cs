@@ -25,5 +25,10 @@ namespace DATALAYER
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NHANVIEN> NHANVIENs { get; set; }
+
+        public void Add(DANTOC dt)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
