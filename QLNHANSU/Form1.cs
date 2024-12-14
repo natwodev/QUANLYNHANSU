@@ -14,7 +14,7 @@ namespace QLNHANSU
         public Form1()
         {
             InitializeComponent();
-
+            this.IsMdiContainer = true; // Form này sẽ là MDI Parent
         }
         void openForm(Type typeForm)
         {
@@ -48,6 +48,11 @@ namespace QLNHANSU
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ribbonControl1_Click(object sender, EventArgs e)
         {
 
         }
