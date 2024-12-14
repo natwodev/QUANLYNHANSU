@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmTONGIAO
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "frmTONGIAO";
+            this.ClientSize = new System.Drawing.Size(880, 402);
+            this.Name = "frmTONGIAO";
+            this.Text = "Tôn Giáo";
+            this.Load += new System.EventHandler(this.frmTONGIAO_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

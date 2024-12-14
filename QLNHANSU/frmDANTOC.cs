@@ -17,5 +17,10 @@ namespace QLNHANSU
         {
             InitializeComponent();
         }
+
+        private void frmDANTOC_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

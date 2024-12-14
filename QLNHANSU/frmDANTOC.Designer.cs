@@ -28,9 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // frmDANTOC
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "frmDANTOC";
+            this.ClientSize = new System.Drawing.Size(780, 408);
+            this.Name = "frmDANTOC";
+            this.Text = "Dân Tộc";
+            this.Load += new System.EventHandler(this.frmDANTOC_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

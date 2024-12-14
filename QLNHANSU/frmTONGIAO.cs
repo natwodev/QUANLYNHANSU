@@ -17,5 +17,10 @@ namespace QLNHANSU
         {
             InitializeComponent();
         }
+
+        private void frmTONGIAO_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
