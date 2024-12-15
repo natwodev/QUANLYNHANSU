@@ -9,17 +9,19 @@ namespace BUSINESSLAYER
     public class dbTONGIAO
     {
         QLNHANSUEntities db = new QLNHANSUEntities();
-        public TONGIAO getItem(int id)
-        {
-            return db.TONGIAOs.FirstOrDefault(x => x.IDTG == id);
-        }
 
+      
 
         public List<TONGIAO> getList()
         {
             return db.TONGIAOs.ToList();
         }
 
+
+        public TONGIAO getItem(int id)
+        {
+            return db.TONGIAOs.FirstOrDefault(x => x.IDTG == id);
+        }
 
 
         public TONGIAO Add(TONGIAO tg)

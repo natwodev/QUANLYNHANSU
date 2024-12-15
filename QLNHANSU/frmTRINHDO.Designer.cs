@@ -1,6 +1,6 @@
 ﻿namespace QLNHANSU
 {
-    partial class frmDANTOC
+    partial class frmTRINHDO
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDANTOC));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTRINHDO));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
@@ -45,12 +45,12 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.IDDT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TENDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IDTD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TENTD = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -89,7 +89,6 @@
             this.bar2.DockCol = 0;
             this.bar2.DockRow = 0;
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.FloatLocation = new System.Drawing.Point(471, 202);
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem1, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem2, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
@@ -104,7 +103,7 @@
             // 
             // barButtonItem1
             // 
-            this.barButtonItem1.Caption = "Thêm ";
+            this.barButtonItem1.Caption = "Thêm";
             this.barButtonItem1.Id = 0;
             this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
             this.barButtonItem1.Name = "barButtonItem1";
@@ -136,7 +135,7 @@
             // 
             // barButtonItem5
             // 
-            this.barButtonItem5.Caption = "Hủy";
+            this.barButtonItem5.Caption = "Hủy ";
             this.barButtonItem5.Id = 4;
             this.barButtonItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
             this.barButtonItem5.Name = "barButtonItem5";
@@ -176,15 +175,15 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(989, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(983, 30);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 514);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 497);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(989, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(983, 20);
             // 
             // barDockControlLeft
             // 
@@ -192,15 +191,15 @@
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 484);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 467);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(989, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(983, 30);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 484);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 467);
             // 
             // splitContainer1
             // 
@@ -211,33 +210,32 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.textEdit1);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl1);
-            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
+            this.splitContainer1.Panel1.Controls.Add(this.textEdit1);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gridControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(989, 484);
-            this.splitContainer1.SplitterDistance = 33;
+            this.splitContainer1.Size = new System.Drawing.Size(983, 467);
+            this.splitContainer1.SplitterDistance = 32;
             this.splitContainer1.TabIndex = 4;
-            // 
-            // textEdit1
-            // 
-            this.textEdit1.Location = new System.Drawing.Point(33, 6);
-            this.textEdit1.MenuManager = this.barManager1;
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(125, 22);
-            this.textEdit1.TabIndex = 1;
-            this.textEdit1.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(5, 9);
+            this.labelControl1.Location = new System.Drawing.Point(3, 9);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(22, 16);
-            this.labelControl1.TabIndex = 0;
+            this.labelControl1.TabIndex = 1;
             this.labelControl1.Text = "Tên";
+            // 
+            // textEdit1
+            // 
+            this.textEdit1.Location = new System.Drawing.Point(31, 6);
+            this.textEdit1.MenuManager = this.barManager1;
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(125, 22);
+            this.textEdit1.TabIndex = 0;
+            this.textEdit1.EditValueChanged += new System.EventHandler(this.textEdit1_EditValueChanged);
             // 
             // gridControl1
             // 
@@ -246,7 +244,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(989, 447);
+            this.gridControl1.Size = new System.Drawing.Size(983, 431);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -254,47 +252,48 @@
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.IDDT,
-            this.TENDT});
+            this.IDTD,
+            this.TENTD});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.Click += new System.EventHandler(this.gridView1_Click);
             // 
-            // IDDT
+            // IDTD
             // 
-            this.IDDT.Caption = "ID";
-            this.IDDT.FieldName = "IDDT";
-            this.IDDT.MaxWidth = 30;
-            this.IDDT.MinWidth = 30;
-            this.IDDT.Name = "IDDT";
-            this.IDDT.Visible = true;
-            this.IDDT.VisibleIndex = 0;
-            this.IDDT.Width = 30;
+            this.IDTD.Caption = "ID";
+            this.IDTD.FieldName = "IDTD";
+            this.IDTD.MaxWidth = 30;
+            this.IDTD.MinWidth = 30;
+            this.IDTD.Name = "IDTD";
+            this.IDTD.Visible = true;
+            this.IDTD.VisibleIndex = 0;
+            this.IDTD.Width = 30;
             // 
-            // TENDT
+            // TENTD
             // 
-            this.TENDT.Caption = "TÊN";
-            this.TENDT.FieldName = "TENDT";
-            this.TENDT.MinWidth = 25;
-            this.TENDT.Name = "TENDT";
-            this.TENDT.Visible = true;
-            this.TENDT.VisibleIndex = 1;
-            this.TENDT.Width = 94;
+            this.TENTD.Caption = "TÊN";
+            this.TENTD.FieldName = "TENTD";
+            this.TENTD.MinWidth = 25;
+            this.TENTD.Name = "TENTD";
+            this.TENTD.Visible = true;
+            this.TENTD.VisibleIndex = 1;
+            this.TENTD.Width = 94;
             // 
-            // frmDANTOC
+            // frmTRINHDO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(989, 534);
+            this.ClientSize = new System.Drawing.Size(983, 517);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "frmDANTOC";
-            this.Text = "Dân Tộc";
-            this.Load += new System.EventHandler(this.frmDANTOC_Load);
+            this.Name = "frmTRINHDO";
+            this.Text = "Trình Độ";
+            this.Load += new System.EventHandler(this.frmTRINHDO_Load);
+            this.Click += new System.EventHandler(this.frmTRINHDO_Click);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -330,7 +329,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn IDDT;
-        private DevExpress.XtraGrid.Columns.GridColumn TENDT;
+        private DevExpress.XtraGrid.Columns.GridColumn IDTD;
+        private DevExpress.XtraGrid.Columns.GridColumn TENTD;
     }
 }
