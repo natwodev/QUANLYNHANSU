@@ -62,6 +62,9 @@
     <Compile Include="CHUCVU.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
+    <Compile Include="CONGTY.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
     <Compile Include="DANTOC.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
@@ -104,9 +107,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QLNS.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
     <Compile Include="TANGCA.cs">
       <DependentUpon>QLNS.tt</DependentUpon>

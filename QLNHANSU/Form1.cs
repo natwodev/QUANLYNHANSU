@@ -37,24 +37,24 @@ namespace QLNHANSU
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            openForm(typeof(frmTONGIAO));
+            openForm(typeof(frmTONGIAO));//TÔN GIÁO
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            openForm(typeof(frmTRINHDO));
+            openForm(typeof(frmTRINHDO));//TRÌNH ĐỘ
 
         }
 
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            openForm(typeof(frmDANTOC));
+            openForm(typeof(frmDANTOC));//DÂN TỘC
             
         }
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            openForm(typeof(frmPHONGBAN));
+            openForm(typeof(frmPHONGBAN));//PHÒNG BAN
         }
 
         private void ribbonControl1_Click(object sender, EventArgs e)
@@ -64,9 +64,22 @@ namespace QLNHANSU
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            //NHÂN VIÊN
+        }
+
+        private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //CÔNG TY
+        }
+
+        private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
 
         }
 
-      
+        private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //BỘ PHẬN
+        }
     }
 }
