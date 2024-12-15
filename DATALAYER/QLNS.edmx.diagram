@@ -6,28 +6,29 @@
     <edmx:Diagrams>
       <Diagram DiagramId="09aedb13ed40472b86087a65c6eafc82" Name="Diagram1" ZoomLevel="62">
         <EntityTypeShape EntityType="QLNHANSUModel.BANGCONG" Width="1.5" PointX="8.25" PointY="7.875" />
-        <EntityTypeShape EntityType="QLNHANSUModel.BAOHIEM" Width="1.5" PointX="5.25" PointY="13.75" />
-        <EntityTypeShape EntityType="QLNHANSUModel.BOPHAN" Width="1.5" PointX="0.75" PointY="20.125" />
-        <EntityTypeShape EntityType="QLNHANSUModel.CHUCVU" Width="1.5" PointX="0.75" PointY="15.5" />
-        <EntityTypeShape EntityType="QLNHANSUModel.DANTOC" Width="1.5" PointX="0.75" PointY="17.75" />
-        <EntityTypeShape EntityType="QLNHANSUModel.HOPDONG" Width="1.5" PointX="5.25" PointY="26.75" />
-        <EntityTypeShape EntityType="QLNHANSUModel.KHENTHUONG_KYLUAT" Width="1.5" PointX="5.25" PointY="7.125" />
-        <EntityTypeShape EntityType="QLNHANSUModel.LOAICA" Width="1.5" PointX="6" PointY="17.375" />
-        <EntityTypeShape EntityType="QLNHANSUModel.LOAICONG" Width="1.5" PointX="6" PointY="10.375" />
-        <EntityTypeShape EntityType="QLNHANSUModel.NHANVIEN" Width="1.5" PointX="3" PointY="10.125" />
-        <EntityTypeShape EntityType="QLNHANSUModel.NHANVIEN_PHU" Width="1.5" PointX="8.25" PointY="16" />
-        <EntityTypeShape EntityType="QLNHANSUModel.PHONGBAN" Width="1.5" PointX="0.75" PointY="7.75" />
-        <EntityTypeShape EntityType="QLNHANSUModel.PHUCAP" Width="1.5" PointX="6" PointY="4.375" />
-        <EntityTypeShape EntityType="QLNHANSUModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="QLNHANSUModel.BAOHIEM" Width="1.5" PointX="5.25" PointY="27.5" />
+        <EntityTypeShape EntityType="QLNHANSUModel.BOPHAN" Width="1.5" PointX="0.75" PointY="12.5" />
+        <EntityTypeShape EntityType="QLNHANSUModel.CHUCVU" Width="1.5" PointX="0.75" PointY="22.625" />
+        <EntityTypeShape EntityType="QLNHANSUModel.CONGTY" Width="1.5" PointX="0.75" PointY="8.625" />
+        <EntityTypeShape EntityType="QLNHANSUModel.DANTOC" Width="1.5" PointX="0.75" PointY="15.625" />
+        <EntityTypeShape EntityType="QLNHANSUModel.HOPDONG" Width="1.5" PointX="5.25" PointY="17.375" />
+        <EntityTypeShape EntityType="QLNHANSUModel.KHENTHUONG_KYLUAT" Width="1.5" PointX="5.25" PointY="24.375" />
+        <EntityTypeShape EntityType="QLNHANSUModel.LOAICA" Width="1.5" PointX="6" PointY="4.375" />
+        <EntityTypeShape EntityType="QLNHANSUModel.LOAICONG" Width="1.5" PointX="6" PointY="7.375" />
+        <EntityTypeShape EntityType="QLNHANSUModel.NHANVIEN" Width="1.5" PointX="3" PointY="10" />
+        <EntityTypeShape EntityType="QLNHANSUModel.NHANVIEN_PHU" Width="1.5" PointX="5.25" PointY="14" />
+        <EntityTypeShape EntityType="QLNHANSUModel.PHONGBAN" Width="1.5" PointX="0.75" PointY="6.25" />
+        <EntityTypeShape EntityType="QLNHANSUModel.PHUCAP" Width="1.5" PointX="3" PointY="17.375" />
         <EntityTypeShape EntityType="QLNHANSUModel.TANGCA" Width="1.5" PointX="8.25" PointY="11.875" />
-        <EntityTypeShape EntityType="QLNHANSUModel.TONGIAO" Width="1.5" PointX="0.75" PointY="10.125" />
-        <EntityTypeShape EntityType="QLNHANSUModel.TRINHDO" Width="1.5" PointX="0.75" PointY="12.5" />
-        <EntityTypeShape EntityType="QLNHANSUModel.UNGLUONG" Width="1.5" PointX="5.25" PointY="20.125" />
+        <EntityTypeShape EntityType="QLNHANSUModel.TONGIAO" Width="1.5" PointX="0.75" PointY="17.875" />
+        <EntityTypeShape EntityType="QLNHANSUModel.TRINHDO" Width="1.5" PointX="0.75" PointY="20.25" />
+        <EntityTypeShape EntityType="QLNHANSUModel.UNGLUONG" Width="1.5" PointX="5.25" PointY="10.625" />
         <AssociationConnector Association="QLNHANSUModel.FK__BANGCONG__IDLC__2739D489" />
         <AssociationConnector Association="QLNHANSUModel.FK__BANGCONG__MANV__2645B050" />
         <AssociationConnector Association="QLNHANSUModel.FK__BAOHIEM__MANV__10566F31" />
         <AssociationConnector Association="QLNHANSUModel.FK__NHANVIEN__IDBP__09A971A2" />
         <AssociationConnector Association="QLNHANSUModel.FK__NHANVIEN__IDCV__0A9D95DB" />
+        <AssociationConnector Association="QLNHANSUModel.FK_NHANVIEN_CONGTY" />
         <AssociationConnector Association="QLNHANSUModel.FK__NHANVIEN__IDDT__0C85DE4D" />
         <AssociationConnector Association="QLNHANSUModel.FK__HOPDONG__MANV__1332DBDC" />
         <AssociationConnector Association="QLNHANSUModel.FK__KHENTHUONG__MANV__1BC821DD" />

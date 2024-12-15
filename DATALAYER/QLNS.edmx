@@ -42,6 +42,16 @@
           <Property Name="IDCV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TENCV" Type="nvarchar" MaxLength="100" />
         </EntityType>
+        <EntityType Name="CONGTY">
+          <Key>
+            <PropertyRef Name="IDCT" />
+          </Key>
+          <Property Name="IDCT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TENCT" Type="nvarchar" MaxLength="100" />
+          <Property Name="DIENTHOAI" Type="nvarchar" MaxLength="15" />
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="100" />
+          <Property Name="DIACHI" Type="nvarchar" MaxLength="500" />
+        </EntityType>
         <EntityType Name="DANTOC">
           <Key>
             <PropertyRef Name="IDDT" />
@@ -108,6 +118,7 @@
           <Property Name="IDTD" Type="int" />
           <Property Name="IDDT" Type="int" />
           <Property Name="IDTG" Type="int" />
+          <Property Name="IDCT" Type="int" />
         </EntityType>
         <EntityType Name="NHANVIEN_PHU">
           <Key>
@@ -134,16 +145,6 @@
           <Property Name="IDPC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TENPC" Type="nvarchar" MaxLength="100" />
           <Property Name="SOTIEN" Type="float" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="TANGCA">
           <Key>
@@ -375,11 +376,24 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_NHANVIEN_CONGTY">
+          <End Role="CONGTY" Type="Self.CONGTY" Multiplicity="0..1" />
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONGTY">
+              <PropertyRef Name="IDCT" />
+            </Principal>
+            <Dependent Role="NHANVIEN">
+              <PropertyRef Name="IDCT" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="QLNHANSUModelStoreContainer">
           <EntitySet Name="BANGCONG" EntityType="Self.BANGCONG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BAOHIEM" EntityType="Self.BAOHIEM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BOPHAN" EntityType="Self.BOPHAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CHUCVU" EntityType="Self.CHUCVU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CONGTY" EntityType="Self.CONGTY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DANTOC" EntityType="Self.DANTOC" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HOPDONG" EntityType="Self.HOPDONG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KHENTHUONG_KYLUAT" EntityType="Self.KHENTHUONG_KYLUAT" Schema="dbo" store:Type="Tables" />
@@ -389,7 +403,6 @@
           <EntitySet Name="NHANVIEN_PHU" EntityType="Self.NHANVIEN_PHU" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHONGBAN" EntityType="Self.PHONGBAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PHUCAP" EntityType="Self.PHUCAP" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TANGCA" EntityType="Self.TANGCA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TONGIAO" EntityType="Self.TONGIAO" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TRINHDO" EntityType="Self.TRINHDO" Schema="dbo" store:Type="Tables" />
@@ -458,6 +471,10 @@
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
             <End Role="UNGLUONG" EntitySet="UNGLUONG" />
           </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_CONGTY" Association="Self.FK_NHANVIEN_CONGTY">
+            <End Role="CONGTY" EntitySet="CONGTY" />
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -468,6 +485,7 @@
           <EntitySet Name="BAOHIEMs" EntityType="QLNHANSUModel.BAOHIEM" />
           <EntitySet Name="BOPHANs" EntityType="QLNHANSUModel.BOPHAN" />
           <EntitySet Name="CHUCVUs" EntityType="QLNHANSUModel.CHUCVU" />
+          <EntitySet Name="CONGTies" EntityType="QLNHANSUModel.CONGTY" />
           <EntitySet Name="DANTOCs" EntityType="QLNHANSUModel.DANTOC" />
           <EntitySet Name="HOPDONGs" EntityType="QLNHANSUModel.HOPDONG" />
           <EntitySet Name="KHENTHUONG_KYLUAT" EntityType="QLNHANSUModel.KHENTHUONG_KYLUAT" />
@@ -477,7 +495,6 @@
           <EntitySet Name="NHANVIEN_PHU" EntityType="QLNHANSUModel.NHANVIEN_PHU" />
           <EntitySet Name="PHONGBANs" EntityType="QLNHANSUModel.PHONGBAN" />
           <EntitySet Name="PHUCAPs" EntityType="QLNHANSUModel.PHUCAP" />
-          <EntitySet Name="sysdiagrams" EntityType="QLNHANSUModel.sysdiagram" />
           <EntitySet Name="TANGCAs" EntityType="QLNHANSUModel.TANGCA" />
           <EntitySet Name="TONGIAOs" EntityType="QLNHANSUModel.TONGIAO" />
           <EntitySet Name="TRINHDOes" EntityType="QLNHANSUModel.TRINHDO" />
@@ -500,6 +517,10 @@
           </AssociationSet>
           <AssociationSet Name="FK__NHANVIEN__IDCV__0A9D95DB" Association="QLNHANSUModel.FK__NHANVIEN__IDCV__0A9D95DB">
             <End Role="CHUCVU" EntitySet="CHUCVUs" />
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NHANVIEN_CONGTY" Association="QLNHANSUModel.FK_NHANVIEN_CONGTY">
+            <End Role="CONGTY" EntitySet="CONGTies" />
             <End Role="NHANVIEN" EntitySet="NHANVIENs" />
           </AssociationSet>
           <AssociationSet Name="FK__NHANVIEN__IDDT__0C85DE4D" Association="QLNHANSUModel.FK__NHANVIEN__IDDT__0C85DE4D">
@@ -589,6 +610,17 @@
           <Property Name="TENCV" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="NHANVIENs" Relationship="QLNHANSUModel.FK__NHANVIEN__IDCV__0A9D95DB" FromRole="CHUCVU" ToRole="NHANVIEN" />
         </EntityType>
+        <EntityType Name="CONGTY">
+          <Key>
+            <PropertyRef Name="IDCT" />
+          </Key>
+          <Property Name="IDCT" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TENCT" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DIENTHOAI" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DIACHI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="NHANVIENs" Relationship="QLNHANSUModel.FK_NHANVIEN_CONGTY" FromRole="CONGTY" ToRole="NHANVIEN" />
+        </EntityType>
         <EntityType Name="DANTOC">
           <Key>
             <PropertyRef Name="IDDT" />
@@ -660,10 +692,12 @@
           <Property Name="IDTD" Type="Int32" />
           <Property Name="IDDT" Type="Int32" />
           <Property Name="IDTG" Type="Int32" />
+          <Property Name="IDCT" Type="Int32" />
           <NavigationProperty Name="BANGCONGs" Relationship="QLNHANSUModel.FK__BANGCONG__MANV__2645B050" FromRole="NHANVIEN" ToRole="BANGCONG" />
           <NavigationProperty Name="BAOHIEMs" Relationship="QLNHANSUModel.FK__BAOHIEM__MANV__10566F31" FromRole="NHANVIEN" ToRole="BAOHIEM" />
           <NavigationProperty Name="BOPHAN" Relationship="QLNHANSUModel.FK__NHANVIEN__IDBP__09A971A2" FromRole="NHANVIEN" ToRole="BOPHAN" />
           <NavigationProperty Name="CHUCVU" Relationship="QLNHANSUModel.FK__NHANVIEN__IDCV__0A9D95DB" FromRole="NHANVIEN" ToRole="CHUCVU" />
+          <NavigationProperty Name="CONGTY" Relationship="QLNHANSUModel.FK_NHANVIEN_CONGTY" FromRole="NHANVIEN" ToRole="CONGTY" />
           <NavigationProperty Name="DANTOC" Relationship="QLNHANSUModel.FK__NHANVIEN__IDDT__0C85DE4D" FromRole="NHANVIEN" ToRole="DANTOC" />
           <NavigationProperty Name="HOPDONGs" Relationship="QLNHANSUModel.FK__HOPDONG__MANV__1332DBDC" FromRole="NHANVIEN" ToRole="HOPDONG" />
           <NavigationProperty Name="KHENTHUONG_KYLUAT" Relationship="QLNHANSUModel.FK__KHENTHUONG__MANV__1BC821DD" FromRole="NHANVIEN" ToRole="KHENTHUONG_KYLUAT" />
@@ -703,16 +737,6 @@
           <Property Name="TENPC" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="SOTIEN" Type="Double" />
           <NavigationProperty Name="NHANVIEN_PHU" Relationship="QLNHANSUModel.FK__NHANVIEN_P__IDPC__18EBB532" FromRole="PHUCAP" ToRole="NHANVIEN_PHU" />
-        </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="TANGCA">
           <Key>
@@ -814,6 +838,18 @@
             </Principal>
             <Dependent Role="NHANVIEN">
               <PropertyRef Name="IDCV" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NHANVIEN_CONGTY">
+          <End Type="QLNHANSUModel.CONGTY" Role="CONGTY" Multiplicity="0..1" />
+          <End Type="QLNHANSUModel.NHANVIEN" Role="NHANVIEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CONGTY">
+              <PropertyRef Name="IDCT" />
+            </Principal>
+            <Dependent Role="NHANVIEN">
+              <PropertyRef Name="IDCT" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -995,6 +1031,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="CONGTies">
+            <EntityTypeMapping TypeName="QLNHANSUModel.CONGTY">
+              <MappingFragment StoreEntitySet="CONGTY">
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="DIENTHOAI" ColumnName="DIENTHOAI" />
+                <ScalarProperty Name="TENCT" ColumnName="TENCT" />
+                <ScalarProperty Name="IDCT" ColumnName="IDCT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="DANTOCs">
             <EntityTypeMapping TypeName="QLNHANSUModel.DANTOC">
               <MappingFragment StoreEntitySet="DANTOC">
@@ -1051,6 +1098,7 @@
           <EntitySetMapping Name="NHANVIENs">
             <EntityTypeMapping TypeName="QLNHANSUModel.NHANVIEN">
               <MappingFragment StoreEntitySet="NHANVIEN">
+                <ScalarProperty Name="IDCT" ColumnName="IDCT" />
                 <ScalarProperty Name="IDTG" ColumnName="IDTG" />
                 <ScalarProperty Name="IDDT" ColumnName="IDDT" />
                 <ScalarProperty Name="IDTD" ColumnName="IDTD" />
@@ -1094,17 +1142,6 @@
                 <ScalarProperty Name="SOTIEN" ColumnName="SOTIEN" />
                 <ScalarProperty Name="TENPC" ColumnName="TENPC" />
                 <ScalarProperty Name="IDPC" ColumnName="IDPC" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="QLNHANSUModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

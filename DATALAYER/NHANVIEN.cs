@@ -40,6 +40,7 @@ namespace DATALAYER
         public Nullable<int> IDTD { get; set; }
         public Nullable<int> IDDT { get; set; }
         public Nullable<int> IDTG { get; set; }
+        public Nullable<int> IDCT { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BANGCONG> BANGCONGs { get; set; }
@@ -47,6 +48,7 @@ namespace DATALAYER
         public virtual ICollection<BAOHIEM> BAOHIEMs { get; set; }
         public virtual BOPHAN BOPHAN { get; set; }
         public virtual CHUCVU CHUCVU { get; set; }
+        public virtual CONGTY CONGTY { get; set; }
         public virtual DANTOC DANTOC { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOPDONG> HOPDONGs { get; set; }

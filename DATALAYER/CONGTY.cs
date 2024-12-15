@@ -12,16 +12,19 @@ namespace DATALAYER
     using System;
     using System.Collections.Generic;
     
-    public partial class DANTOC
+    public partial class CONGTY
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DANTOC()
+        public CONGTY()
         {
             this.NHANVIENs = new HashSet<NHANVIEN>();
         }
     
-        public int IDDT { get; set; }
-        public string TENDT { get; set; }
+        public int IDCT { get; set; }
+        public string TENCT { get; set; }
+        public string DIENTHOAI { get; set; }
+        public string EMAIL { get; set; }
+        public string DIACHI { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NHANVIEN> NHANVIENs { get; set; }
