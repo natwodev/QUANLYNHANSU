@@ -7,19 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BUSINESSLAYER;
-using DATALAYER;
 using DevExpress.XtraEditors;
+using DATALAYER;
+using BUSINESSLAYER;
 
 namespace QLNHANSU
 {
-    public partial class frmTRINHDO : DevExpress.XtraEditors.XtraForm
+    public partial class frmCONGTY : DevExpress.XtraEditors.XtraForm
     {
-        public frmTRINHDO()
+
+        public frmCONGTY()
         {
             InitializeComponent();
         }
-        dbTRINHDO _trinhdo;
+        dbCONGTY _congty;
         bool _them;
         int _id;
         void _showHide(bool kt)
@@ -34,17 +35,17 @@ namespace QLNHANSU
             textEdit1.Enabled = !kt;
 
         }
-        private void frmTRINHDO_Load(object sender, EventArgs e)
+        private void frmCONGTY_Load(object sender, EventArgs e)
         {
             _them = false;
-            _trinhdo = new dbTRINHDO();
+            _congty = new dbCONGTY();
             _showHide(true);
             loadData();
         }
 
         void loadData()
         {
-            gridControl1.DataSource = _trinhdo.getList();
+            gridControl1.DataSource = _congty.getList();
             gridView1.OptionsBehavior.Editable = false;
         }
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -64,7 +65,7 @@ namespace QLNHANSU
         {
             if (MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                _trinhdo.Delete(_id);
+                _congty.Delete(_id);
                 loadData();
                 //MessageBox.Show("Xóa thành công", "Thống báo", MessageBoxButtons.OK);
             }
@@ -112,15 +113,15 @@ namespace QLNHANSU
         {
             if (_them)
             {
-                TRINHDO td = new TRINHDO();
-                td.TENTD = textEdit1.Text;
-                _trinhdo.Add(td);
+                CONGTY ct = new CONGTY();
+                ct.TENCT = textEdit1.Text;
+                _congty.Add(ct);
             }
             else
             {
-                var td = _trinhdo.getItem(_id);
-                td.TENTD = textEdit1.Text;
-                _trinhdo.Update(td);
+                var ct = _congty.getItem(_id);
+                ct.TENCT = textEdit1.Text;
+                _congty.Update(ct);
             }
         }
 
@@ -129,8 +130,8 @@ namespace QLNHANSU
            
             try
             {
-                _id = int.Parse(gridView1.GetFocusedRowCellValue("IDTD").ToString());
-                textEdit1.Text = gridView1.GetFocusedRowCellValue("TENTD").ToString();
+                _id = int.Parse(gridView1.GetFocusedRowCellValue("IDCT").ToString());
+                textEdit1.Text = gridView1.GetFocusedRowCellValue("TENCT").ToString();
             }
             catch (NullReferenceException)
             {
@@ -142,9 +143,5 @@ namespace QLNHANSU
             }
         }
 
-        private void frmTRINHDO_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

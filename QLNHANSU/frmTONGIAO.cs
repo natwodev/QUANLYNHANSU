@@ -127,8 +127,20 @@ namespace QLNHANSU
 
         private void gridView1_Click(object sender, EventArgs e)
         {
-            _id = int.Parse(gridView1.GetFocusedRowCellValue("IDTG").ToString());
-            textEdit1.Text = gridView1.GetFocusedRowCellValue("TENTG").ToString();
+           
+            try
+            {
+                _id = int.Parse(gridView1.GetFocusedRowCellValue("IDTG").ToString());
+                textEdit1.Text = gridView1.GetFocusedRowCellValue("TENTG").ToString();
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Không có giá trị nào được chọn hoặc dữ liệu bị thiếu.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Có lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
        

@@ -69,7 +69,7 @@ namespace QLNHANSU
 
         private void barButtonItem21_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //CÔNG TY
+            openForm(typeof(frmCONGTY));//CÔNG TY
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -80,6 +80,11 @@ namespace QLNHANSU
         private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             //BỘ PHẬN
+        }
+
+        private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //CHỨC VỤ 
         }
     }
 }
