@@ -52,11 +52,21 @@ namespace QLNHANSU
             
         }
 
-       
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmPHONGBAN));
+        }
 
         private void ribbonControl1_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+      
     }
 }

@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dbDANTOC.cs" />
+    <Compile Include="dbPHONGBAN.cs" />
     <Compile Include="dbTONGIAO.cs" />
     <Compile Include="dbTRINHDO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
