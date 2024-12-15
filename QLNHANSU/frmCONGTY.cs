@@ -33,6 +33,9 @@ namespace QLNHANSU
             barButtonItem6.Enabled = kt;
             barButtonItem7.Enabled = kt;
             textEdit1.Enabled = !kt;
+            textEdit2.Enabled = !kt;
+            textEdit3.Enabled = !kt;
+            textEdit4.Enabled = !kt;
 
         }
         private void frmCONGTY_Load(object sender, EventArgs e)

@@ -51,6 +51,12 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.IDCT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENCT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -59,6 +65,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -211,6 +220,12 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.textEdit4);
+            this.splitContainer1.Panel1.Controls.Add(this.labelControl4);
+            this.splitContainer1.Panel1.Controls.Add(this.textEdit3);
+            this.splitContainer1.Panel1.Controls.Add(this.labelControl3);
+            this.splitContainer1.Panel1.Controls.Add(this.textEdit2);
+            this.splitContainer1.Panel1.Controls.Add(this.labelControl2);
             this.splitContainer1.Panel1.Controls.Add(this.textEdit1);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl1);
             this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
@@ -219,20 +234,20 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gridControl1);
             this.splitContainer1.Size = new System.Drawing.Size(969, 442);
-            this.splitContainer1.SplitterDistance = 30;
+            this.splitContainer1.SplitterDistance = 68;
             this.splitContainer1.TabIndex = 5;
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(33, 6);
+            this.textEdit1.Location = new System.Drawing.Point(165, 6);
             this.textEdit1.MenuManager = this.barManager1;
             this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(125, 22);
+            this.textEdit1.Size = new System.Drawing.Size(197, 22);
             this.textEdit1.TabIndex = 1;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(5, 9);
+            this.labelControl1.Location = new System.Drawing.Point(137, 9);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(22, 16);
             this.labelControl1.TabIndex = 0;
@@ -245,7 +260,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(969, 408);
+            this.gridControl1.Size = new System.Drawing.Size(969, 370);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -281,6 +296,54 @@
             this.TENCT.VisibleIndex = 1;
             this.TENCT.Width = 94;
             // 
+            // textEdit2
+            // 
+            this.textEdit2.Location = new System.Drawing.Point(505, 6);
+            this.textEdit2.MenuManager = this.barManager1;
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Size = new System.Drawing.Size(199, 22);
+            this.textEdit2.TabIndex = 3;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(477, 9);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(22, 16);
+            this.labelControl2.TabIndex = 2;
+            this.labelControl2.Text = "Tên";
+            // 
+            // textEdit3
+            // 
+            this.textEdit3.Location = new System.Drawing.Point(165, 43);
+            this.textEdit3.MenuManager = this.barManager1;
+            this.textEdit3.Name = "textEdit3";
+            this.textEdit3.Size = new System.Drawing.Size(197, 22);
+            this.textEdit3.TabIndex = 5;
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(137, 46);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(22, 16);
+            this.labelControl3.TabIndex = 4;
+            this.labelControl3.Text = "Tên";
+            // 
+            // textEdit4
+            // 
+            this.textEdit4.Location = new System.Drawing.Point(505, 40);
+            this.textEdit4.MenuManager = this.barManager1;
+            this.textEdit4.Name = "textEdit4";
+            this.textEdit4.Size = new System.Drawing.Size(199, 22);
+            this.textEdit4.TabIndex = 7;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(477, 43);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(22, 16);
+            this.labelControl4.TabIndex = 6;
+            this.labelControl4.Text = "Tên";
+            // 
             // frmCONGTY
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -303,6 +366,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,5 +397,11 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn IDCT;
         private DevExpress.XtraGrid.Columns.GridColumn TENCT;
+        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.TextEdit textEdit2;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
     }
 }
