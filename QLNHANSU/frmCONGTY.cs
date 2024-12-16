@@ -56,6 +56,10 @@ namespace QLNHANSU
             _them = true;
             _showHide(false); //thêm
             textEdit1.Text = string.Empty;
+            textEdit2.Text = string.Empty;
+            textEdit3.Text = string.Empty;
+            textEdit4.Text = string.Empty;
+
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -95,7 +99,7 @@ namespace QLNHANSU
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.Close();
+             this.Close();
         }
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -118,12 +122,18 @@ namespace QLNHANSU
             {
                 CONGTY ct = new CONGTY();
                 ct.TENCT = textEdit1.Text;
+                ct.DIENTHOAI = textEdit2.Text;
+                ct.EMAIL = textEdit3.Text;
+                ct.DIACHI = textEdit4.Text;
                 _congty.Add(ct);
             }
             else
             {
                 var ct = _congty.getItem(_id);
                 ct.TENCT = textEdit1.Text;
+                ct.DIENTHOAI = textEdit2.Text;
+                ct.EMAIL = textEdit3.Text;
+                ct.DIACHI = textEdit4.Text;
                 _congty.Update(ct);
             }
         }
@@ -133,8 +143,15 @@ namespace QLNHANSU
            
             try
             {
-                _id = int.Parse(gridView1.GetFocusedRowCellValue("IDCT").ToString());
-                textEdit1.Text = gridView1.GetFocusedRowCellValue("TENCT").ToString();
+                if (gridView1.RowCount>0 )
+                {
+                    _id = int.Parse(gridView1.GetFocusedRowCellValue("IDCT").ToString());
+                    textEdit1.Text = gridView1.GetFocusedRowCellValue("TENCT").ToString();
+                    textEdit2.Text = gridView1.GetFocusedRowCellValue("EMAIL").ToString();
+                    textEdit3.Text = gridView1.GetFocusedRowCellValue("DIENTHOAI").ToString();
+                    textEdit4.Text = gridView1.GetFocusedRowCellValue("DIACHI").ToString();
+                }
+
             }
             catch (NullReferenceException)
             {
@@ -146,5 +163,25 @@ namespace QLNHANSU
             }
         }
 
+        private void textEdit1_EditValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textEdit3_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textEdit2_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }
