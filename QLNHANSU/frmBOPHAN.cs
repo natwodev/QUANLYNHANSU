@@ -80,10 +80,9 @@ namespace QLNHANSU
             {
                 _bophan.Delete(_id);
                 loadData();
-                //MessageBox.Show("Xóa thành công", "Thống báo", MessageBoxButtons.OK);
+                textEdit1.Clear();
+
             }
-
-
             //xóa
         }
 
@@ -148,8 +147,11 @@ namespace QLNHANSU
 
             try
             {
-                _id = int.Parse(gridView1.GetFocusedRowCellValue("IDBP").ToString());
-                textEdit1.Text = gridView1.GetFocusedRowCellValue("TENBP").ToString();
+                if (gridView1.RowCount > 0) 
+                {
+                    _id = int.Parse(gridView1.GetFocusedRowCellValue("IDBP").ToString());
+                    textEdit1.Text = gridView1.GetFocusedRowCellValue("TENBP").ToString();
+                } 
             }
             catch (NullReferenceException)
             {
@@ -159,11 +161,6 @@ namespace QLNHANSU
             {
                 MessageBox.Show($"Có lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void frmBOPHAN_Load_1(object sender, EventArgs e)
-        {
-
         }
     }
 }

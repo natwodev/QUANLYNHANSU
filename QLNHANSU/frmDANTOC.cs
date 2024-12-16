@@ -81,9 +81,9 @@ namespace QLNHANSU
             {
                 _dantoc.Delete(_id);
                 loadData();
-                //MessageBox.Show("Xóa thành công", "Thống báo", MessageBoxButtons.OK);
+                textEdit1.Clear();
             }
-           
+
 
             //xóa
         }

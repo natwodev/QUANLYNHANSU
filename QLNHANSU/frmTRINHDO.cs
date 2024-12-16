@@ -79,7 +79,7 @@ namespace QLNHANSU
             {
                 _trinhdo.Delete(_id);
                 loadData();
-                //MessageBox.Show("Xóa thành công", "Thống báo", MessageBoxButtons.OK);
+                textEdit1.Clear();
             }
 
 
