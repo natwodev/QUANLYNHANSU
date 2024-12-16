@@ -111,6 +111,11 @@ namespace QLNHANSU
                 loadData();
                 _them = false;
                 _showHide(true); // lưu
+                                 // Làm sạch các TextEdit sau khi xóa
+                textEdit1.Clear();
+                textEdit2.Clear();
+                textEdit3.Clear();
+                textEdit4.Clear();
             }
             catch (Exception ex)
             {

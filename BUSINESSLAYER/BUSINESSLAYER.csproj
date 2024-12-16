@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dbBOPHAN.cs" />
+    <Compile Include="dbCHUCVU.cs" />
     <Compile Include="dbCONGTY.cs" />
     <Compile Include="dbDANTOC.cs" />
     <Compile Include="dbPHONGBAN.cs" />

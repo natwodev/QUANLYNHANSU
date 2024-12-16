@@ -76,6 +76,12 @@
     <Compile Include="frmBOPHAN.Designer.cs">
       <DependentUpon>frmBOPHAN.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCHUCVU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCHUCVU.Designer.cs">
+      <DependentUpon>frmCHUCVU.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCONGTY.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBOPHAN.resx">
       <DependentUpon>frmBOPHAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCHUCVU.resx">
+      <DependentUpon>frmCHUCVU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCONGTY.resx">
       <DependentUpon>frmCONGTY.cs</DependentUpon>

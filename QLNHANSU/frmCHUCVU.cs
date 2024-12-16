@@ -7,19 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BUSINESSLAYER;
-using DATALAYER;
 using DevExpress.XtraEditors;
+using DATALAYER;
+using BUSINESSLAYER;
 
 namespace QLNHANSU
 {
-    public partial class frmPHONGBAN : DevExpress.XtraEditors.XtraForm
+    public partial class frmCHUCVU : DevExpress.XtraEditors.XtraForm
     {
-        public frmPHONGBAN()
+
+        public frmCHUCVU()
         {
             InitializeComponent();
         }
-        dbPHONGBAN _phongban;
+        dbCHUCVU _chucvu;
         bool _them;
         int _id;
         void _showHide(bool kt)
@@ -34,24 +35,24 @@ namespace QLNHANSU
             textEdit1.Enabled = !kt;
 
         }
-        private void frmPHONGBAN_Load(object sender, EventArgs e)
+        private void frmCHUCVU_Load(object sender, EventArgs e)
         {
             _them = false;
-            _phongban = new dbPHONGBAN();
+            _chucvu = new dbCHUCVU();
             _showHide(true);
             loadData();
         }
 
         void loadData()
         {
-            gridControl1.DataSource = _phongban.getList();
+            gridControl1.DataSource = _chucvu.getList();
             gridView1.OptionsBehavior.Editable = false;
         }
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             _them = true;
             _showHide(false); //thêm
-            textEdit1.Text = string.Empty;
+            textEdit1.Clear();
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -62,6 +63,7 @@ namespace QLNHANSU
                 MessageBox.Show("Chưa có id cần sửa. Vui lòng chọn thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Dừng việc xóa nếu textEdit1 trống
             }
+
             _them = false;
             _showHide(false);//sửa
         }
@@ -74,15 +76,18 @@ namespace QLNHANSU
                 MessageBox.Show("Chưa có id cần xóa. Vui lòng chọn thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Dừng việc xóa nếu textEdit1 trống
             }
-
+            if (_id <= 0)
+            {
+                MessageBox.Show("ID không hợp lệ. Vui lòng chọn lại thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                _phongban.Delete(_id);
+                _chucvu.Delete(_id);
                 loadData();
                 textEdit1.Clear();
+
             }
-
-
             //xóa
         }
 
@@ -98,7 +103,6 @@ namespace QLNHANSU
             _them = false;
             _showHide(true);//lưu
             textEdit1.Clear();
-
 
         }
 
@@ -132,24 +136,28 @@ namespace QLNHANSU
         {
             if (_them)
             {
-                PHONGBAN pb = new PHONGBAN();
-                pb.TENPB = textEdit1.Text;
-                _phongban.Add(pb);
+                CHUCVU cv = new CHUCVU();
+                cv.TENCV = textEdit1.Text;
+                _chucvu.Add(cv);
             }
             else
             {
-                var pb = _phongban.getItem(_id);
-                pb.TENPB = textEdit1.Text;
-                _phongban.Update(pb);
+                var cv = _chucvu.getItem(_id);
+                cv.TENCV = textEdit1.Text;
+                _chucvu.Update(cv);
             }
         }
 
         private void gridView1_Click(object sender, EventArgs e)
         {
+
             try
             {
-                _id = int.Parse(gridView1.GetFocusedRowCellValue("IDPB").ToString());
-                textEdit1.Text = gridView1.GetFocusedRowCellValue("TENPB").ToString();
+                if (gridView1.RowCount > 0)
+                {
+                    _id = int.Parse(gridView1.GetFocusedRowCellValue("IDCV").ToString());
+                    textEdit1.Text = gridView1.GetFocusedRowCellValue("TENCV").ToString();
+                }
             }
             catch (NullReferenceException)
             {
@@ -160,6 +168,5 @@ namespace QLNHANSU
                 MessageBox.Show($"Có lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }

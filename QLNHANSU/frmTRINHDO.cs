@@ -51,7 +51,7 @@ namespace QLNHANSU
         {
             _them = true;
             _showHide(false); //thêm
-            textEdit1.Text = string.Empty;
+            textEdit1.Clear();
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -97,6 +97,7 @@ namespace QLNHANSU
             loadData();
             _them = false;
             _showHide(true);//lưu
+            textEdit1.Clear();
 
         }
 

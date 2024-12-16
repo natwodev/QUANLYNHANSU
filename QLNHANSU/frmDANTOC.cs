@@ -99,6 +99,7 @@ namespace QLNHANSU
             loadData();
             _them = false;
             _showHide(true);//lưu
+            textEdit1.Clear();
 
         }
 
