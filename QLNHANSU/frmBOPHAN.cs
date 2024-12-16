@@ -13,14 +13,14 @@ using BUSINESSLAYER;
 
 namespace QLNHANSU
 {
-    public partial class frmTONGIAO : DevExpress.XtraEditors.XtraForm
+    public partial class frmBOPHAN : DevExpress.XtraEditors.XtraForm
     {
 
-        public frmTONGIAO()
+        public frmBOPHAN()
         {
             InitializeComponent();
         }
-        dbTONGIAO _tongiao;
+        dbBOPHAN _bophan;
         bool _them;
         int _id;
         void _showHide(bool kt)
@@ -35,17 +35,17 @@ namespace QLNHANSU
             textEdit1.Enabled = !kt;
 
         }
-        private void frmTONGIAO_Load(object sender, EventArgs e)
+        private void frmBOPHAN_Load(object sender, EventArgs e)
         {
             _them = false;
-            _tongiao = new dbTONGIAO();
+            _bophan = new dbBOPHAN();
             _showHide(true);
             loadData();
         }
 
         void loadData()
         {
-            gridControl1.DataSource = _tongiao.getList();
+            gridControl1.DataSource = _bophan.getList();
             gridView1.OptionsBehavior.Editable = false;
         }
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -78,7 +78,7 @@ namespace QLNHANSU
             }
             if (MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                _tongiao.Delete(_id);
+                _bophan.Delete(_id);
                 loadData();
                 //MessageBox.Show("Xóa thành công", "Thống báo", MessageBoxButtons.OK);
             }
@@ -94,7 +94,6 @@ namespace QLNHANSU
                 MessageBox.Show("Tên không thể để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Dừng lại nếu text1 trống
             }
-
             SaveData();
             loadData();
             _them = false;
@@ -132,25 +131,25 @@ namespace QLNHANSU
         {
             if (_them)
             {
-                TONGIAO tg = new TONGIAO();
-                tg.TENTG = textEdit1.Text;
-                _tongiao.Add(tg);
+                BOPHAN bp = new BOPHAN();
+                bp.TENBP = textEdit1.Text;
+                _bophan.Add(bp);
             }
             else
             {
-                var tg = _tongiao.getItem(_id);
-                tg.TENTG = textEdit1.Text;
-                _tongiao.Update(tg);
+                var bp = _bophan.getItem(_id);
+                bp.TENBP = textEdit1.Text;
+                _bophan.Update(bp);
             }
         }
 
         private void gridView1_Click(object sender, EventArgs e)
         {
-           
+
             try
             {
-                _id = int.Parse(gridView1.GetFocusedRowCellValue("IDTG").ToString());
-                textEdit1.Text = gridView1.GetFocusedRowCellValue("TENTG").ToString();
+                _id = int.Parse(gridView1.GetFocusedRowCellValue("IDBP").ToString());
+                textEdit1.Text = gridView1.GetFocusedRowCellValue("TENBP").ToString();
             }
             catch (NullReferenceException)
             {
@@ -162,6 +161,9 @@ namespace QLNHANSU
             }
         }
 
-       
+        private void frmBOPHAN_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

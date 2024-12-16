@@ -79,7 +79,7 @@ namespace QLNHANSU
 
         private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //BỘ PHẬN
+            openForm(typeof(frmBOPHAN)); //BỘ PHẬN
         }
 
         private void barButtonItem23_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

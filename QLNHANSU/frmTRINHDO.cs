@@ -56,12 +56,25 @@ namespace QLNHANSU
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            // Kiểm tra xem textEdit1 có trống không
+            if (string.IsNullOrEmpty(textEdit1.Text))
+            {
+                MessageBox.Show("Chưa có id cần sửa. Vui lòng chọn thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Dừng việc xóa nếu textEdit1 trống
+            }
             _them = false;
             _showHide(false);//sửa
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
+        { 
+            // Kiểm tra xem textEdit1 có trống không
+            if (string.IsNullOrEmpty(textEdit1.Text))
+            {
+                MessageBox.Show("Chưa có id cần xóa. Vui lòng chọn thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Dừng việc xóa nếu textEdit1 trống
+            }
+
             if (MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 _trinhdo.Delete(_id);
@@ -75,6 +88,11 @@ namespace QLNHANSU
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            if (string.IsNullOrEmpty(textEdit1.Text))
+            {
+                MessageBox.Show("Tên không thể để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Dừng lại nếu text1 trống
+            }
             SaveData();
             loadData();
             _them = false;

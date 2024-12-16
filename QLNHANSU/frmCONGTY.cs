@@ -64,31 +64,61 @@ namespace QLNHANSU
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            // Kiểm tra xem textEdit1 có trống không
+            if (string.IsNullOrEmpty(textEdit1.Text))
+            {
+                MessageBox.Show("Chưa có id cần sửa. Vui lòng chọn thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Dừng việc xóa nếu textEdit1 trống
+            }
+
             _them = false;
             _showHide(false);//sửa
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            // Kiểm tra xem textEdit1 có trống không
+            if (string.IsNullOrEmpty(textEdit1.Text))
+            {
+                MessageBox.Show("Chưa có id cần xóa. Vui lòng chọn thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Dừng việc xóa nếu textEdit1 trống
+            }
+
             if (MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 _congty.Delete(_id);
                 loadData();
-                //MessageBox.Show("Xóa thành công", "Thống báo", MessageBoxButtons.OK);
+
+                // Làm sạch các TextEdit sau khi xóa
+                textEdit1.Clear();
+                textEdit2.Clear();
+                textEdit3.Clear();
+                textEdit4.Clear();
             }
-
-
-            //xóa
         }
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SaveData();
-            loadData();
-            _them = false;
-            _showHide(true);//lưu
+            try
+            {
+                if (string.IsNullOrEmpty(textEdit1.Text))
+                {
+                    MessageBox.Show("Tên không thể để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Dừng lại nếu text1 trống
+                }
 
+                SaveData();
+                loadData();
+                _them = false;
+                _showHide(true); // lưu
+            }
+            catch (Exception ex)
+            {
+                // Xử lý ngoại lệ nếu có lỗi trong quá trình thực thi
+                MessageBox.Show($"Có lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
