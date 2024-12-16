@@ -243,6 +243,7 @@
             // 
             this.barButtonItem17.Caption = "Đổi mật khẩu";
             this.barButtonItem17.Id = 17;
+            this.barButtonItem17.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem17.ImageOptions.SvgImage")));
             this.barButtonItem17.Name = "barButtonItem17";
             this.barButtonItem17.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
@@ -250,6 +251,7 @@
             // 
             this.barButtonItem18.Caption = "Sao lưu";
             this.barButtonItem18.Id = 18;
+            this.barButtonItem18.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem18.ImageOptions.SvgImage")));
             this.barButtonItem18.Name = "barButtonItem18";
             this.barButtonItem18.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
@@ -257,6 +259,7 @@
             // 
             this.barButtonItem19.Caption = "Phục hồi dữ liệu";
             this.barButtonItem19.Id = 19;
+            this.barButtonItem19.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem19.ImageOptions.SvgImage")));
             this.barButtonItem19.Name = "barButtonItem19";
             this.barButtonItem19.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
@@ -264,6 +267,7 @@
             // 
             this.barButtonItem20.Caption = "Thoát";
             this.barButtonItem20.Id = 20;
+            this.barButtonItem20.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem20.ImageOptions.SvgImage")));
             this.barButtonItem20.Name = "barButtonItem20";
             this.barButtonItem20.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
             // 
