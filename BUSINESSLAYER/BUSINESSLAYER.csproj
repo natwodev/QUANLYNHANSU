@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DATA_OBJECT\NHANVIEN_DTO.cs" />
     <Compile Include="dbBOPHAN.cs" />
     <Compile Include="dbCHUCVU.cs" />
     <Compile Include="dbCONGTY.cs" />
@@ -68,5 +69,6 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

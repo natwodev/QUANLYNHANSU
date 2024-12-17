@@ -561,12 +561,12 @@
             this.MANV.AppearanceCell.Options.UseFont = true;
             this.MANV.Caption = "MA";
             this.MANV.FieldName = "MANV";
-            this.MANV.MaxWidth = 45;
-            this.MANV.MinWidth = 45;
+            this.MANV.MaxWidth = 90;
+            this.MANV.MinWidth = 90;
             this.MANV.Name = "MANV";
             this.MANV.Visible = true;
             this.MANV.VisibleIndex = 0;
-            this.MANV.Width = 45;
+            this.MANV.Width = 90;
             // 
             // HOTEN
             // 
@@ -600,12 +600,12 @@
             this.NGAYSINH.AppearanceCell.Options.UseFont = true;
             this.NGAYSINH.Caption = "NGAYSINH";
             this.NGAYSINH.FieldName = "NGAYSINH";
-            this.NGAYSINH.MaxWidth = 130;
-            this.NGAYSINH.MinWidth = 130;
+            this.NGAYSINH.MaxWidth = 105;
+            this.NGAYSINH.MinWidth = 105;
             this.NGAYSINH.Name = "NGAYSINH";
             this.NGAYSINH.Visible = true;
             this.NGAYSINH.VisibleIndex = 3;
-            this.NGAYSINH.Width = 130;
+            this.NGAYSINH.Width = 105;
             // 
             // DIENTHOAI
             // 
@@ -613,12 +613,12 @@
             this.DIENTHOAI.AppearanceCell.Options.UseFont = true;
             this.DIENTHOAI.Caption = "SDT";
             this.DIENTHOAI.FieldName = "DIENTHOAI";
-            this.DIENTHOAI.MaxWidth = 125;
-            this.DIENTHOAI.MinWidth = 125;
+            this.DIENTHOAI.MaxWidth = 120;
+            this.DIENTHOAI.MinWidth = 120;
             this.DIENTHOAI.Name = "DIENTHOAI";
             this.DIENTHOAI.Visible = true;
             this.DIENTHOAI.VisibleIndex = 4;
-            this.DIENTHOAI.Width = 125;
+            this.DIENTHOAI.Width = 120;
             // 
             // CCCD
             // 
@@ -626,12 +626,12 @@
             this.CCCD.AppearanceCell.Options.UseFont = true;
             this.CCCD.Caption = "CCCD";
             this.CCCD.FieldName = "CCCD";
-            this.CCCD.MaxWidth = 175;
-            this.CCCD.MinWidth = 175;
+            this.CCCD.MaxWidth = 145;
+            this.CCCD.MinWidth = 145;
             this.CCCD.Name = "CCCD";
             this.CCCD.Visible = true;
             this.CCCD.VisibleIndex = 5;
-            this.CCCD.Width = 175;
+            this.CCCD.Width = 145;
             // 
             // DIACHI
             // 

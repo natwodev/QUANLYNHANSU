@@ -95,7 +95,7 @@ namespace QLNHANSU
         }
         void loadData()
         {
-            gridControl1.DataSource = _nhanvien.getList();
+            gridControl1.DataSource = _nhanvien.getListFull();
             gridView1.OptionsBehavior.Editable = false;
         }
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -211,7 +211,6 @@ namespace QLNHANSU
             else
             {
                 var nv = _nhanvien.getItem(_id);
-                nv.MANV = GenerateEmployeeCode(dateTimePicker1.Value);
                 nv.HOTEN = textEdit1.Text;
                 nv.GIOITINH = checkBox1.Checked;
                 nv.NGAYSINH = dateTimePicker1.Value;
@@ -233,29 +232,32 @@ namespace QLNHANSU
 
         private void gridView1_Click(object sender, EventArgs e)
         {
-
             try
             {
-                if (gridView1.FocusedRowHandle >= 0) {
-                    _id = gridView1.GetFocusedRowCellValue("MANV").ToString();
-                    var nv = _nhanvien.getItem(_id);
-                    textEdit1.Text = gridView1.GetFocusedRowCellValue("HOTEN").ToString();
-                    // nv.MANV = GenerateEmployeeCode(dateTimePicker1.Value);
-                    textEdit1.Text = nv.HOTEN;
-                    checkBox1.Checked = nv.GIOITINH.Value;
-                    dateTimePicker1.Value = nv.NGAYSINH.Value;
-                    textEdit3.Text = nv.DIENTHOAI;
-                    textEdit2.Text = nv.CCCD;
-                    textEdit4.Text = nv.DIACHI;
-                    pictureBox1.Image = Base64ToImage(nv.HINHANH);
+                if (!_them) // Kiểm tra nếu _them là false
+                {
+                    if (gridView1.FocusedRowHandle >= 0)
+                    {
+                        _id = gridView1.GetFocusedRowCellValue("MANV").ToString();
+                        var nv = _nhanvien.getItem(_id);
+                        textEdit1.Text = gridView1.GetFocusedRowCellValue("HOTEN").ToString();
+                        // nv.MANV = GenerateEmployeeCode(dateTimePicker1.Value);
+                        textEdit1.Text = nv.HOTEN;
+                        checkBox1.Checked = nv.GIOITINH.Value;
+                        dateTimePicker1.Value = nv.NGAYSINH.Value;
+                        textEdit3.Text = nv.DIENTHOAI;
+                        textEdit2.Text = nv.CCCD;
+                        textEdit4.Text = nv.DIACHI;
+                        pictureBox1.Image = Base64ToImage(nv.HINHANH);
 
-                    comboBox1.SelectedValue = nv.IDPB;//phòng ban
-                    comboBox4.SelectedValue = nv.IDTD; //trình độ
-                    comboBox2.SelectedValue = nv.IDBP; //bộ phận
-                    comboBox3.SelectedValue = nv.IDCV; //chức vụ 
-                    comboBox5.SelectedValue = nv.IDDT; //dân tộc
-                    comboBox6.SelectedValue = nv.IDTG; //tôn giáo
-                                                       //nv.IDCT = 1;
+                        comboBox1.SelectedValue = nv.IDPB; //phòng ban
+                        comboBox4.SelectedValue = nv.IDTD; //trình độ
+                        comboBox2.SelectedValue = nv.IDBP; //bộ phận
+                        comboBox3.SelectedValue = nv.IDCV; //chức vụ
+                        comboBox5.SelectedValue = nv.IDDT; //dân tộc
+                        comboBox6.SelectedValue = nv.IDTG; //tôn giáo
+                                                           //nv.IDCT = 1;
+                    }
                 }
             }
             catch (NullReferenceException)
@@ -276,6 +278,9 @@ namespace QLNHANSU
             textEdit3.Clear();
             textEdit4.Clear();
             checkBox1.Checked = false;
+            pictureBox1.Image = Image.FromFile("C:\\Users\\nam\\Desktop\\avatar_trang_1_cd729c335b.jpg");
+
+
         }
 
         //Hàm chuyển đổi hình ảnh lưu vào database  

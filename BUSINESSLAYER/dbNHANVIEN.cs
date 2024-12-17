@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BUSINESSLAYER.DATA_OBJECT;
 using DATALAYER;
 namespace BUSINESSLAYER
 {
@@ -20,7 +21,51 @@ namespace BUSINESSLAYER
             return db.NHANVIENs.ToList();
         }
 
+        public List<NHANVIEN_DTO> getListFull()
+        {
+            var lstNV = db.NHANVIENs.ToList();
+            List<NHANVIEN_DTO> lstDTO = new List<NHANVIEN_DTO>();
+            NHANVIEN_DTO nvDTO;
+            foreach (var item in lstNV)
+            {
+                nvDTO = new NHANVIEN_DTO();
+                nvDTO.MANV = item.MANV;
+                nvDTO.HOTEN = item.HOTEN;
+                nvDTO.GIOITINH = item.GIOITINH;
+                nvDTO.NGAYSINH = item.NGAYSINH;
+                nvDTO.CCCD = item.CCCD;
+                nvDTO.DIENTHOAI = item.DIENTHOAI;
+                nvDTO.DIACHI = item.DIACHI;
+                nvDTO.HINHANH = item.HINHANH;
 
+                nvDTO.IDBP = item.IDBP;
+                var bp = db.BOPHANs.FirstOrDefault(b => b.IDBP == item.IDBP);
+                nvDTO.TENBP = bp.TENBP;
+
+                nvDTO.IDCV = item.IDCV;
+                var cv = db.CHUCVUs.FirstOrDefault(b => b.IDCV == item.IDCV);
+                nvDTO.TENCV = cv.TENCV;
+
+                nvDTO.IDPB = item.IDPB;
+                var pb = db.PHONGBANs.FirstOrDefault(b => b.IDPB == item.IDPB);
+                nvDTO.TENPB = pb.TENPB;
+
+                nvDTO.IDTD = item.IDTD;
+                var td = db.TRINHDOes.FirstOrDefault(b => b.IDTD == item.IDTD);
+                nvDTO.TENTD = td.TENTD;
+
+                nvDTO.IDDT = item.IDDT;
+                var dt = db.DANTOCs.FirstOrDefault(b => b.IDDT == item.IDDT);
+                nvDTO.TENDT = dt.TENDT;
+
+                nvDTO.IDTG = item.IDTG;
+                var tg = db.TONGIAOs.FirstOrDefault(b => b.IDTG == item.IDTG);
+                nvDTO.TENTG = tg.TENTG;
+
+                lstDTO.Add(nvDTO);
+            }
+            return lstDTO;
+        }
 
         public NHANVIEN Add(NHANVIEN nv)
         {
@@ -42,9 +87,13 @@ namespace BUSINESSLAYER
             try
             {
                 var _nv = db.NHANVIENs.FirstOrDefault(x => x.MANV == nv.MANV);
+                if (_nv == null)
+                {
+                    throw new Exception("Không tìm thấy nhân viên với mã " + nv.MANV);
+                }
                 _nv.HOTEN = nv.HOTEN;
                 _nv.GIOITINH = nv.GIOITINH;
-              //  _nv.NGAYSINH = nv.NGAYSINH;
+                _nv.NGAYSINH = nv.NGAYSINH;
                 _nv.DIENTHOAI = nv.DIENTHOAI;
                 _nv.CCCD = nv.CCCD;
                 _nv.DIACHI = nv.DIACHI;
