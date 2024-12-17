@@ -292,7 +292,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmBOPHAN";
-            this.Text = "frmBOPHAN";
+            this.Text = "Bộ Phận";
             this.Load += new System.EventHandler(this.frmBOPHAN_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);

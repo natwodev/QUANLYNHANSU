@@ -111,7 +111,7 @@
           <Property Name="DIENTHOAI" Type="varchar" MaxLength="15" />
           <Property Name="CCCD" Type="varchar" MaxLength="12" />
           <Property Name="DIACHI" Type="nvarchar" MaxLength="255" />
-          <Property Name="HINHANH" Type="image" />
+          <Property Name="HINHANH" Type="varbinary(max)" />
           <Property Name="IDPB" Type="int" />
           <Property Name="IDBP" Type="int" />
           <Property Name="IDCV" Type="int" />

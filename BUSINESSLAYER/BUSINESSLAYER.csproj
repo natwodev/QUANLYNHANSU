@@ -52,6 +52,7 @@
     <Compile Include="dbCHUCVU.cs" />
     <Compile Include="dbCONGTY.cs" />
     <Compile Include="dbDANTOC.cs" />
+    <Compile Include="dbNHANVIEN.cs" />
     <Compile Include="dbPHONGBAN.cs" />
     <Compile Include="dbTONGIAO.cs" />
     <Compile Include="dbTRINHDO.cs" />
