@@ -12,7 +12,9 @@ using DATALAYER;
 using BUSINESSLAYER;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
+using QLNHANSU.REPORTS;
+using BUSINESSLAYER.DATA_OBJECT;
+using DevExpress.XtraReports.UI;
 namespace QLNHANSU
 {
     public partial class frmNHANVIEN : DevExpress.XtraEditors.XtraForm
@@ -22,15 +24,17 @@ namespace QLNHANSU
         {
             InitializeComponent();
         }
-        dbNHANVIEN _nhanvien;
-        dbDANTOC _dantoc;
-        dbTONGIAO _tongiao;
-        dbCHUCVU _chucvu;
-        dbTRINHDO _trinhdo;
-        dbPHONGBAN _phongban;
-        dbBOPHAN _bophan;
+        private dbNHANVIEN _nhanvien;
+        private dbDANTOC _dantoc;
+        private dbTONGIAO _tongiao;
+        private dbCHUCVU _chucvu;
+        private dbTRINHDO _trinhdo;
+        private dbPHONGBAN _phongban;
+        private dbBOPHAN _bophan;
+       // private Image _hinh;
         bool _them;
         string _id;
+        List<NHANVIEN_DTO> _listNVDTO;
         void _showHide(bool kt)
         {
             barButtonItem1.Enabled = kt;
@@ -97,6 +101,7 @@ namespace QLNHANSU
         {
             gridControl1.DataSource = _nhanvien.getListFull();
             gridView1.OptionsBehavior.Editable = false;
+            _listNVDTO = _nhanvien.getListFull();
         }
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -173,6 +178,12 @@ namespace QLNHANSU
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            rpDSNHANVIEN rpt = new rpDSNHANVIEN(_listNVDTO);
+
+            // Hiển thị chế độ preview full màn hình
+            var previewForm = new DevExpress.XtraReports.UI.ReportPrintTool(rpt);
+            previewForm.PreviewForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            previewForm.ShowRibbonPreview();
 
         }
 
