@@ -31,7 +31,7 @@ namespace QLNHANSU
         private dbTRINHDO _trinhdo;
         private dbPHONGBAN _phongban;
         private dbBOPHAN _bophan;
-       // private Image _hinh;
+        private Image _hinh;
         bool _them;
         string _id;
         List<NHANVIEN_DTO> _listNVDTO;
@@ -116,16 +116,11 @@ namespace QLNHANSU
         {
            
             splitContainer1.Panel1Collapsed = false;
-            // Kiểm tra xem textEdit1 có trống không
-            /*
-            if (string.IsNullOrEmpty(textEdit1.Text))
-            {
-                MessageBox.Show("Chưa có id cần sửa. Vui lòng chọn thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; // Dừng việc xóa nếu textEdit1 trống
-            }
-            */
+         
             _them = false;
             _showHide(false);//sửa
+            pictureBox1.Image = _hinh;
+            dateTimePicker1.Enabled = true;
            
         }
 
@@ -378,6 +373,11 @@ namespace QLNHANSU
                 pictureBox1.Image = Image.FromFile(openFile.FileName);
                 pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             }
+
+        }
+
+        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
+        {
 
         }
     }
