@@ -31,7 +31,7 @@ namespace QLNHANSU
         private dbTRINHDO _trinhdo;
         private dbPHONGBAN _phongban;
         private dbBOPHAN _bophan;
-        private Image _hinh;
+       // private Image _hinh = null;
         bool _them;
         string _id;
         List<NHANVIEN_DTO> _listNVDTO;
@@ -119,7 +119,7 @@ namespace QLNHANSU
          
             _them = false;
             _showHide(false);//sửa
-            pictureBox1.Image = _hinh;
+           // pictureBox1.Image = _hinh;
             dateTimePicker1.Enabled = true;
            
         }
@@ -247,7 +247,6 @@ namespace QLNHANSU
                         _id = gridView1.GetFocusedRowCellValue("MANV").ToString();
                         var nv = _nhanvien.getItem(_id);
                         textEdit1.Text = gridView1.GetFocusedRowCellValue("HOTEN").ToString();
-                        // nv.MANV = GenerateEmployeeCode(dateTimePicker1.Value);
                         textEdit1.Text = nv.HOTEN;
                         checkBox1.Checked = nv.GIOITINH.Value;
                         dateTimePicker1.Value = nv.NGAYSINH.Value;

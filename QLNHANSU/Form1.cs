@@ -74,7 +74,7 @@ namespace QLNHANSU
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            openForm(typeof(frmHOPDONG));//HỢP ĐỒNG
+          //  openForm(typeof(frmHOPDONG));//HỢP ĐỒNG
         }
 
         private void barButtonItem22_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

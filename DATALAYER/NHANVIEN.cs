@@ -23,7 +23,6 @@ namespace DATALAYER
             this.NHANVIEN_PHU = new HashSet<NHANVIEN_PHU>();
             this.TANGCAs = new HashSet<TANGCA>();
             this.UNGLUONGs = new HashSet<UNGLUONG>();
-            this.HOPDONGs = new HashSet<HOPDONG>();
         }
     
         public string MANV { get; set; }
@@ -61,7 +60,5 @@ namespace DATALAYER
         public virtual ICollection<TANGCA> TANGCAs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UNGLUONG> UNGLUONGs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOPDONG> HOPDONGs { get; set; }
     }
 }

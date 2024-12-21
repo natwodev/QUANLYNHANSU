@@ -59,27 +59,6 @@
           <Property Name="IDDT" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TENDT" Type="nvarchar" MaxLength="100" />
         </EntityType>
-        <EntityType Name="HOPDONG">
-          <Key>
-            <PropertyRef Name="SOHD" />
-          </Key>
-          <Property Name="SOHD" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="NGAYBATDAU" Type="datetime" />
-          <Property Name="NGAYKETTHUC" Type="datetime" />
-          <Property Name="NGAYKY" Type="datetime" />
-          <Property Name="NOIDUNG" Type="nvarchar" MaxLength="255" />
-          <Property Name="THOIHAN" Type="nvarchar" MaxLength="50" />
-          <Property Name="HESOLUONG" Type="float" />
-          <Property Name="LANKY" Type="int" />
-          <Property Name="MANV" Type="varchar" MaxLength="10" />
-          <Property Name="IDCT" Type="int" />
-          <Property Name="DELETED" Type="int" />
-          <Property Name="DELETE_DATE" Type="datetime" />
-          <Property Name="UPDATED" Type="int" />
-          <Property Name="UPDATE_DATE" Type="datetime" />
-          <Property Name="CREATED" Type="int" />
-          <Property Name="CREATED_DATE" Type="date" />
-        </EntityType>
         <EntityType Name="KHENTHUONG_KYLUAT">
           <Key>
             <PropertyRef Name="IDKTKL" />
@@ -223,30 +202,6 @@
               <PropertyRef Name="MANV" />
             </Principal>
             <Dependent Role="BAOHIEM">
-              <PropertyRef Name="MANV" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__HOPDONG__IDCT__57DD0BE4">
-          <End Role="CONGTY" Type="Self.CONGTY" Multiplicity="0..1" />
-          <End Role="HOPDONG" Type="Self.HOPDONG" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CONGTY">
-              <PropertyRef Name="IDCT" />
-            </Principal>
-            <Dependent Role="HOPDONG">
-              <PropertyRef Name="IDCT" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__HOPDONG__MANV__56E8E7AB">
-          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
-          <End Role="HOPDONG" Type="Self.HOPDONG" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NHANVIEN">
-              <PropertyRef Name="MANV" />
-            </Principal>
-            <Dependent Role="HOPDONG">
               <PropertyRef Name="MANV" />
             </Dependent>
           </ReferentialConstraint>
@@ -414,7 +369,6 @@
           <EntitySet Name="CHUCVU" EntityType="Self.CHUCVU" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CONGTY" EntityType="Self.CONGTY" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DANTOC" EntityType="Self.DANTOC" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="HOPDONG" EntityType="Self.HOPDONG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KHENTHUONG_KYLUAT" EntityType="Self.KHENTHUONG_KYLUAT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOAICA" EntityType="Self.LOAICA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOAICONG" EntityType="Self.LOAICONG" Schema="dbo" store:Type="Tables" />
@@ -437,14 +391,6 @@
           <AssociationSet Name="FK__BAOHIEM__MANV__10566F31" Association="Self.FK__BAOHIEM__MANV__10566F31">
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
             <End Role="BAOHIEM" EntitySet="BAOHIEM" />
-          </AssociationSet>
-          <AssociationSet Name="FK__HOPDONG__IDCT__57DD0BE4" Association="Self.FK__HOPDONG__IDCT__57DD0BE4">
-            <End Role="CONGTY" EntitySet="CONGTY" />
-            <End Role="HOPDONG" EntitySet="HOPDONG" />
-          </AssociationSet>
-          <AssociationSet Name="FK__HOPDONG__MANV__56E8E7AB" Association="Self.FK__HOPDONG__MANV__56E8E7AB">
-            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
-            <End Role="HOPDONG" EntitySet="HOPDONG" />
           </AssociationSet>
           <AssociationSet Name="FK__KHENTHUONG__MANV__1BC821DD" Association="Self.FK__KHENTHUONG__MANV__1BC821DD">
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
@@ -585,16 +531,7 @@
             <End Role="PHUCAP" EntitySet="PHUCAPs" />
             <End Role="NHANVIEN_PHU" EntitySet="NHANVIEN_PHU" />
           </AssociationSet>
-          <EntitySet Name="HOPDONGs" EntityType="QLNHANSUModel.HOPDONG" />
-          <AssociationSet Name="FK__HOPDONG__IDCT__57DD0BE4" Association="QLNHANSUModel.FK__HOPDONG__IDCT__57DD0BE4">
-            <End Role="CONGTY" EntitySet="CONGTies" />
-            <End Role="HOPDONG" EntitySet="HOPDONGs" />
-          </AssociationSet>
-          <AssociationSet Name="FK__HOPDONG__MANV__56E8E7AB" Association="QLNHANSUModel.FK__HOPDONG__MANV__56E8E7AB">
-            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
-            <End Role="HOPDONG" EntitySet="HOPDONGs" />
-          </AssociationSet>
-          </EntityContainer>
+        </EntityContainer>
         <EntityType Name="BANGCONG">
           <Key>
             <PropertyRef Name="MANV" />
@@ -647,7 +584,6 @@
           <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="DIACHI" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="NHANVIENs" Relationship="QLNHANSUModel.FK_NHANVIEN_CONGTY" FromRole="CONGTY" ToRole="NHANVIEN" />
-          <NavigationProperty Name="HOPDONGs" Relationship="QLNHANSUModel.FK__HOPDONG__IDCT__57DD0BE4" FromRole="CONGTY" ToRole="HOPDONG" />
         </EntityType>
         <EntityType Name="DANTOC">
           <Key>
@@ -719,7 +655,6 @@
           <NavigationProperty Name="NHANVIEN_PHU" Relationship="QLNHANSUModel.FK__NHANVIEN_P__MANV__17F790F9" FromRole="NHANVIEN" ToRole="NHANVIEN_PHU" />
           <NavigationProperty Name="TANGCAs" Relationship="QLNHANSUModel.FK__TANGCA__MANV__208CD6FA" FromRole="NHANVIEN" ToRole="TANGCA" />
           <NavigationProperty Name="UNGLUONGs" Relationship="QLNHANSUModel.FK__UNGLUONG__MANV__2A164134" FromRole="NHANVIEN" ToRole="UNGLUONG" />
-          <NavigationProperty Name="HOPDONGs" Relationship="QLNHANSUModel.FK__HOPDONG__MANV__56E8E7AB" FromRole="NHANVIEN" ToRole="HOPDONG" />
         </EntityType>
         <EntityType Name="NHANVIEN_PHU">
           <Key>
@@ -986,53 +921,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityType Name="HOPDONG">
-          <Key>
-            <PropertyRef Name="SOHD" />
-          </Key>
-          <Property Name="SOHD" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="NGAYBATDAU" Type="DateTime" Precision="3" />
-          <Property Name="NGAYKETTHUC" Type="DateTime" Precision="3" />
-          <Property Name="NGAYKY" Type="DateTime" Precision="3" />
-          <Property Name="NOIDUNG" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
-          <Property Name="THOIHAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="HESOLUONG" Type="Double" />
-          <Property Name="LANKY" Type="Int32" />
-          <Property Name="MANV" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="IDCT" Type="Int32" />
-          <Property Name="DELETED" Type="Int32" />
-          <Property Name="DELETE_DATE" Type="DateTime" Precision="3" />
-          <Property Name="UPDATED" Type="Int32" />
-          <Property Name="UPDATE_DATE" Type="DateTime" Precision="3" />
-          <Property Name="CREATED" Type="Int32" />
-          <Property Name="CREATED_DATE" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="CONGTY" Relationship="QLNHANSUModel.FK__HOPDONG__IDCT__57DD0BE4" FromRole="HOPDONG" ToRole="CONGTY" />
-          <NavigationProperty Name="NHANVIEN" Relationship="QLNHANSUModel.FK__HOPDONG__MANV__56E8E7AB" FromRole="HOPDONG" ToRole="NHANVIEN" />
-        </EntityType>
-        <Association Name="FK__HOPDONG__IDCT__57DD0BE4">
-          <End Type="QLNHANSUModel.CONGTY" Role="CONGTY" Multiplicity="0..1" />
-          <End Type="QLNHANSUModel.HOPDONG" Role="HOPDONG" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CONGTY">
-              <PropertyRef Name="IDCT" />
-            </Principal>
-            <Dependent Role="HOPDONG">
-              <PropertyRef Name="IDCT" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__HOPDONG__MANV__56E8E7AB">
-          <End Type="QLNHANSUModel.NHANVIEN" Role="NHANVIEN" Multiplicity="0..1" />
-          <End Type="QLNHANSUModel.HOPDONG" Role="HOPDONG" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NHANVIEN">
-              <PropertyRef Name="MANV" />
-            </Principal>
-            <Dependent Role="HOPDONG">
-              <PropertyRef Name="MANV" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1217,28 +1105,6 @@
                 <ScalarProperty Name="THANG" ColumnName="THANG" />
                 <ScalarProperty Name="NAM" ColumnName="NAM" />
                 <ScalarProperty Name="IDUL" ColumnName="IDUL" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="HOPDONGs">
-            <EntityTypeMapping TypeName="QLNHANSUModel.HOPDONG">
-              <MappingFragment StoreEntitySet="HOPDONG">
-                <ScalarProperty Name="CREATED_DATE" ColumnName="CREATED_DATE" />
-                <ScalarProperty Name="CREATED" ColumnName="CREATED" />
-                <ScalarProperty Name="UPDATE_DATE" ColumnName="UPDATE_DATE" />
-                <ScalarProperty Name="UPDATED" ColumnName="UPDATED" />
-                <ScalarProperty Name="DELETE_DATE" ColumnName="DELETE_DATE" />
-                <ScalarProperty Name="DELETED" ColumnName="DELETED" />
-                <ScalarProperty Name="IDCT" ColumnName="IDCT" />
-                <ScalarProperty Name="MANV" ColumnName="MANV" />
-                <ScalarProperty Name="LANKY" ColumnName="LANKY" />
-                <ScalarProperty Name="HESOLUONG" ColumnName="HESOLUONG" />
-                <ScalarProperty Name="THOIHAN" ColumnName="THOIHAN" />
-                <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
-                <ScalarProperty Name="NGAYKY" ColumnName="NGAYKY" />
-                <ScalarProperty Name="NGAYKETTHUC" ColumnName="NGAYKETTHUC" />
-                <ScalarProperty Name="NGAYBATDAU" ColumnName="NGAYBATDAU" />
-                <ScalarProperty Name="SOHD" ColumnName="SOHD" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

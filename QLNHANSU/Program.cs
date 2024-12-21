@@ -17,7 +17,19 @@ namespace QLNHANSU
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            // Hiển thị form đăng nhập
+            frmLOGIN loginForm = new frmLOGIN();
+            if (loginForm.ShowDialog() == DialogResult.OK)  // Kiểm tra khi đăng nhập thành công
+            {
+                // Nếu đăng nhập thành công, mở form chính
+                Application.Run(new Form1());
+            }
+            else
+            {
+                // Nếu đăng nhập thất bại hoặc form đăng nhập bị đóng, ứng dụng sẽ dừng lại
+                Application.Exit();
+            }
         }
     }
 }

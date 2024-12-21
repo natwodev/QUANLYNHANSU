@@ -36,6 +36,7 @@
     <Reference Include="DevExpress.Charts.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Data.Desktop.v24.2" />
     <Reference Include="DevExpress.Data.v24.2" />
+    <Reference Include="DevExpress.Images.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Office.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Pdf.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.PivotGrid.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -56,6 +57,7 @@
     <Reference Include="DevExpress.XtraPrinting.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraReports.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraReports.v24.2.Extensions, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -105,11 +107,11 @@
     <Compile Include="frmDANTOC.Designer.cs">
       <DependentUpon>frmDANTOC.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHOPDONG.cs">
+    <Compile Include="frmLOGIN.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHOPDONG.Designer.cs">
-      <DependentUpon>frmHOPDONG.cs</DependentUpon>
+    <Compile Include="frmLOGIN.Designer.cs">
+      <DependentUpon>frmLOGIN.cs</DependentUpon>
     </Compile>
     <Compile Include="frmNHANVIEN.cs">
       <SubType>Form</SubType>
@@ -158,8 +160,8 @@
     <EmbeddedResource Include="frmDANTOC.resx">
       <DependentUpon>frmDANTOC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHOPDONG.resx">
-      <DependentUpon>frmHOPDONG.cs</DependentUpon>
+    <EmbeddedResource Include="frmLOGIN.resx">
+      <DependentUpon>frmLOGIN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNHANVIEN.resx">
       <DependentUpon>frmNHANVIEN.cs</DependentUpon>
