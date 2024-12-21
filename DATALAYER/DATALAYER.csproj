@@ -68,6 +68,9 @@
     <Compile Include="DANTOC.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>
+    <Compile Include="HOPDONG.cs">
+      <DependentUpon>QLNS.tt</DependentUpon>
+    </Compile>
     <Compile Include="KHENTHUONG_KYLUAT.cs">
       <DependentUpon>QLNS.tt</DependentUpon>
     </Compile>

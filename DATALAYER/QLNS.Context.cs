@@ -42,5 +42,6 @@ namespace DATALAYER
         public virtual DbSet<TONGIAO> TONGIAOs { get; set; }
         public virtual DbSet<TRINHDO> TRINHDOes { get; set; }
         public virtual DbSet<UNGLUONG> UNGLUONGs { get; set; }
+        public virtual DbSet<HOPDONG> HOPDONGs { get; set; }
     }
 }
