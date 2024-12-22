@@ -48,6 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DATA_OBJECT\HOPDONG_DTO.cs" />
     <Compile Include="DATA_OBJECT\NHANVIEN_DTO.cs" />
     <Compile Include="dbBOPHAN.cs" />
     <Compile Include="dbCHUCVU.cs" />

@@ -39,8 +39,8 @@
         <AssociationConnector Association="QLNHANSUModel.FK__UNGLUONG__MANV__2A164134" />
         <AssociationConnector Association="QLNHANSUModel.FK__NHANVIEN_P__IDPC__18EBB532" />
         <EntityTypeShape EntityType="QLNHANSUModel.HOPDONG" Width="1.5" PointX="8.25" PointY="4.375" />
-        <AssociationConnector Association="QLNHANSUModel.FK__HOPDONG__IDCT__793DFFAF" />
-        <AssociationConnector Association="QLNHANSUModel.FK__HOPDONG__MANV__7849DB76" />
+        <AssociationConnector Association="QLNHANSUModel.FK__HOPDONG__IDCT__7D0E9093" />
+        <AssociationConnector Association="QLNHANSUModel.FK__HOPDONG__MANV__7C1A6C5A" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

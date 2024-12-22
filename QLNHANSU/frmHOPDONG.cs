@@ -29,6 +29,7 @@ namespace QLNHANSU
         }
 
         dbHOPDONG _hopdong;
+        dbNHANVIEN _nhanvien;
         bool _them;
         string _id;
         void _showHide(bool kt)
@@ -53,14 +54,22 @@ namespace QLNHANSU
         private void frmHOPDONG_Load(object sender, EventArgs e)
         {
             _hopdong = new dbHOPDONG();
+            _nhanvien = new dbNHANVIEN();
             _them = false;
             _showHide(true);
             loadData();
+            loadNhanVien();
             splitContainer1.Panel1Collapsed = true;
+        }
+        void loadNhanVien()
+        {
+            searchLookUpEdit1.Properties.DataSource = _nhanvien.getList();
+            searchLookUpEdit1.Properties.ValueMember = "MANV";
+            searchLookUpEdit1.Properties.DisplayMember = "HOTEN";
         }
         void loadData()
         {
-            gridControl1.DataSource = _hopdong.getList();
+            gridControl1.DataSource = _hopdong.getListFull();
             gridView1.OptionsBehavior.Editable = false;
 
         }
@@ -103,24 +112,8 @@ namespace QLNHANSU
         {
 
         }
-        void SaveData()
-        {
-            if (_them)
-            {
 
-            }
-            else
-            {
-
-            }
-        }
-
-        private void gridView1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
+       
         void _reset()
         {
             textEdit1.Clear();
@@ -175,5 +168,139 @@ namespace QLNHANSU
         {
 
         }
+
+        private void barButtonItem1_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            _showHide(false); //thêm
+            _them = true;
+            _reset();
+            splitContainer1.Panel1Collapsed = false;
+        }
+
+        private void barButtonItem2_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+
+            _them = false;
+            _showHide(false);//sửa
+                             // pictureBox1.Image = _hinh;
+            splitContainer1.Panel1Collapsed = false;
+            dateTimePicker1.Enabled = true;
+            gridControl1.Enabled = true;
+        }
+
+        private void barButtonItem3_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            // Kiểm tra xem textEdit1 có trống không
+            if (string.IsNullOrEmpty(textEdit1.Text))
+            {
+                MessageBox.Show("Chưa có id cần xóa. Vui lòng chọn thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Dừng việc xóa nếu textEdit1 trống
+            }
+
+            if (MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                _hopdong.Delete(_id,1);
+                loadData();
+                textEdit1.Clear();
+            }
+
+
+            //xóa
+        }
+
+        private void barButtonItem4_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            /*
+            if (string.IsNullOrEmpty(textEdit1.Text))
+            {
+                MessageBox.Show("Tên không thể để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Dừng lại nếu text1 trống
+            }*/
+            SaveData();
+            loadData();
+            _them = false;
+            _showHide(true);//lưu
+            textEdit1.Clear();
+            splitContainer1.Panel1Collapsed = true;
+        }
+
+        private void barButtonItem5_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            _them = false;
+            _showHide(true);//hủy
+            splitContainer1.Panel1Collapsed = true;
+        }
+
+        private void barButtonItem6_ItemClick_1(object sender, ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+        void SaveData()
+        {
+            if (_them)
+            {
+                HOPDONG hd = new HOPDONG();
+                hd.SOHD = GenerateEmployeeCode(dateTimePicker1.Value);
+                hd.NGAYBATDAU = dateTimePicker1.Value;
+                hd.NGAYKETTHUC = dateTimePicker2.Value;
+                hd.NGAYKY = dateTimePicker3.Value;
+                hd.THOIHAN = comboBox6.Text;
+                hd.NOIDUNG = richEditControl1.RtfText;
+                hd.HESOLUONG = float.Parse(spinEdit1.EditValue.ToString());
+                hd.LANKY = int.Parse(spinEdit2.EditValue.ToString());
+                hd.MANV = searchLookUpEdit1.EditValue.ToString();
+                hd.IDCT = 1;
+                hd.CREATED = 1;
+                hd.CREATED_DATE = DateTime.Now;
+                _hopdong.Add(hd);
+            }
+            else
+            {
+                var hd = _hopdong.getItem(_id);
+              //  hd.SOHD = GenerateEmployeeCode(dateTimePicker1.Value);
+                hd.NGAYBATDAU = dateTimePicker1.Value;
+                hd.NGAYKETTHUC = dateTimePicker2.Value;
+                hd.NGAYKY = dateTimePicker3.Value;
+                hd.THOIHAN = comboBox6.Text;
+                hd.HESOLUONG = float.Parse(spinEdit1.EditValue.ToString());
+                hd.LANKY = int.Parse(spinEdit2.EditValue.ToString());
+                hd.MANV = searchLookUpEdit1.EditValue.ToString();
+                hd.NOIDUNG = richEditControl1.RtfText;
+
+                hd.IDCT = 1;
+                hd.CREATED = 1;
+                hd.CREATED_DATE = DateTime.Now;
+                _hopdong.Update(hd);
+            }
+        }
+
+        private void gridView1_Click(object sender, EventArgs e)
+        {
+            if (gridView1.FocusedRowHandle >= 0)
+            {
+                _id = gridView1.GetFocusedRowCellValue("SOHD").ToString();
+                var hd = _hopdong.getItem(_id);
+                textEdit1.Text = _id;
+                dateTimePicker1.Value = hd.NGAYBATDAU.Value;
+                dateTimePicker2.Value = hd.NGAYKETTHUC.Value;
+                dateTimePicker3.Value = hd.NGAYKY.Value;
+                comboBox6.Text = hd.THOIHAN;
+                spinEdit1.Text = hd.HESOLUONG.ToString();
+                spinEdit2.Text = hd.LANKY.ToString();
+                searchLookUpEdit1.EditValue = hd.MANV;
+                richEditControl1.RtfText = hd.NOIDUNG;
+            }
+        }
+
+        private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void spinEdit1_EditValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
