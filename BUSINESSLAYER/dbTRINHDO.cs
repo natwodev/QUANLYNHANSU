@@ -9,7 +9,7 @@ namespace BUSINESSLAYER
 {
     public class dbTRINHDO
     {
-        QLNHANSUEntities db = new QLNHANSUEntities();
+        QLNHANSU db = new QLNHANSU();
         public List<TRINHDO> getList()
         {
             return db.TRINHDOes.ToList();

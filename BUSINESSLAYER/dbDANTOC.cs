@@ -8,7 +8,7 @@ namespace BUSINESSLAYER
 {
     public class dbDANTOC
     {
-        QLNHANSUEntities db = new QLNHANSUEntities();
+        QLNHANSU db = new QLNHANSU();
         public DANTOC getItem(int id)
         {
             return db.DANTOCs.FirstOrDefault(x=>x.IDDT==id);

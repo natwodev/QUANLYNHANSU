@@ -6,23 +6,20 @@ namespace DATALAYER
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("UNGLUONG")]
-    public partial class UNGLUONG
+    [Table("TAIKHOAN")]
+    public partial class TAIKHOAN
     {
         [Key]
-        public int IDUL { get; set; }
-
-        public int? NAM { get; set; }
-
-        public int? THANG { get; set; }
-
-        [Column(TypeName = "date")]
-        public DateTime? NGAY { get; set; }
-
-        public double? SOTIEN { get; set; }
+        public int IDTK { get; set; }
 
         [StringLength(50)]
-        public string TRANGTHAI { get; set; }
+        public string TENDANGNHAP { get; set; }
+
+        [StringLength(255)]
+        public string MATKHAU { get; set; }
+
+        [StringLength(50)]
+        public string QUYENHAN { get; set; }
 
         [StringLength(10)]
         public string MANV { get; set; }

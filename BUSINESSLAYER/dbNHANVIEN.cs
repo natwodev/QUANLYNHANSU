@@ -9,7 +9,7 @@ namespace BUSINESSLAYER
 {
     public class dbNHANVIEN
     {
-        QLNHANSUEntities db = new QLNHANSUEntities();
+        QLNHANSU db = new QLNHANSU();
         public NHANVIEN getItem(string id)
         {
             return db.NHANVIENs.FirstOrDefault(x => x.MANV == id);

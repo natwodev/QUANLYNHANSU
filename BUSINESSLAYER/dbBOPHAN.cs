@@ -8,7 +8,7 @@ namespace BUSINESSLAYER
 {
     public class dbBOPHAN
     {
-        QLNHANSUEntities db = new QLNHANSUEntities();
+        QLNHANSU db = new QLNHANSU();
         public BOPHAN getItem(int id)
         {
             return db.BOPHANs.FirstOrDefault(x => x.IDBP == id);

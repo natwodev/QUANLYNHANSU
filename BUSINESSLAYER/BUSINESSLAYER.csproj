@@ -62,15 +62,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DATALAYER\DATALAYER.csproj">
-      <Project>{b4931bf8-ce9f-4e53-bb8f-1430f0f324f0}</Project>
-      <Name>DATALAYER</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DATALAYER\DATALAYER.csproj">
+      <Project>{443e6b62-6ccf-40d5-a729-49c4b32ff1fc}</Project>
+      <Name>DATALAYER</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

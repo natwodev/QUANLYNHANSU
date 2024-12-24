@@ -8,7 +8,7 @@ namespace BUSINESSLAYER
 {
     public class dbCHUCVU
     {
-        QLNHANSUEntities db = new QLNHANSUEntities();
+        QLNHANSU db = new QLNHANSU();
         public CHUCVU getItem(int id)
         {
             return db.CHUCVUs.FirstOrDefault(x => x.IDCV == id);

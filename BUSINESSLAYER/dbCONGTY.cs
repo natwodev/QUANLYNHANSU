@@ -8,7 +8,7 @@ namespace BUSINESSLAYER
 {
     public class dbCONGTY
     {
-        QLNHANSUEntities db = new QLNHANSUEntities();
+        QLNHANSU db = new QLNHANSU();
         public CONGTY getItem(int id)
         {
             return db.CONGTies.FirstOrDefault(x => x.IDCT == id);

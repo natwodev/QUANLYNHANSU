@@ -8,7 +8,7 @@ namespace BUSINESSLAYER
 {
     public class dbTONGIAO
     {
-        QLNHANSUEntities db = new QLNHANSUEntities();
+        QLNHANSU db = new QLNHANSU();
 
       
 

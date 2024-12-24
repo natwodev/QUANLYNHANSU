@@ -9,7 +9,7 @@ namespace BUSINESSLAYER
 {
     public class dbPHONGBAN
     {
-        QLNHANSUEntities db = new QLNHANSUEntities();
+        QLNHANSU db = new QLNHANSU();
         public List<PHONGBAN> getList()
         {
             return db.PHONGBANs.ToList();

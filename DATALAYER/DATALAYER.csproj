@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B4931BF8-CE9F-4E53-BB8F-1430F0F324F0}</ProjectGuid>
+    <ProjectGuid>{443E6B62-6CCF-40D5-A729-49C4B32FF1FC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DATALAYER</RootNamespace>
@@ -50,104 +50,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BANGCONG.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BAOHIEM.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BOPHAN.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CHUCVU.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CONGTY.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DANTOC.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="HOPDONG.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="KHENTHUONG_KYLUAT.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="LOAICA.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="LOAICONG.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NHANVIEN.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="NHANVIEN_PHU.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PHONGBAN.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PHUCAP.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
+    <Compile Include="BANGCONG.cs" />
+    <Compile Include="BAOHIEM.cs" />
+    <Compile Include="BOPHAN.cs" />
+    <Compile Include="CHUCVU.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="CONGTY.cs" />
+    <Compile Include="DANTOC.cs" />
+    <Compile Include="HOPDONG.cs" />
+    <Compile Include="KHENTHUONG_KYLUAT.cs" />
+    <Compile Include="LOAICA.cs" />
+    <Compile Include="LOAICONG.cs" />
+    <Compile Include="NHANVIEN.cs" />
+    <Compile Include="NHANVIEN_PHU.cs" />
+    <Compile Include="PHONGBAN.cs" />
+    <Compile Include="PHUCAP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLNS.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLNS.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="QLNS.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="QLNS.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLNS.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="TANGCA.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TONGIAO.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TRINHDO.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="UNGLUONG.cs">
-      <DependentUpon>QLNS.tt</DependentUpon>
-    </Compile>
+    <Compile Include="QLNHANSU.cs" />
+    <Compile Include="TAIKHOAN.cs" />
+    <Compile Include="TANGCA.cs" />
+    <Compile Include="TONGIAO.cs" />
+    <Compile Include="TRINHDO.cs" />
+    <Compile Include="UNGLUONG.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="QLNS.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLNS.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
+    <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="QLNS.edmx.diagram">
-      <DependentUpon>QLNS.edmx</DependentUpon>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="QLNS.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>QLNS.Context.cs</LastGenOutput>
-      <DependentUpon>QLNS.edmx</DependentUpon>
-    </Content>
-    <Content Include="QLNS.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLNS.edmx</DependentUpon>
-      <LastGenOutput>QLNS.cs</LastGenOutput>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

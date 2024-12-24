@@ -10,7 +10,7 @@ namespace BUSINESSLAYER
 {
     public class dbHOPDONG
     {
-        QLNHANSUEntities db = new QLNHANSUEntities();
+        QLNHANSU db = new QLNHANSU();
         public HOPDONG getItem(string id)
         {
             return db.HOPDONGs.FirstOrDefault(x => x.SOHD == id);
