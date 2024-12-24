@@ -96,5 +96,10 @@ namespace QLNHANSU
         {
             this.Close();
         }
+
+        private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }

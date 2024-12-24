@@ -35,8 +35,10 @@ namespace QLNHANSU
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
- 
 
+        private void frmLOGIN_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

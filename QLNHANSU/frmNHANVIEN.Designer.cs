@@ -45,8 +45,30 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -71,40 +93,18 @@
             this.TENDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IDTG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENTG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -293,6 +293,122 @@
             this.splitContainer1.TabIndex = 6;
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
+            this.simpleButton1.Location = new System.Drawing.Point(63, 247);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(128, 38);
+            this.simpleButton1.TabIndex = 11;
+            this.simpleButton1.Text = "Chọn ảnh";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // comboBox6
+            // 
+            this.comboBox6.FormattingEnabled = true;
+            this.comboBox6.Location = new System.Drawing.Point(979, 184);
+            this.comboBox6.Name = "comboBox6";
+            this.comboBox6.Size = new System.Drawing.Size(121, 24);
+            this.comboBox6.TabIndex = 30;
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Location = new System.Drawing.Point(701, 184);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(121, 24);
+            this.comboBox5.TabIndex = 29;
+            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Location = new System.Drawing.Point(701, 138);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(246, 24);
+            this.comboBox4.TabIndex = 28;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(701, 94);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(246, 24);
+            this.comboBox3.TabIndex = 27;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(701, 51);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(246, 24);
+            this.comboBox2.TabIndex = 26;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(701, 12);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(246, 24);
+            this.comboBox1.TabIndex = 25;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Location = new System.Drawing.Point(897, 187);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(50, 16);
+            this.labelControl11.TabIndex = 24;
+            this.labelControl11.Text = "Tôn giáo";
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Location = new System.Drawing.Point(617, 187);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(43, 16);
+            this.labelControl10.TabIndex = 22;
+            this.labelControl10.Text = "Dân tộc";
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Location = new System.Drawing.Point(612, 54);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(46, 16);
+            this.labelControl9.TabIndex = 20;
+            this.labelControl9.Text = "Bộ phận";
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(600, 15);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(60, 16);
+            this.labelControl8.TabIndex = 18;
+            this.labelControl8.Text = "Phòng ban";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Location = new System.Drawing.Point(612, 141);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(48, 16);
+            this.labelControl7.TabIndex = 16;
+            this.labelControl7.Text = "Trình độ";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(249, 54);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(46, 16);
+            this.labelControl6.TabIndex = 15;
+            this.labelControl6.Text = "Giới tính";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(612, 97);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(46, 16);
+            this.labelControl5.TabIndex = 13;
+            this.labelControl5.Text = "Chức vụ";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -301,6 +417,68 @@
             this.label1.Size = new System.Drawing.Size(62, 16);
             this.label1.TabIndex = 12;
             this.label1.Text = "Ngày sinh";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(33, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(187, 217);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // textEdit4
+            // 
+            this.textEdit4.Location = new System.Drawing.Point(309, 227);
+            this.textEdit4.MenuManager = this.barManager1;
+            this.textEdit4.Name = "textEdit4";
+            this.textEdit4.Size = new System.Drawing.Size(563, 22);
+            this.textEdit4.TabIndex = 10;
+            this.textEdit4.EditValueChanged += new System.EventHandler(this.textEdit4_EditValueChanged);
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(249, 230);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(39, 16);
+            this.labelControl4.TabIndex = 9;
+            this.labelControl4.Text = "Địa chỉ";
+            // 
+            // textEdit3
+            // 
+            this.textEdit3.Location = new System.Drawing.Point(309, 184);
+            this.textEdit3.MenuManager = this.barManager1;
+            this.textEdit3.Name = "textEdit3";
+            this.textEdit3.Size = new System.Drawing.Size(125, 22);
+            this.textEdit3.TabIndex = 8;
+            this.textEdit3.EditValueChanged += new System.EventHandler(this.textEdit3_EditValueChanged);
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Location = new System.Drawing.Point(263, 187);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(25, 16);
+            this.labelControl3.TabIndex = 7;
+            this.labelControl3.Text = "SĐT";
+            // 
+            // textEdit2
+            // 
+            this.textEdit2.Location = new System.Drawing.Point(309, 138);
+            this.textEdit2.MenuManager = this.barManager1;
+            this.textEdit2.Name = "textEdit2";
+            this.textEdit2.Size = new System.Drawing.Size(183, 22);
+            this.textEdit2.TabIndex = 6;
+            this.textEdit2.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(256, 141);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(32, 16);
+            this.labelControl2.TabIndex = 5;
+            this.labelControl2.Text = "CCCD";
             // 
             // dateTimePicker1
             // 
@@ -311,6 +489,16 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(125, 23);
             this.dateTimePicker1.TabIndex = 4;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(309, 53);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(76, 20);
+            this.checkBox1.TabIndex = 2;
+            this.checkBox1.Text = "Nam/Nữ";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // textEdit1
             // 
@@ -599,193 +787,6 @@
             this.TENTG.VisibleIndex = 13;
             this.TENTG.Width = 130;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(309, 53);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(76, 20);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "Nam/Nữ";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Location = new System.Drawing.Point(249, 54);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(46, 16);
-            this.labelControl6.TabIndex = 15;
-            this.labelControl6.Text = "Giới tính";
-            // 
-            // labelControl2
-            // 
-            this.labelControl2.Location = new System.Drawing.Point(256, 141);
-            this.labelControl2.Name = "labelControl2";
-            this.labelControl2.Size = new System.Drawing.Size(32, 16);
-            this.labelControl2.TabIndex = 5;
-            this.labelControl2.Text = "CCCD";
-            // 
-            // textEdit2
-            // 
-            this.textEdit2.Location = new System.Drawing.Point(309, 138);
-            this.textEdit2.MenuManager = this.barManager1;
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(183, 22);
-            this.textEdit2.TabIndex = 6;
-            this.textEdit2.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Location = new System.Drawing.Point(263, 187);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(25, 16);
-            this.labelControl3.TabIndex = 7;
-            this.labelControl3.Text = "SĐT";
-            // 
-            // textEdit3
-            // 
-            this.textEdit3.Location = new System.Drawing.Point(309, 184);
-            this.textEdit3.MenuManager = this.barManager1;
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(125, 22);
-            this.textEdit3.TabIndex = 8;
-            this.textEdit3.EditValueChanged += new System.EventHandler(this.textEdit3_EditValueChanged);
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(249, 230);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(39, 16);
-            this.labelControl4.TabIndex = 9;
-            this.labelControl4.Text = "Địa chỉ";
-            // 
-            // textEdit4
-            // 
-            this.textEdit4.Location = new System.Drawing.Point(309, 227);
-            this.textEdit4.MenuManager = this.barManager1;
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(563, 22);
-            this.textEdit4.TabIndex = 10;
-            this.textEdit4.EditValueChanged += new System.EventHandler(this.textEdit4_EditValueChanged);
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Location = new System.Drawing.Point(612, 97);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(46, 16);
-            this.labelControl5.TabIndex = 13;
-            this.labelControl5.Text = "Chức vụ";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Location = new System.Drawing.Point(612, 141);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(48, 16);
-            this.labelControl7.TabIndex = 16;
-            this.labelControl7.Text = "Trình độ";
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(600, 15);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(60, 16);
-            this.labelControl8.TabIndex = 18;
-            this.labelControl8.Text = "Phòng ban";
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Location = new System.Drawing.Point(612, 54);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(46, 16);
-            this.labelControl9.TabIndex = 20;
-            this.labelControl9.Text = "Bộ phận";
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Location = new System.Drawing.Point(617, 187);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(43, 16);
-            this.labelControl10.TabIndex = 22;
-            this.labelControl10.Text = "Dân tộc";
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Location = new System.Drawing.Point(897, 187);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(50, 16);
-            this.labelControl11.TabIndex = 24;
-            this.labelControl11.Text = "Tôn giáo";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(701, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(246, 24);
-            this.comboBox1.TabIndex = 25;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(701, 51);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(246, 24);
-            this.comboBox2.TabIndex = 26;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(701, 94);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(246, 24);
-            this.comboBox3.TabIndex = 27;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(701, 138);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(246, 24);
-            this.comboBox4.TabIndex = 28;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(701, 184);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(121, 24);
-            this.comboBox5.TabIndex = 29;
-            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(979, 184);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(121, 24);
-            this.comboBox6.TabIndex = 30;
-            // 
-            // simpleButton1
-            // 
-            this.simpleButton1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.simpleButton1.Location = new System.Drawing.Point(63, 247);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(128, 38);
-            this.simpleButton1.TabIndex = 11;
-            this.simpleButton1.Text = "Chọn ảnh";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(33, 15);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(187, 217);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
-            // 
             // frmNHANVIEN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -805,13 +806,13 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

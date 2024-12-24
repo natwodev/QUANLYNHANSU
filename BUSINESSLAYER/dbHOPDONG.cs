@@ -95,7 +95,7 @@ namespace BUSINESSLAYER
                 var _hd = db.HOPDONGs.FirstOrDefault(x => x.SOHD == id);
 
                 _hd.DELETED = manv;
-                _hd.UPDATE_DATE = DateTime.Now;
+                _hd.DELETE_DATE = DateTime.Now;
                 db.SaveChanges();
             }
             catch (Exception ex)
