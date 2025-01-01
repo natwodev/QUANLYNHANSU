@@ -17,7 +17,7 @@ namespace QLNHANSU
         {
             InitializeComponent();
         }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             string username = textEdit1.Text.Trim();

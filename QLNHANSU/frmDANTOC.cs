@@ -155,11 +155,13 @@ namespace QLNHANSU
 
         private void gridView1_Click(object sender, EventArgs e)
         {
-          
             try
             {
-                _id = int.Parse(gridView1.GetFocusedRowCellValue("IDDT").ToString());
-                textEdit1.Text = gridView1.GetFocusedRowCellValue("TENDT").ToString();
+                if (gridView1.FocusedRowHandle > -1)
+                {
+                    _id = int.Parse(gridView1.GetFocusedRowCellValue("IDDT").ToString());
+                    textEdit1.Text = gridView1.GetFocusedRowCellValue("TENDT").ToString();
+                }   
             }
             catch (NullReferenceException)
             {
@@ -169,6 +171,11 @@ namespace QLNHANSU
             {
                 MessageBox.Show($"Có lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void frmDANTOC_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

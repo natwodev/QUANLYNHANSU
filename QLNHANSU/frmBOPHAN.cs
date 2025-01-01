@@ -159,7 +159,7 @@ namespace QLNHANSU
 
             try
             {
-                if (gridView1.FocusedRowHandle > 0) 
+                if (gridView1.FocusedRowHandle > -1) 
                 {
                     _id = int.Parse(gridView1.GetFocusedRowCellValue("IDBP").ToString());
                     textEdit1.Text = gridView1.GetFocusedRowCellValue("TENBP").ToString();

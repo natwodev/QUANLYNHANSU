@@ -295,6 +295,7 @@
             this.Name = "frmDANTOC";
             this.Text = "Dân Tộc";
             this.Load += new System.EventHandler(this.frmDANTOC_Load);
+            this.Click += new System.EventHandler(this.frmDANTOC_Click);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();

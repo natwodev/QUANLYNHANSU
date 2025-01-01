@@ -159,8 +159,12 @@ namespace QLNHANSU
         {
             try
             {
-                _id = int.Parse(gridView1.GetFocusedRowCellValue("IDPB").ToString());
-                textEdit1.Text = gridView1.GetFocusedRowCellValue("TENPB").ToString();
+                if (gridView1.FocusedRowHandle > -1)
+                {
+                    _id = int.Parse(gridView1.GetFocusedRowCellValue("IDPB").ToString());
+                    textEdit1.Text = gridView1.GetFocusedRowCellValue("TENPB").ToString();
+                }
+                
             }
             catch (NullReferenceException)
             {

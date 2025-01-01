@@ -218,7 +218,7 @@
       <Name>BUSINESSLAYER</Name>
     </ProjectReference>
     <ProjectReference Include="..\DATALAYER\DATALAYER.csproj">
-      <Project>{443e6b62-6ccf-40d5-a729-49c4b32ff1fc}</Project>
+      <Project>{c670f24d-befa-45e6-b232-1e30c023b044}</Project>
       <Name>DATALAYER</Name>
     </ProjectReference>
   </ItemGroup>

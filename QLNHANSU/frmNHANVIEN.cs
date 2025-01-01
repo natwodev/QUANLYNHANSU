@@ -110,13 +110,19 @@ namespace QLNHANSU
           //  textEdit1.Text = string.Empty;
             _reset();
             splitContainer1.Panel1Collapsed = false;
+            barButtonItem2.Enabled = false;
+
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-           
+        { 
+            // Kiểm tra xem textEdit1 có trống không
+            if (string.IsNullOrEmpty(textEdit1.Text))
+            {
+                MessageBox.Show("Chưa có id cần sửa. Vui lòng chọn thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Dừng việc xóa nếu textEdit1 trống
+            }
             splitContainer1.Panel1Collapsed = false;
-         
             _them = false;
             _showHide(false);//sửa
            // pictureBox1.Image = _hinh;
@@ -224,6 +230,21 @@ namespace QLNHANSU
                 MessageBox.Show("Vui lòng nhập SĐT với độ dài là 10 hoặc 11 ký tự.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            DateTime selectedDate = dateTimePicker1.Value;
+            DateTime currentDate = DateTime.Now;
+            DateTime minDate = currentDate.AddYears(-18);
+
+            // Kiểm tra giá trị và xuất ra MessageBox
+            if (selectedDate >= minDate)
+            {
+                MessageBox.Show("Ngày bạn chọn nhỏ hơn 18 năm trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            else if (selectedDate > currentDate)
+            {
+                MessageBox.Show("Ngày bạn chọn vượt quá ngày hiện tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             SaveData();
             loadData();
             _them = false;
@@ -232,7 +253,7 @@ namespace QLNHANSU
             splitContainer1.Panel1Collapsed = true;
 
         }
-
+     
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             _them = false;
@@ -316,7 +337,7 @@ namespace QLNHANSU
             {
                 if (!_them) // Kiểm tra nếu _them là false
                 {
-                    if (gridView1.FocusedRowHandle >= 0)
+                    if (gridView1.FocusedRowHandle >= -1)
                     {
                         _id = gridView1.GetFocusedRowCellValue("MANV").ToString();
                         var nv = _nhanvien.getItem(_id);
@@ -492,5 +513,23 @@ namespace QLNHANSU
                 e.Handled = true; // Prevent non-numeric characters
             }
         }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            // Đường dẫn đến hình ảnh
+            string imagePath = @"C:\Users\nam\Desktop\avatar_trang_1_cd729c335b.jpg";
+
+            // Kiểm tra nếu file tồn tại
+            if (System.IO.File.Exists(imagePath))
+            {
+                // Đặt hình ảnh vào PictureBox
+                pictureBox1.Image = Image.FromFile(imagePath);
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy file hình ảnh!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
     }
 }

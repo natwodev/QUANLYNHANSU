@@ -189,7 +189,7 @@ namespace QLNHANSU
            
             try
             {
-                if (gridView1.RowCount>0 )
+                if (gridView1.RowCount > -1)
                 {
                     _id = int.Parse(gridView1.GetFocusedRowCellValue("IDCT").ToString());
                     var cty = _congty.getItem(_id);

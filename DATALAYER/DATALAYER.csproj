@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{443E6B62-6CCF-40D5-A729-49C4B32FF1FC}</ProjectGuid>
+    <ProjectGuid>{C670F24D-BEFA-45E6-B232-1E30C023B044}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DATALAYER</RootNamespace>
@@ -54,7 +54,6 @@
     <Compile Include="BAOHIEM.cs" />
     <Compile Include="BOPHAN.cs" />
     <Compile Include="CHUCVU.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="CONGTY.cs" />
     <Compile Include="DANTOC.cs" />
     <Compile Include="HOPDONG.cs" />

@@ -24,6 +24,10 @@ namespace DATALAYER
         [StringLength(10)]
         public string MANV { get; set; }
 
+        public bool? TRANGTHAI { get; set; }
+
+        public DateTime? LAST_LOGIN { get; set; }
+
         public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }
