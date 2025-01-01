@@ -327,6 +327,7 @@
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(246, 24);
             this.comboBox4.TabIndex = 28;
+            this.comboBox4.SelectedIndexChanged += new System.EventHandler(this.comboBox4_SelectedIndexChanged);
             // 
             // comboBox3
             // 
@@ -335,6 +336,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(246, 24);
             this.comboBox3.TabIndex = 27;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
             // comboBox2
             // 
@@ -343,6 +345,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(246, 24);
             this.comboBox2.TabIndex = 26;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // comboBox1
             // 
@@ -454,6 +457,7 @@
             this.textEdit3.Size = new System.Drawing.Size(125, 22);
             this.textEdit3.TabIndex = 8;
             this.textEdit3.EditValueChanged += new System.EventHandler(this.textEdit3_EditValueChanged);
+            this.textEdit3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit3_KeyPress);
             // 
             // labelControl3
             // 
@@ -471,6 +475,7 @@
             this.textEdit2.Size = new System.Drawing.Size(183, 22);
             this.textEdit2.TabIndex = 6;
             this.textEdit2.EditValueChanged += new System.EventHandler(this.textEdit2_EditValueChanged);
+            this.textEdit2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textEdit2_KeyPress);
             // 
             // labelControl2
             // 

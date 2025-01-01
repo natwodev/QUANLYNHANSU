@@ -101,5 +101,30 @@ namespace QLNHANSU
         {
 
         }
+
+        private void barButtonItem25_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonItem27_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            // Ẩn Form chính thay vì đóng
+            this.Hide();
+
+            // Mở lại form đăng nhập
+            frmLOGIN loginForm = new frmLOGIN();
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                // Nếu đăng nhập thành công, mở lại form chính
+                this.Show(); // Mở lại Form chính mà không cần khởi động lại vòng lặp ứng dụng
+            }
+            else
+            {
+                // Nếu đăng nhập thất bại hoặc form đăng nhập bị đóng, thoát ứng dụng
+                Application.Exit();
+            }
+        }
+
     }
 }

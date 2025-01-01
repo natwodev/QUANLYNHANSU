@@ -151,12 +151,86 @@ namespace QLNHANSU
                 MessageBox.Show("Tên không thể để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Dừng lại nếu text1 trống
             }
+           
+            // Check if other controls are empty or invalid
+            if (string.IsNullOrEmpty(textEdit3.Text))
+            {
+                MessageBox.Show("SĐT không thể để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(textEdit2.Text))
+            {
+                MessageBox.Show("CCCD không thể để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(textEdit4.Text))
+            {
+                MessageBox.Show("Địa không thể để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (pictureBox1.Image == null)
+            {
+                MessageBox.Show("Vui lòng chọn hình ảnh", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn một Phòng Ban", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (comboBox4.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn một Trình độ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (comboBox2.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn một Bộ phận", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (comboBox3.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn một chức vụ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (comboBox5.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn một Dân tộc", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            
+            if (comboBox6.SelectedIndex == -1)
+            {
+                MessageBox.Show("Vui lòng chọn một Tôn giáo", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            string cccd = textEdit2.Text.Trim();
+            if (cccd.Length != 9 && cccd.Length != 12)
+            {
+                MessageBox.Show("Vui lòng nhập CCCD hoặc CMND với độ dài là 9 hoặc 12 ký tự.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string sdt = textEdit3.Text.Trim();
+            if (sdt.Length != 10 && sdt.Length != 11)
+            {
+                MessageBox.Show("Vui lòng nhập SĐT với độ dài là 10 hoặc 11 ký tự.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             SaveData();
             loadData();
             _them = false;
-            _showHide(true);//lưu
+            _showHide(true); //lưu
             textEdit1.Clear();
             splitContainer1.Panel1Collapsed = true;
+
         }
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -246,7 +320,7 @@ namespace QLNHANSU
                     {
                         _id = gridView1.GetFocusedRowCellValue("MANV").ToString();
                         var nv = _nhanvien.getItem(_id);
-                        //textEdit1.Text = gridView1.GetFocusedRowCellValue("HOTEN").ToString();
+                        textEdit1.Text = gridView1.GetFocusedRowCellValue("HOTEN").ToString();
                         textEdit1.Text = nv.HOTEN;
                         checkBox1.Checked = nv.GIOITINH.Value;
                         dateTimePicker1.Value = nv.NGAYSINH.Value;
@@ -383,6 +457,40 @@ namespace QLNHANSU
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textEdit3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Allow only digits and control keys (e.g., backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Prevent non-numeric characters
+            }
+        }
+
+        private void textEdit2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            // Allow only digits and control keys (e.g., backspace)
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true; // Prevent non-numeric characters
+            }
         }
     }
 }

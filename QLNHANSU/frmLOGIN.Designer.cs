@@ -33,13 +33,14 @@
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(234, 76);
+            this.textEdit1.Location = new System.Drawing.Point(189, 29);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(171, 22);
             this.textEdit1.TabIndex = 2;
@@ -47,7 +48,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(234, 223);
+            this.button1.Location = new System.Drawing.Point(130, 176);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 30);
             this.button1.TabIndex = 4;
@@ -57,7 +58,7 @@
             // 
             // textEdit2
             // 
-            this.textEdit2.Location = new System.Drawing.Point(234, 150);
+            this.textEdit2.Location = new System.Drawing.Point(189, 103);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Properties.PasswordChar = '*';
             this.textEdit2.Size = new System.Drawing.Size(171, 22);
@@ -67,7 +68,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(104, 79);
+            this.labelControl1.Location = new System.Drawing.Point(59, 32);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(61, 16);
             this.labelControl1.TabIndex = 6;
@@ -77,17 +78,29 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(104, 153);
+            this.labelControl2.Location = new System.Drawing.Point(59, 106);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(60, 16);
             this.labelControl2.TabIndex = 7;
             this.labelControl2.Text = "Mật khẩu";
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.button2.Location = new System.Drawing.Point(292, 176);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(116, 30);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Thoát";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // frmLOGIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 363);
+            this.ClientSize = new System.Drawing.Size(485, 259);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.textEdit2);
@@ -110,5 +123,6 @@
         private DevExpress.XtraEditors.TextEdit textEdit2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
+        private System.Windows.Forms.Button button2;
     }
 }
