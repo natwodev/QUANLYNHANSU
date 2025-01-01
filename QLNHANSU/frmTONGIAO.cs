@@ -21,6 +21,7 @@ namespace QLNHANSU
             InitializeComponent();
         }
         dbTONGIAO _tongiao;
+        dbNHANVIEN _nhanvien;
         bool _them;
         int _id;
         void _showHide(bool kt)
@@ -75,6 +76,17 @@ namespace QLNHANSU
             {
                 MessageBox.Show("Chưa có id cần xóa. Vui lòng chọn thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Dừng việc xóa nếu textEdit1 trống
+            }
+            _tongiao = new dbTONGIAO();
+            var listTG = _tongiao.getList();
+            _nhanvien = new dbNHANVIEN();
+            int idtg = listTG.FirstOrDefault(x => x.TENTG == textEdit1.Text)?.IDTG ?? 0;
+            var listNV = _nhanvien.getList();
+            bool isReferenced = listNV.Any(x => x.IDTG == idtg);
+            if (isReferenced)
+            {
+                MessageBox.Show("Tôn giáo này đã tồn tại trên bảng khác nên không thể thể xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             if (MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {

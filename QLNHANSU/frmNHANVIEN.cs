@@ -178,7 +178,7 @@ namespace QLNHANSU
             // Hiển thị chế độ preview full màn hình
             var previewForm = new DevExpress.XtraReports.UI.ReportPrintTool(rpt);
             previewForm.PreviewForm.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            previewForm.ShowRibbonPreview();
+            previewForm.ShowRibbonPreview(); //ShowRibbonPreview
 
         }
 

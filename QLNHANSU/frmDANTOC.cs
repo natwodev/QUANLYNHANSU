@@ -21,6 +21,7 @@ namespace QLNHANSU
             InitializeComponent();
         }
         dbDANTOC _dantoc;
+        dbNHANVIEN _nhanvien;
         bool _them;
         int _id;
         void _showHide(bool kt)
@@ -70,21 +71,28 @@ namespace QLNHANSU
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            // Kiểm tra xem textEdit1 có trống không
             if (string.IsNullOrEmpty(textEdit1.Text))
             {
                 MessageBox.Show("Chưa có id cần xóa. Vui lòng chọn thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; // Dừng việc xóa nếu textEdit1 trống
+                return; 
             }
-
+            _dantoc = new dbDANTOC();
+            var listDT = _dantoc.getList();
+            _nhanvien = new dbNHANVIEN();
+            int iddt = listDT.FirstOrDefault(x => x.TENDT == textEdit1.Text)?.IDDT ?? 0;
+            var listNV = _nhanvien.getList();
+            bool isReferenced = listNV.Any(x => x.IDDT == iddt);
+            if (isReferenced)
+            {
+                MessageBox.Show("Dân tộc này đã tồn tại trên bảng khác nên không thể thể xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (MessageBox.Show("Có muốn xóa không ?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
             {
                 _dantoc.Delete(_id);
                 loadData();
                 textEdit1.Clear();
             }
-
-
             //xóa
         }
 

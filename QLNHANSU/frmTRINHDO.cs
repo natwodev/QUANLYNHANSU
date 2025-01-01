@@ -20,6 +20,7 @@ namespace QLNHANSU
             InitializeComponent();
         }
         dbTRINHDO _trinhdo;
+        dbNHANVIEN _nhanvien;
         bool _them;
         int _id;
         void _showHide(bool kt)
@@ -74,7 +75,17 @@ namespace QLNHANSU
                 MessageBox.Show("Chưa có id cần xóa. Vui lòng chọn thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Dừng việc xóa nếu textEdit1 trống
             }
-
+            _trinhdo = new dbTRINHDO();
+            var listTD = _trinhdo.getList();
+            _nhanvien = new dbNHANVIEN();
+            int idtd = listTD.FirstOrDefault(x => x.TENTD == textEdit1.Text)?.IDTD ?? 0;
+            var listNV = _nhanvien.getList();
+            bool isReferenced = listNV.Any(x => x.IDTD == idtd);
+            if (isReferenced)
+            {
+                MessageBox.Show("Trình độ này đã tồn tại trên bảng khác nên không thể thể xóa (khóa ngoại)", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 _trinhdo.Delete(_id);

@@ -35,7 +35,7 @@ namespace BUSINESSLAYER
             }
         }
 
-
+       
         public DANTOC Update(DANTOC dt)
         {
             try
@@ -50,7 +50,7 @@ namespace BUSINESSLAYER
                 throw new Exception("Lỗi :" + ex.Message);
             }
         }
-
+        /*
         public void Delete(int id)
         {
             try
@@ -63,7 +63,21 @@ namespace BUSINESSLAYER
             {
                 throw new Exception("Lỗi :" + ex.Message);
             }
-
         }
+          */
+        public void Delete(int id)
+        {
+            try
+            {
+                var _dt = db.DANTOCs.FirstOrDefault(x => x.IDDT == id);
+                db.DANTOCs.Remove(_dt);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi: " + ex.Message);
+            }
+        }
+      
     }
 }
