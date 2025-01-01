@@ -21,6 +21,7 @@ namespace QLNHANSU
             InitializeComponent();
         }
         dbCHUCVU _chucvu;
+        dbNHANVIEN _nhanvien;
         bool _them;
         int _id;
         void _showHide(bool kt)
@@ -79,6 +80,17 @@ namespace QLNHANSU
             if (_id <= 0)
             {
                 MessageBox.Show("ID không hợp lệ. Vui lòng chọn lại thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            _chucvu = new dbCHUCVU();
+            var listCV = _chucvu.getList();
+            _nhanvien = new dbNHANVIEN();
+            int idcv = listCV.FirstOrDefault(x => x.TENCV == textEdit1.Text)?.IDCV ?? 0;
+            var listNV = _nhanvien.getList();
+            bool isReferenced = listNV.Any(x => x.IDCV == idcv);
+            if (isReferenced)
+            {
+                MessageBox.Show("Chức vụ này đã tồn tại trên bảng khác nên không thể thể xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)

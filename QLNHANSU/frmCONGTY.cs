@@ -21,6 +21,7 @@ namespace QLNHANSU
             InitializeComponent();
         }
         dbCONGTY _congty;
+        dbNHANVIEN _nhanvien;
         bool _them;
         int _id;
         void _showHide(bool kt)
@@ -83,7 +84,17 @@ namespace QLNHANSU
                 MessageBox.Show("Chưa có id cần xóa. Vui lòng chọn thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Dừng việc xóa nếu textEdit1 trống
             }
-
+            _congty = new dbCONGTY();
+            var listCTy = _congty.getList();
+            _nhanvien = new dbNHANVIEN();
+            int idcty = listCTy.FirstOrDefault(x => x.TENCT == textEdit1.Text)?.IDCT ?? 0;
+            var listNV = _nhanvien.getList();
+            bool isReferenced = listNV.Any(x => x.IDCT == idcty);
+            if (isReferenced)
+            {
+                MessageBox.Show("Công ty đã tồn tại trên bảng khác nên không thể thể xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 _congty.Delete(_id);
@@ -181,10 +192,18 @@ namespace QLNHANSU
                 if (gridView1.RowCount>0 )
                 {
                     _id = int.Parse(gridView1.GetFocusedRowCellValue("IDCT").ToString());
+                    var cty = _congty.getItem(_id);
+                    textEdit1.Text = cty.TENCT;
+                    textEdit2.Text = cty.DIENTHOAI;
+                    textEdit3.Text = cty.EMAIL;
+                    textEdit4.Text = cty.DIACHI;
+                    
+                    /*
                     textEdit1.Text = gridView1.GetFocusedRowCellValue("TENCT").ToString();
                     textEdit2.Text = gridView1.GetFocusedRowCellValue("EMAIL").ToString();
                     textEdit3.Text = gridView1.GetFocusedRowCellValue("DIENTHOAI").ToString();
                     textEdit4.Text = gridView1.GetFocusedRowCellValue("DIACHI").ToString();
+                    */
                 }
 
             }

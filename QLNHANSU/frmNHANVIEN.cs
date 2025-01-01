@@ -246,7 +246,7 @@ namespace QLNHANSU
                     {
                         _id = gridView1.GetFocusedRowCellValue("MANV").ToString();
                         var nv = _nhanvien.getItem(_id);
-                        textEdit1.Text = gridView1.GetFocusedRowCellValue("HOTEN").ToString();
+                        //textEdit1.Text = gridView1.GetFocusedRowCellValue("HOTEN").ToString();
                         textEdit1.Text = nv.HOTEN;
                         checkBox1.Checked = nv.GIOITINH.Value;
                         dateTimePicker1.Value = nv.NGAYSINH.Value;

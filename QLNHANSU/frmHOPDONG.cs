@@ -210,12 +210,12 @@ namespace QLNHANSU
 
         private void barButtonItem4_ItemClick_1(object sender, ItemClickEventArgs e)
         {
-            /*
+            
             if (string.IsNullOrEmpty(textEdit1.Text))
             {
-                MessageBox.Show("Tên không thể để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; // Dừng lại nếu text1 trống
-            }*/
+                MessageBox.Show("Không thể để trống nhân viên ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; 
+            }
             SaveData();
             loadData();
             _them = false;
@@ -257,7 +257,6 @@ namespace QLNHANSU
             else
             {
                 var hd = _hopdong.getItem(_id);
-              //  hd.SOHD = GenerateEmployeeCode(dateTimePicker1.Value);
                 hd.NGAYBATDAU = dateTimePicker1.Value;
                 hd.NGAYKETTHUC = dateTimePicker2.Value;
                 hd.NGAYKY = dateTimePicker3.Value;

@@ -20,6 +20,7 @@ namespace QLNHANSU
             InitializeComponent();
         }
         dbPHONGBAN _phongban;
+        dbNHANVIEN _nhanvien;
         bool _them;
         int _id;
         void _showHide(bool kt)
@@ -74,7 +75,17 @@ namespace QLNHANSU
                 MessageBox.Show("Chưa có id cần xóa. Vui lòng chọn thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Dừng việc xóa nếu textEdit1 trống
             }
-
+            _phongban = new dbPHONGBAN();
+            var listPB = _phongban.getList();
+            _nhanvien = new dbNHANVIEN();
+            int idpb = listPB.FirstOrDefault(x => x.TENPB == textEdit1.Text)?.IDPB ?? 0;
+            var listNV = _nhanvien.getList();
+            bool isReferenced = listNV.Any(x => x.IDPB == idpb);
+            if (isReferenced)
+            {
+                MessageBox.Show("Phòng ban này đã tồn tại trên bảng khác nên không thể thể xóa", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 _phongban.Delete(_id);
