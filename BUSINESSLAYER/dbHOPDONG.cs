@@ -30,10 +30,11 @@ namespace BUSINESSLAYER
                 hd.SOHD = item.SOHD;
                 hd.NGAYBATDAU = item.NGAYBATDAU;
                 hd.NGAYKETTHUC = item.NGAYKETTHUC;
-                hd.NGAYKY = item.NGAYKY;
+                hd.THOIHAN = item.THOIHAN;
                 hd.HESOLUONG = item.HESOLUONG;
+                hd.LANKY = item.LANKY;
+                hd.NGAYKY = item.NGAYKY;
                 hd.NOIDUNG = item.NOIDUNG;
-                hd.THOIHAN = hd.THOIHAN;
                 hd.MANV = item.MANV;
                 var nv = db.NHANVIENs.FirstOrDefault(n=>n.MANV==item.MANV);
                 hd.HOTEN = nv.HOTEN;

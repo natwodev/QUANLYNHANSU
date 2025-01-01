@@ -151,6 +151,12 @@
     <Compile Include="REPORTS\rpDSNHANVIEN.Designer.cs">
       <DependentUpon>rpDSNHANVIEN.cs</DependentUpon>
     </Compile>
+    <Compile Include="REPORTS\rpHOPDONG.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="REPORTS\rpHOPDONG.Designer.cs">
+      <DependentUpon>rpHOPDONG.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +202,9 @@
     </Compile>
     <EmbeddedResource Include="REPORTS\rpDSNHANVIEN.resx">
       <DependentUpon>rpDSNHANVIEN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="REPORTS\rpHOPDONG.resx">
+      <DependentUpon>rpHOPDONG.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />

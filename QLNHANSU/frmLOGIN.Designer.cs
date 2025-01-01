@@ -108,7 +108,7 @@
             this.Controls.Add(this.textEdit1);
             this.Name = "frmLOGIN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmLOGIN";
+            this.Text = "LOGIN";
             this.Load += new System.EventHandler(this.frmLOGIN_Load);
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();

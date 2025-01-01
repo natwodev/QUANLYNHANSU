@@ -61,7 +61,7 @@ namespace BUSINESSLAYER
                 db.TAIKHOANs.Remove(_tK);
                 db.SaveChanges();
             }
-            catch (Exception ex)S
+            catch (Exception ex)
             {
                 throw new Exception("Lỗi :" + ex.Message);
             }

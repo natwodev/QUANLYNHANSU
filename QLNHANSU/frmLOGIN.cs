@@ -20,6 +20,8 @@ namespace QLNHANSU
         
         private void button1_Click(object sender, EventArgs e)
         {
+            textEdit1.Text = "admin";
+            textEdit2.Text = "123";
             string username = textEdit1.Text.Trim();
             string password = textEdit2.Text.Trim();
 

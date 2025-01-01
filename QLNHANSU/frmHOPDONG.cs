@@ -179,7 +179,12 @@ namespace QLNHANSU
 
         private void barButtonItem2_ItemClick_1(object sender, ItemClickEventArgs e)
         {
-
+            // Kiểm tra xem textEdit1 có trống không
+            if (string.IsNullOrEmpty(textEdit1.Text))
+            {
+                MessageBox.Show("Chưa có id cần sửa. Vui lòng chọn thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Dừng việc sửa nếu textEdit1 trống
+            }
             _them = false;
             _showHide(false);//sửa
                              // pictureBox1.Image = _hinh;
@@ -210,11 +215,11 @@ namespace QLNHANSU
 
         private void barButtonItem4_ItemClick_1(object sender, ItemClickEventArgs e)
         {
-            
-            if (string.IsNullOrEmpty(textEdit1.Text))
+
+            if (string.IsNullOrEmpty(searchLookUpEdit1.EditValue?.ToString()))
             {
-                MessageBox.Show("Không thể để trống nhân viên ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; 
+                MessageBox.Show("Không thể để trống nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
             SaveData();
             loadData();
@@ -244,7 +249,7 @@ namespace QLNHANSU
                 hd.NGAYBATDAU = dateTimePicker1.Value;
                 hd.NGAYKETTHUC = dateTimePicker2.Value;
                 hd.NGAYKY = dateTimePicker3.Value;
-                hd.THOIHAN = comboBox6.Text;
+                hd.THOIHAN = comboBox6.Text.ToString();
                 hd.NOIDUNG = richEditControl1.RtfText;
                 hd.HESOLUONG = float.Parse(spinEdit1.EditValue.ToString());
                 hd.LANKY = int.Parse(spinEdit2.EditValue.ToString());
@@ -301,5 +306,20 @@ namespace QLNHANSU
 
         }
 
+        private void searchLookUpEdit1_EditValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richEditControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            rpHOPDONG rpt = new rpHOPDONG();
+            rpt.ShowPreviewDialog();
+        }
     }
 }
