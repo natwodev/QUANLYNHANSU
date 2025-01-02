@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BUSINESSLAYER.DATA_OBJECT;
 using DATALAYER;
 
 namespace BUSINESSLAYER
@@ -25,6 +26,32 @@ namespace BUSINESSLAYER
             return db.TAIKHOANs.FirstOrDefault(x => x.IDTK == id);
         }
 
+        public List<TAIKHOAN_DTO> getListFull()
+        {
+            var lstTK = db.TAIKHOANs.ToList();
+            List<TAIKHOAN_DTO> lstDTO = new List<TAIKHOAN_DTO>();
+            TAIKHOAN_DTO tkDTO;
+            foreach (var item in lstTK)
+            {
+                tkDTO = new TAIKHOAN_DTO();
+                tkDTO.IDTK = item.IDTK;
+                tkDTO.TENDANGNHAP = item.TENDANGNHAP;
+                tkDTO.MATKHAU = item.MATKHAU;
+                tkDTO.TRANGTHAI = item.TRANGTHAI;
+                tkDTO.LAST_LOGIN = item.LAST_LOGIN;
+
+                tkDTO.MANV = item.MANV;
+                var nv = db.NHANVIENs.FirstOrDefault(b => b.MANV == item.MANV);
+                tkDTO.HOTEN = nv.HOTEN;
+
+                tkDTO.IDQUYEN = item.IDQUYEN;
+                var qh = db.QUYENHANs.FirstOrDefault(b => b.IDQUYEN == item.IDQUYEN);
+                tkDTO.TENQUYEN = qh.TENQUYEN;
+
+                lstDTO.Add(tkDTO);
+            }
+            return lstDTO;
+        }
 
         public TAIKHOAN Add(TAIKHOAN tk)
         {

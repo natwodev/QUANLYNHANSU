@@ -1,15 +1,15 @@
-namespace DATALAYER
-{
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DATALAYER;
 
-    [Table("TAIKHOAN")]
-    public partial class TAIKHOAN
+namespace BUSINESSLAYER.DATA_OBJECT
+{
+    public class TAIKHOAN_DTO
     {
-        [Key]
         public int IDTK { get; set; }
 
         [StringLength(50)]
@@ -30,5 +30,9 @@ namespace DATALAYER
         public virtual NHANVIEN NHANVIEN { get; set; }
 
         public virtual QUYENHAN QUYENHAN { get; set; }
+
+        public string HOTEN { get; set; }
+
+        public string TENQUYEN { get; set; }
     }
 }

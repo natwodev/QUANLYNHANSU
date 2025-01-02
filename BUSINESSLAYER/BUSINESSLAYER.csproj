@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="DATA_OBJECT\HOPDONG_DTO.cs" />
     <Compile Include="DATA_OBJECT\NHANVIEN_DTO.cs" />
+    <Compile Include="DATA_OBJECT\TAIKHOAN_DTO.cs" />
     <Compile Include="dbBOPHAN.cs" />
     <Compile Include="dbCHUCVU.cs" />
     <Compile Include="dbCONGTY.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="dbHOPDONG.cs" />
     <Compile Include="dbNHANVIEN.cs" />
     <Compile Include="dbPHONGBAN.cs" />
+    <Compile Include="dbQUYENHAN.cs" />
     <Compile Include="dbTAIKHOAN.cs" />
     <Compile Include="dbTONGIAO.cs" />
     <Compile Include="dbTRINHDO.cs" />
@@ -68,7 +70,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DATALAYER\DATALAYER.csproj">
-      <Project>{c670f24d-befa-45e6-b232-1e30c023b044}</Project>
+      <Project>{72c0af16-f14e-4a00-87c9-25cfab782b97}</Project>
       <Name>DATALAYER</Name>
     </ProjectReference>
   </ItemGroup>

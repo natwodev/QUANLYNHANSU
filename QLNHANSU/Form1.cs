@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using BUSINESSLAYER;
+using BUSINESSLAYER.DATA_OBJECT;
 using DATALAYER;
 
 namespace QLNHANSU
@@ -13,10 +15,23 @@ namespace QLNHANSU
     public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         private string _userRole;
+        dbTAIKHOAN _taikhoan;
+        List<TAIKHOAN_DTO> _listTKDTO;
         public Form1(TAIKHOAN tk)
         {
             InitializeComponent();
-            _userRole = tk.QUYENHAN;
+            _taikhoan = new dbTAIKHOAN();
+            _listTKDTO = _taikhoan.getListFull();
+            // Giả sử _listTKDTO đã được khởi tạo hoặc tải dữ liệu trước
+            var matchedRole = _listTKDTO.FirstOrDefault(dto => dto.IDTK == tk.IDTK);
+            if (matchedRole != null)
+            {
+                _userRole = matchedRole.TENQUYEN; // Lấy tên quyền tương ứng
+            }
+            else
+            {
+                _userRole = "Quyền không xác định"; // Trường hợp không tìm thấy quyền
+            }
         }
         public Form1()
         {
@@ -36,14 +51,16 @@ namespace QLNHANSU
             // Giả sử _userRole có các giá trị như "Admin", "User1", v.v.
             if (_userRole == "admin")
             {
+
+
+
+            }
+            else if (_userRole == "HR")
+            {
                 // Admin có thể sử dụng tất cả các nút
                 ribbonPage2.Visible = false; // Kích hoạt trang ribbonPage2
-               
-               
-            }
-            else if (_userRole == "User1")
-            {
-                
+                barButtonItem18.Enabled = false;
+                barButtonItem19.Enabled = false;
             }
             else
             {
@@ -156,5 +173,14 @@ namespace QLNHANSU
             }
         }
 
+        private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonItem28_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
     }
 }
