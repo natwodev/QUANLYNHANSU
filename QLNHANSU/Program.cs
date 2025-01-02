@@ -24,33 +24,39 @@ namespace QLNHANSU
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            while (true) // Vòng lặp vĩnh viễn để quản lý đăng nhập - đăng xuất
-            {
-                // Hiển thị form đăng nhập
-                using (frmLOGIN loginForm = new frmLOGIN())
-                {
-                    if (loginForm.ShowDialog() == DialogResult.OK) // Đăng nhập thành công
-                    {
-                        // Khi đăng nhập thành công, mở Form1
-                        using (Form1 mainForm = new Form1(_user)) // _user là thông tin người dùng
-                        {
-                            if (mainForm.ShowDialog() == DialogResult.Cancel) // Nhấn nút Đăng xuất
-                            {
-                                continue; // Quay lại form đăng nhập
-                            }
-                        }
-                    }
-                    else
-                    {
-                        // Nếu đóng form đăng nhập hoặc đăng nhập thất bại, thoát ứng dụng
-                        break;
-                    }
-                }
-            }
+            // Hiển thị form đăng nhập
+            ShowLoginForm();
 
-            // Thoát ứng dụng
+            // Thoát ứng dụng khi người dùng đóng các form
             Application.Exit();
         }
+
+        private static void ShowLoginForm()
+        {
+            using (frmLOGIN loginForm = new frmLOGIN())
+            {
+                if (loginForm.ShowDialog() == DialogResult.OK) // Nếu đăng nhập thành công
+                {
+                    ShowMainForm(); // Mở Form1
+                }
+                // Nếu nhấn "Thoát" trong màn hình đăng nhập thì không làm gì và ứng dụng kết thúc
+            }
+        }
+
+        private static void ShowMainForm()
+        {
+            using (Form1 mainForm = new Form1(_user))
+            {
+                DialogResult result = mainForm.ShowDialog();
+
+                if (result == DialogResult.Cancel) // Nếu nhấn "Đăng xuất"
+                {
+                    ShowLoginForm(); // Quay lại form đăng nhập
+                }
+                // Nếu nhấn "Thoát" thì không làm gì và ứng dụng kết thúc
+            }
+        }
+
 
     }
 }

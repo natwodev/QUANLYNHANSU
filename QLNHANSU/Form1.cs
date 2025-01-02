@@ -140,11 +140,13 @@ namespace QLNHANSU
 
         private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            this.DialogResult = DialogResult.None; // Đặt DialogResult là None
             this.Close();
         }
 
         private void barButtonItem24_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            this.DialogResult = DialogResult.None; // Đặt DialogResult là None
             this.Close();
         }
 
@@ -161,8 +163,7 @@ namespace QLNHANSU
         private void barButtonItem27_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            // Đặt DialogResult là Cancel để quay lại form đăng nhập
-            this.DialogResult = DialogResult.Cancel;
+            this.DialogResult = DialogResult.Cancel; // Đặt DialogResult là Cancel
             this.Close();
         }
 
