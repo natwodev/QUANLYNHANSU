@@ -15,6 +15,10 @@ namespace BUSINESSLAYER
             return db.TAIKHOANs.ToList();
         }
 
+        public TAIKHOAN ValidateUser(string username, string password)
+        {
+            return db.TAIKHOANs.FirstOrDefault(x => x.TENDANGNHAP == username && x.MATKHAU == password);
+        }
 
         public TAIKHOAN getItem(int id)
         {

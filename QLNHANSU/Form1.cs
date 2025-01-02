@@ -6,19 +6,49 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DATALAYER;
 
 namespace QLNHANSU
 {
     public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        private string _userRole;
+        public Form1(TAIKHOAN tk)
+        {
+            InitializeComponent();
+            _userRole = tk.QUYENHAN;
+        }
         public Form1()
         {
             InitializeComponent();
             this.IsMdiContainer = true; // Form này sẽ là MDI Parent
+
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-           ribbonControl1.SelectedPage = ribbonPage2; //hiển page nhân sự 
+            MessageBox.Show($"User role: {_userRole}", "Role Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
+            ApplyRolePermissions();
+            ribbonControl1.SelectedPage = ribbonPage2; //hiển page nhân sự 
+        }
+        private void ApplyRolePermissions()
+        {
+            // Giả sử _userRole có các giá trị như "Admin", "User1", v.v.
+            if (_userRole == "admin")
+            {
+                // Admin có thể sử dụng tất cả các nút
+                ribbonPage2.Visible = false; // Kích hoạt trang ribbonPage2
+               
+               
+            }
+            else if (_userRole == "User1")
+            {
+                
+            }
+            else
+            {
+              
+            }
         }
         void openForm(Type typeForm)
         {
