@@ -24,21 +24,33 @@ namespace QLNHANSU
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Hiển thị form đăng nhập
-            frmLOGIN loginForm = new frmLOGIN();
-            
-            
-            if (loginForm.ShowDialog() == DialogResult.OK)  // Kiểm tra khi đăng nhập thành công
+            while (true) // Vòng lặp vĩnh viễn để quản lý đăng nhập - đăng xuất
             {
-                // Nếu đăng nhập thành công, mở form chính
-                Application.Run(new Form1(_user));
+                // Hiển thị form đăng nhập
+                using (frmLOGIN loginForm = new frmLOGIN())
+                {
+                    if (loginForm.ShowDialog() == DialogResult.OK) // Đăng nhập thành công
+                    {
+                        // Khi đăng nhập thành công, mở Form1
+                        using (Form1 mainForm = new Form1(_user)) // _user là thông tin người dùng
+                        {
+                            if (mainForm.ShowDialog() == DialogResult.Cancel) // Nhấn nút Đăng xuất
+                            {
+                                continue; // Quay lại form đăng nhập
+                            }
+                        }
+                    }
+                    else
+                    {
+                        // Nếu đóng form đăng nhập hoặc đăng nhập thất bại, thoát ứng dụng
+                        break;
+                    }
+                }
             }
-            else
-            {
-                // Nếu đăng nhập thất bại hoặc form đăng nhập bị đóng, ứng dụng sẽ dừng lại
-                Application.Exit();
-            }
-            
+
+            // Thoát ứng dụng
+            Application.Exit();
         }
+
     }
 }

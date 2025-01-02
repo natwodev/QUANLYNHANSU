@@ -17,6 +17,7 @@ namespace QLNHANSU
         private string _userRole;
         dbTAIKHOAN _taikhoan;
         List<TAIKHOAN_DTO> _listTKDTO;
+        public static TAIKHOAN _user;
         public Form1(TAIKHOAN tk)
         {
             InitializeComponent();
@@ -159,8 +160,15 @@ namespace QLNHANSU
 
         private void barButtonItem27_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-          
+
+            // Đặt DialogResult là Cancel để quay lại form đăng nhập
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
+
+    
+
+
 
         private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -168,6 +176,11 @@ namespace QLNHANSU
         }
 
         private void barButtonItem28_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barButtonItem29_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
         }

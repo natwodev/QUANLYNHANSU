@@ -42,6 +42,7 @@ namespace QLNHANSU
                     MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     // Trả về DialogResult.OK
                     Program._user = user;
+                    Form1._user = user;
                     this.DialogResult = DialogResult.OK;
                     this.Hide();
 
