@@ -107,6 +107,12 @@
     <Compile Include="frmDANTOC.Designer.cs">
       <DependentUpon>frmDANTOC.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDOIMATKHAU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDOIMATKHAU.Designer.cs">
+      <DependentUpon>frmDOIMATKHAU.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHOPDONG.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -171,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDANTOC.resx">
       <DependentUpon>frmDANTOC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDOIMATKHAU.resx">
+      <DependentUpon>frmDOIMATKHAU.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHOPDONG.resx">
       <DependentUpon>frmHOPDONG.cs</DependentUpon>

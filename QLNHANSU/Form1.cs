@@ -15,9 +15,12 @@ namespace QLNHANSU
     public partial class Form1 : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         private string _userRole;
+        private string _userName;
+
         dbTAIKHOAN _taikhoan;
         List<TAIKHOAN_DTO> _listTKDTO;
         public static TAIKHOAN _user;
+
         public Form1(TAIKHOAN tk)
         {
             InitializeComponent();
@@ -31,6 +34,7 @@ namespace QLNHANSU
                 tkk.LAST_LOGIN = DateTime.Now;
                 _taikhoan.Update(tkk);
                 _userRole = matchedRole.TENQUYEN; // Lấy tên quyền tương ứng
+                _userName = matchedRole.HOTEN;
             }
             else
             {
@@ -45,7 +49,7 @@ namespace QLNHANSU
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            MessageBox.Show($"User role: {_userRole}", "Role Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"Chào mừng : {_userName} với quyền : {_userRole}", "Role Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
             ApplyRolePermissions();
             ribbonControl1.SelectedPage = ribbonPage2; //hiển page nhân sự 
@@ -80,6 +84,20 @@ namespace QLNHANSU
                     frm.Activate();
                     return;
                 }   
+            }
+            Form f = (Form)Activator.CreateInstance(typeForm);
+            f.MdiParent = this;
+            f.Show();
+        }
+        void openFormT(Type typeForm) 
+        {
+            foreach (var frm in MdiChildren)
+            {
+                if (frm.GetType() == typeForm)
+                {
+                    frm.Activate();
+                    return;
+                }
             }
             Form f = (Form)Activator.CreateInstance(typeForm);
             f.MdiParent = this;
@@ -152,7 +170,8 @@ namespace QLNHANSU
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+           
+            openForm(typeof(frmDOIMATKHAU));//Đổi mk
         }
 
         private void barButtonItem25_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
