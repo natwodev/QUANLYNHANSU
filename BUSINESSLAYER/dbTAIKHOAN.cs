@@ -75,6 +75,7 @@ namespace BUSINESSLAYER
                 var _tk = db.TAIKHOANs.FirstOrDefault(x => x.IDTK == tk.IDTK);
                 _tk.MATKHAU = tk.MATKHAU;
                 _tk.TRANGTHAI = tk.TRANGTHAI;
+                _tk.LAST_LOGIN = tk.LAST_LOGIN;
                 db.SaveChanges();
                 return tk;
             }
@@ -98,5 +99,7 @@ namespace BUSINESSLAYER
             }
 
         }
+
+      
     }
 }

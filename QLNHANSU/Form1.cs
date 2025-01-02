@@ -26,6 +26,9 @@ namespace QLNHANSU
             var matchedRole = _listTKDTO.FirstOrDefault(dto => dto.IDTK == tk.IDTK);
             if (matchedRole != null)
             {
+                var tkk = _taikhoan.getItem(tk.IDTK);
+                tkk.LAST_LOGIN = DateTime.Now;
+                _taikhoan.Update(tkk);
                 _userRole = matchedRole.TENQUYEN; // Lấy tên quyền tương ứng
             }
             else
@@ -55,7 +58,7 @@ namespace QLNHANSU
 
 
             }
-            else if (_userRole == "HR")
+            else if (_userRole == "user")
             {
                 // Admin có thể sử dụng tất cả các nút
                 ribbonPage2.Visible = false; // Kích hoạt trang ribbonPage2
@@ -156,21 +159,7 @@ namespace QLNHANSU
 
         private void barButtonItem27_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            // Ẩn Form chính thay vì đóng
-            this.Hide();
-
-            // Mở lại form đăng nhập
-            frmLOGIN loginForm = new frmLOGIN();
-            if (loginForm.ShowDialog() == DialogResult.OK)
-            {
-                // Nếu đăng nhập thành công, mở lại form chính
-                this.Show(); // Mở lại Form chính mà không cần khởi động lại vòng lặp ứng dụng
-            }
-            else
-            {
-                // Nếu đăng nhập thất bại hoặc form đăng nhập bị đóng, thoát ứng dụng
-                Application.Exit();
-            }
+          
         }
 
         private void barButtonItem18_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
