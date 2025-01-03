@@ -16,6 +16,7 @@ namespace QLNHANSU
     {
         dbNHANVIEN _nhanvien;
         dbTAIKHOAN _taikhoan;
+        dbQUYENHAN _quyenhan;
         public frmDANGKY()
         {
             InitializeComponent();
@@ -23,7 +24,9 @@ namespace QLNHANSU
         private void frmDANGKY_Load(object sender, EventArgs e)
         {
             _nhanvien = new dbNHANVIEN();
+            _quyenhan = new dbQUYENHAN();
             loadNhanVien();
+            loadCombo();
         }
         void loadNhanVien()
         {
@@ -31,7 +34,12 @@ namespace QLNHANSU
             searchLookUpEdit1.Properties.ValueMember = "MANV";
             searchLookUpEdit1.Properties.DisplayMember = "HOTEN";
         }
-
+        void loadCombo()
+        {
+            comboBox6.DataSource = _quyenhan.getList();
+            comboBox6.DisplayMember =  "TENQUYEN";
+            comboBox6.ValueMember = "IDQUYEN";
+        }
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             string username = textEdit1.Text;
@@ -96,6 +104,9 @@ namespace QLNHANSU
 
         }
 
-        
+        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
