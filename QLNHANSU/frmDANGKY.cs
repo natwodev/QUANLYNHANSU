@@ -42,6 +42,41 @@ namespace QLNHANSU
         }
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+
+        }
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void labelControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textEdit2_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchLookUpEdit1_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
             string username = textEdit1.Text;
             string password1 = textEdit2.Text;
             string password2 = textEdit3.Text;
@@ -78,35 +113,6 @@ namespace QLNHANSU
             }
             TAIKHOAN tk = new TAIKHOAN();
             tk.MANV = searchLookUpEdit1.EditValue.ToString();
-        }
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void labelControl1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textEdit1_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textEdit2_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void searchLookUpEdit1_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox6_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
