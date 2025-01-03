@@ -319,6 +319,7 @@ namespace QLNHANSU
 
         private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
         {
+            //HOPDONG_DTO hd = _hopdong;
             rpHOPDONG rpt = new rpHOPDONG();
             rpt.ShowPreviewDialog();
         }

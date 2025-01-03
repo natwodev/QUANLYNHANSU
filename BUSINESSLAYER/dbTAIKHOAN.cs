@@ -43,7 +43,8 @@ namespace BUSINESSLAYER
 
                 tkDTO.MANV = item.MANV;
                 var nv = db.NHANVIENs.FirstOrDefault(b => b.MANV == item.MANV);
-                tkDTO.HOTEN = nv.HOTEN;
+                tkDTO.HOTEN = nv != null ? nv.HOTEN : null;
+
 
                 tkDTO.IDQUYEN = item.IDQUYEN;
                 var qh = db.QUYENHANs.FirstOrDefault(b => b.IDQUYEN == item.IDQUYEN);

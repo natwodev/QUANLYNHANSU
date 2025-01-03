@@ -383,23 +383,33 @@ namespace QLNHANSU
 
 
         }
-
-        //Hàm chuyển đổi hình ảnh lưu vào database  
+        // Hàm chuyển đổi hình ảnh sang Base64 nếu có hình ảnh
         public byte[] ImageToBase64(Image image, System.Drawing.Imaging.ImageFormat format)
         {
+            if (image == null)
+            {
+                // Không có hình ảnh, trả về null hoặc một mảng byte rỗng
+                return null;
+            }
+
             using (MemoryStream ms = new MemoryStream())
             {
                 image.Save(ms, format);
                 byte[] imageBytes = ms.ToArray();
-
                 return imageBytes;
             }
         }
 
+        // Hàm chuyển đổi Base64 (mảng byte) thành hình ảnh nếu có dữ liệu
         public Image Base64ToImage(byte[] imageBytes)
         {
-            MemoryStream ms = new MemoryStream(imageBytes, 0, imageBytes.Length);
-            ms.Write(imageBytes, 0, imageBytes.Length);
+            if (imageBytes == null || imageBytes.Length == 0)
+            {
+                // Không có dữ liệu hình ảnh, trả về null hoặc thông báo lỗi
+                return null;
+            }
+
+            MemoryStream ms = new MemoryStream(imageBytes);
             Image image = Image.FromStream(ms, true);
             return image;
         }

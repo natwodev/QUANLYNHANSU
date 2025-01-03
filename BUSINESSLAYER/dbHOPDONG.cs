@@ -16,6 +16,37 @@ namespace BUSINESSLAYER
         {
             return db.HOPDONGs.FirstOrDefault(x => x.SOHD == id);
         }
+        public HOPDONG_DTO getItemFull(string id)
+        {
+
+            var item = db.HOPDONGs.FirstOrDefault(x => x.SOHD == id);
+            HOPDONG_DTO hd;
+            hd = new HOPDONG_DTO();
+            hd.SOHD = item.SOHD;
+            hd.NGAYBATDAU = item.NGAYBATDAU;
+            hd.NGAYKETTHUC = item.NGAYKETTHUC;
+            hd.THOIHAN = item.THOIHAN;
+            hd.HESOLUONG = item.HESOLUONG;
+            hd.LANKY = item.LANKY;
+            hd.NGAYKY = item.NGAYKY;
+            hd.NOIDUNG = item.NOIDUNG;
+            hd.MANV = item.MANV;
+            var nv = db.NHANVIENs.FirstOrDefault(n => n.MANV == item.MANV);
+            hd.HOTEN = nv.HOTEN;
+            hd.CCCD = nv.CCCD;
+            hd.DIENTHOAI = nv.DIENTHOAI;
+            hd.DIACHI = nv.DIACHI;
+            hd.CREATED = item.CREATED;
+            hd.CREATED_DATE = item.CREATED_DATE;
+            hd.UPDATED = item.UPDATED;
+            hd.UPDATE_DATE = item.UPDATE_DATE;
+            hd.DELETED = item.DELETED;
+            hd.DELETE_DATE = item.DELETE_DATE;
+            hd.IDCT = item.IDCT;
+
+
+            return hd;
+        }
         public List<HOPDONG> getList()
         {
             return db.HOPDONGs.ToList();
@@ -39,13 +70,17 @@ namespace BUSINESSLAYER
                 hd.MANV = item.MANV;
                 var nv = db.NHANVIENs.FirstOrDefault(n=>n.MANV==item.MANV);
                 hd.HOTEN = nv.HOTEN;
-                hd.CREATED = hd.CREATED;
-                hd.CREATED_DATE = hd.CREATED_DATE;
-                hd.UPDATED = hd.UPDATED;
-                hd.UPDATE_DATE = hd.UPDATE_DATE;
-                hd.DELETED = hd.DELETED;
-                hd.DELETE_DATE = hd.DELETE_DATE;
-                hd.IDCT = hd.IDCT;
+                hd.CCCD = nv.CCCD;
+                hd.DIENTHOAI = nv.DIENTHOAI;
+                hd.DIACHI = nv.DIACHI;
+                hd.CREATED = item.CREATED;
+                hd.CREATED_DATE = item.CREATED_DATE;
+                hd.UPDATED = item.UPDATED;
+                hd.UPDATE_DATE = item.UPDATE_DATE;
+                hd.DELETED = item.DELETED;
+                hd.DELETE_DATE = item.DELETE_DATE;
+                hd.IDCT = item.IDCT;
+                
                 listDTO.Add(hd);
             }
             return listDTO;

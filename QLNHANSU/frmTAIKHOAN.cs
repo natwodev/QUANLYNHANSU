@@ -84,8 +84,10 @@ namespace QLNHANSU
                     _id = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IDTK").ToString();
                     int idd = int.Parse(_id);
                     var tkk = _taikhoan.getItem(idd);
-                    textEdit1.Text = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "MANV").ToString();
-                    textEdit1.Text = tkk.MANV;
+                    var manvValue = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "MANV");
+                    textEdit1.Text = manvValue != null ? manvValue.ToString() : string.Empty;
+                    textEdit1.Text = tkk?.MANV ?? string.Empty;
+
                     checkBox1.Checked = tkk.TRANGTHAI.Value;
                     comboBox6.SelectedValue = tkk.IDQUYEN;
                     //   comboBox6.SelectedValue = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IDQUYEN");
@@ -114,7 +116,7 @@ namespace QLNHANSU
 
             if (!string.IsNullOrEmpty(textEdit1.Text))
             {
-                resultList = resultList.Where(tk => tk.MANV.Contains(textEdit1.Text)).ToList();
+                resultList = resultList.Where(tk => tk.MANV != null && tk.MANV.Contains(textEdit1.Text)).ToList();
             }
             if (comboBox6.SelectedIndex != -1)
             {
@@ -143,7 +145,13 @@ namespace QLNHANSU
                 MessageBox.Show("Vui lòng chọn một quyền", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
+            var listTk = _taikhoan.getList();
+            var nvv = listTk.FirstOrDefault(x => x.MANV == textEdit1.Text);
+            if (nvv == null)
+            {
+                MessageBox.Show("Không thể xác định tài khoản ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             // Ensure Program._user is properly initialized
             if (Program._user == null)
             {
@@ -151,7 +159,6 @@ namespace QLNHANSU
                 return;
             }
 
-            var listTk = _taikhoan.getList();
             var tk = listTk.FirstOrDefault(x => x.MANV == Program._user.MANV);
             if (tk != null && tk.MANV == textEdit1.Text)
             {
