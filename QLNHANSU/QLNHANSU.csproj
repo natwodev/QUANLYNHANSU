@@ -101,6 +101,12 @@
     <Compile Include="frmCONGTY.Designer.cs">
       <DependentUpon>frmCONGTY.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDANGKY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDANGKY.Designer.cs">
+      <DependentUpon>frmDANGKY.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDANTOC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,12 @@
     </Compile>
     <Compile Include="frmPHONGBAN.Designer.cs">
       <DependentUpon>frmPHONGBAN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTAIKHOAN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTAIKHOAN.Designer.cs">
+      <DependentUpon>frmTAIKHOAN.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTONGIAO.cs">
       <SubType>Form</SubType>
@@ -175,6 +187,9 @@
     <EmbeddedResource Include="frmCONGTY.resx">
       <DependentUpon>frmCONGTY.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDANGKY.resx">
+      <DependentUpon>frmDANGKY.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDANTOC.resx">
       <DependentUpon>frmDANTOC.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPHONGBAN.resx">
       <DependentUpon>frmPHONGBAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTAIKHOAN.resx">
+      <DependentUpon>frmTAIKHOAN.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTONGIAO.resx">
       <DependentUpon>frmTONGIAO.cs</DependentUpon>

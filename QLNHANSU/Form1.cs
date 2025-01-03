@@ -204,5 +204,10 @@ namespace QLNHANSU
         {
 
         }
+
+        private void barButtonItem30_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmDANGKY));//Đổi mk
+        }
     }
 }
