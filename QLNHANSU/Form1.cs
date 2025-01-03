@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using BUSINESSLAYER;
 using BUSINESSLAYER.DATA_OBJECT;
 using DATALAYER;
+using DATALAYER.context;
 
 namespace QLNHANSU
 {
@@ -20,7 +21,6 @@ namespace QLNHANSU
         dbTAIKHOAN _taikhoan;
         List<TAIKHOAN_DTO> _listTKDTO;
         public static TAIKHOAN _user;
-
         public Form1(TAIKHOAN tk)
         {
             InitializeComponent();

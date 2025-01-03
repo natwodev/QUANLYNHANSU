@@ -15,6 +15,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using QLNHANSU.REPORTS;
 using BUSINESSLAYER.DATA_OBJECT;
 using DevExpress.XtraReports.UI;
+using DATALAYER.context;
 namespace QLNHANSU
 {
     public partial class frmNHANVIEN : DevExpress.XtraEditors.XtraForm

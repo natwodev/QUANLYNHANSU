@@ -1,4 +1,4 @@
-namespace DATALAYER
+namespace DATALAYER.context
 {
     using System;
     using System.Collections.Generic;
@@ -6,20 +6,23 @@ namespace DATALAYER
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("BAOHIEM")]
-    public partial class BAOHIEM
+    [Table("UNGLUONG")]
+    public partial class UNGLUONG
     {
         [Key]
-        public int IDBH { get; set; }
+        public int IDUL { get; set; }
+
+        public int? NAM { get; set; }
+
+        public int? THANG { get; set; }
 
         [Column(TypeName = "date")]
-        public DateTime? NGAYCAP { get; set; }
+        public DateTime? NGAY { get; set; }
 
-        [StringLength(100)]
-        public string NOICAP { get; set; }
+        public double? SOTIEN { get; set; }
 
-        [StringLength(255)]
-        public string NOIDUNG { get; set; }
+        [StringLength(50)]
+        public string TRANGTHAI { get; set; }
 
         [StringLength(10)]
         public string MANV { get; set; }

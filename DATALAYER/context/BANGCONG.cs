@@ -1,4 +1,4 @@
-namespace DATALAYER
+namespace DATALAYER.context
 {
     using System;
     using System.Collections.Generic;

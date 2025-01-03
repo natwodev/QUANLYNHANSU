@@ -18,6 +18,7 @@ using DevExpress.XtraReports.UI;
 using DevExpress.XtraBars;
 using DevExpress.XtraGrid;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+using DATALAYER.context;
 namespace QLNHANSU
 {
     public partial class frmHOPDONG : DevExpress.XtraEditors.XtraForm

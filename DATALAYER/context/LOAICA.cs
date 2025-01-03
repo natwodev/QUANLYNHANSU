@@ -1,4 +1,4 @@
-namespace DATALAYER
+namespace DATALAYER.context
 {
     using System;
     using System.Collections.Generic;
@@ -6,22 +6,24 @@ namespace DATALAYER
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("CHUCVU")]
-    public partial class CHUCVU
+    [Table("LOAICA")]
+    public partial class LOAICA
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CHUCVU()
+        public LOAICA()
         {
-            NHANVIENs = new HashSet<NHANVIEN>();
+            TANGCAs = new HashSet<TANGCA>();
         }
 
         [Key]
-        public int IDCV { get; set; }
+        public int IDLOAICA { get; set; }
 
         [StringLength(100)]
-        public string TENCV { get; set; }
+        public string TENLOAICA { get; set; }
+
+        public double? HESO { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NHANVIEN> NHANVIENs { get; set; }
+        public virtual ICollection<TANGCA> TANGCAs { get; set; }
     }
 }

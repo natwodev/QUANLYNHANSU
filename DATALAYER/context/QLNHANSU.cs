@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Linq;
 
-namespace DATALAYER
+namespace DATALAYER.context
 {
     public partial class QLNHANSU : DbContext
     {

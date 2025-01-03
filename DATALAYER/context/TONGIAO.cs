@@ -1,4 +1,4 @@
-namespace DATALAYER
+namespace DATALAYER.context
 {
     using System;
     using System.Collections.Generic;
@@ -6,20 +6,20 @@ namespace DATALAYER
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("BOPHAN")]
-    public partial class BOPHAN
+    [Table("TONGIAO")]
+    public partial class TONGIAO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public BOPHAN()
+        public TONGIAO()
         {
             NHANVIENs = new HashSet<NHANVIEN>();
         }
 
         [Key]
-        public int IDBP { get; set; }
+        public int IDTG { get; set; }
 
         [StringLength(100)]
-        public string TENBP { get; set; }
+        public string TENTG { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NHANVIEN> NHANVIENs { get; set; }

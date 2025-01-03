@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{72C0AF16-F14E-4A00-87C9-25CFAB782B97}</ProjectGuid>
+    <ProjectGuid>{CB44F6A3-CF85-40C1-AF62-9A7C4BE49752}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DATALAYER</RootNamespace>
@@ -50,30 +50,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BANGCONG.cs" />
-    <Compile Include="BAOHIEM.cs" />
-    <Compile Include="BOPHAN.cs" />
-    <Compile Include="CHUCVU.cs" />
     <Compile Include="Class1.cs" />
-    <Compile Include="CONGTY.cs" />
-    <Compile Include="DANTOC.cs" />
-    <Compile Include="HOPDONG.cs" />
-    <Compile Include="KHENTHUONG_KYLUAT.cs" />
-    <Compile Include="LOAICA.cs" />
-    <Compile Include="LOAICONG.cs" />
-    <Compile Include="NHANVIEN.cs" />
-    <Compile Include="NHANVIEN_PHU.cs" />
-    <Compile Include="PHONGBAN.cs" />
-    <Compile Include="PHUCAP.cs" />
+    <Compile Include="context\BANGCONG.cs" />
+    <Compile Include="context\BAOHIEM.cs" />
+    <Compile Include="context\BOPHAN.cs" />
+    <Compile Include="context\CHUCVU.cs" />
+    <Compile Include="context\CONGTY.cs" />
+    <Compile Include="context\DANTOC.cs" />
+    <Compile Include="context\HOPDONG.cs" />
+    <Compile Include="context\KHENTHUONG_KYLUAT.cs" />
+    <Compile Include="context\LOAICA.cs" />
+    <Compile Include="context\LOAICONG.cs" />
+    <Compile Include="context\NHANVIEN.cs" />
+    <Compile Include="context\NHANVIEN_PHU.cs" />
+    <Compile Include="context\PHONGBAN.cs" />
+    <Compile Include="context\PHUCAP.cs" />
+    <Compile Include="context\QLNHANSU.cs" />
+    <Compile Include="context\QUYENHAN.cs" />
+    <Compile Include="context\TAIKHOAN.cs" />
+    <Compile Include="context\TANGCA.cs" />
+    <Compile Include="context\TONGIAO.cs" />
+    <Compile Include="context\TRINHDO.cs" />
+    <Compile Include="context\UNGLUONG.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QLNHANSU.cs" />
-    <Compile Include="QUYENHAN.cs" />
-    <Compile Include="TAIKHOAN.cs" />
-    <Compile Include="TANGCA.cs" />
-    <Compile Include="TONGIAO.cs" />
-    <Compile Include="TRINHDO.cs" />
-    <Compile Include="UNGLUONG.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
