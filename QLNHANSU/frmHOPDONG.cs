@@ -31,6 +31,7 @@ namespace QLNHANSU
 
         dbHOPDONG _hopdong;
         dbNHANVIEN _nhanvien;
+        List<HOPDONG_DTO> _listHD;
         bool _them;
         string _id;
         void _showHide(bool kt)
@@ -294,6 +295,7 @@ namespace QLNHANSU
                 spinEdit2.Text = hd.LANKY.ToString();
                 searchLookUpEdit1.EditValue = hd.MANV;
                 richEditControl1.RtfText = hd.NOIDUNG;
+                _listHD = _hopdong.getItemFull(_id);
             }
         }
 
@@ -319,9 +321,18 @@ namespace QLNHANSU
 
         private void barButtonItem7_ItemClick(object sender, ItemClickEventArgs e)
         {
-            //HOPDONG_DTO hd = _hopdong;
-            rpHOPDONG rpt = new rpHOPDONG();
-            rpt.ShowPreviewDialog();
+            if (_id!=null)
+            {
+                _listHD  = _hopdong.getItemFull(_id);
+                rpHOPDONG rpt = new rpHOPDONG(_listHD);
+                rpt.ShowPreviewDialog();
+            }
+            else
+            {
+                MessageBox.Show("Chưa có hợp đồng nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
         }
     }
 }

@@ -41,27 +41,28 @@ namespace BUSINESSLAYER
 
                 nvDTO.IDBP = item.IDBP;
                 var bp = db.BOPHANs.FirstOrDefault(b => b.IDBP == item.IDBP);
-                nvDTO.TENBP = bp.TENBP;
+                nvDTO.TENBP = bp?.TENBP;
 
                 nvDTO.IDCV = item.IDCV;
                 var cv = db.CHUCVUs.FirstOrDefault(b => b.IDCV == item.IDCV);
-                nvDTO.TENCV = cv.TENCV;
+                nvDTO.TENCV = cv?.TENCV;
 
                 nvDTO.IDPB = item.IDPB;
                 var pb = db.PHONGBANs.FirstOrDefault(b => b.IDPB == item.IDPB);
-                nvDTO.TENPB = pb.TENPB;
+                nvDTO.TENPB = pb?.TENPB;
 
                 nvDTO.IDTD = item.IDTD;
                 var td = db.TRINHDOes.FirstOrDefault(b => b.IDTD == item.IDTD);
-                nvDTO.TENTD = td.TENTD;
+                nvDTO.TENTD = td?.TENTD;
 
                 nvDTO.IDDT = item.IDDT;
                 var dt = db.DANTOCs.FirstOrDefault(b => b.IDDT == item.IDDT);
-                nvDTO.TENDT = dt.TENDT;
+                nvDTO.TENDT = dt?.TENDT;
 
                 nvDTO.IDTG = item.IDTG;
                 var tg = db.TONGIAOs.FirstOrDefault(b => b.IDTG == item.IDTG);
-                nvDTO.TENTG = tg.TENTG;
+                nvDTO.TENTG = tg?.TENTG;
+
 
                 lstDTO.Add(nvDTO);
             }

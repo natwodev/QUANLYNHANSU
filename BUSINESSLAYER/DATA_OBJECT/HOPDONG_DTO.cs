@@ -24,7 +24,9 @@ namespace BUSINESSLAYER.DATA_OBJECT
         public Nullable<System.DateTime> UPDATE_DATE { get; set; }
         public Nullable<int> CREATED { get; set; }
         public Nullable<System.DateTime> CREATED_DATE { get; set; }
-
+        public Nullable<int> IDTD { get; set; }
+        public string TENTD { set; get; }
+        public string TENCT { set; get; }
         public string HOTEN { set; get; }
         public string CCCD { set; get; }
         public string DIENTHOAI { set; get; }

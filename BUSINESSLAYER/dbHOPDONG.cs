@@ -16,36 +16,43 @@ namespace BUSINESSLAYER
         {
             return db.HOPDONGs.FirstOrDefault(x => x.SOHD == id);
         }
-        public HOPDONG_DTO getItemFull(string id)
+        public List<HOPDONG_DTO> getItemFull(string id)
         {
-
-            var item = db.HOPDONGs.FirstOrDefault(x => x.SOHD == id);
+            List<HOPDONG> listHD = db.HOPDONGs.Where(x =>x.SOHD == id).ToList();
+            List<HOPDONG_DTO> listDTO = new List<HOPDONG_DTO>();
             HOPDONG_DTO hd;
-            hd = new HOPDONG_DTO();
-            hd.SOHD = item.SOHD;
-            hd.NGAYBATDAU = item.NGAYBATDAU;
-            hd.NGAYKETTHUC = item.NGAYKETTHUC;
-            hd.THOIHAN = item.THOIHAN;
-            hd.HESOLUONG = item.HESOLUONG;
-            hd.LANKY = item.LANKY;
-            hd.NGAYKY = item.NGAYKY;
-            hd.NOIDUNG = item.NOIDUNG;
-            hd.MANV = item.MANV;
-            var nv = db.NHANVIENs.FirstOrDefault(n => n.MANV == item.MANV);
-            hd.HOTEN = nv.HOTEN;
-            hd.CCCD = nv.CCCD;
-            hd.DIENTHOAI = nv.DIENTHOAI;
-            hd.DIACHI = nv.DIACHI;
-            hd.CREATED = item.CREATED;
-            hd.CREATED_DATE = item.CREATED_DATE;
-            hd.UPDATED = item.UPDATED;
-            hd.UPDATE_DATE = item.UPDATE_DATE;
-            hd.DELETED = item.DELETED;
-            hd.DELETE_DATE = item.DELETE_DATE;
-            hd.IDCT = item.IDCT;
-
-
-            return hd;
+            foreach (var item in listHD)
+            {
+                hd = new HOPDONG_DTO();
+                hd.SOHD = item.SOHD;
+                hd.NGAYBATDAU = item.NGAYBATDAU;
+                hd.NGAYKETTHUC = item.NGAYKETTHUC;
+                hd.THOIHAN = item.THOIHAN;
+                hd.HESOLUONG = item.HESOLUONG;
+                hd.LANKY = item.LANKY;
+                hd.NGAYKY = item.NGAYKY;
+                hd.NOIDUNG = item.NOIDUNG;
+                hd.MANV = item.MANV;
+                var nv = db.NHANVIENs.FirstOrDefault(n => n.MANV == item.MANV);
+                hd.HOTEN = nv.HOTEN;
+                hd.CCCD = nv.CCCD;
+                hd.DIENTHOAI = nv.DIENTHOAI;
+                hd.DIACHI = nv.DIACHI;
+                hd.CREATED = item.CREATED;
+                hd.CREATED_DATE = item.CREATED_DATE;
+                hd.UPDATED = item.UPDATED;
+                hd.UPDATE_DATE = item.UPDATE_DATE;
+                hd.DELETED = item.DELETED;
+                hd.DELETE_DATE = item.DELETE_DATE;
+                hd.IDCT = item.IDCT;
+                var ct = db.CONGTies.FirstOrDefault(n => n.IDCT == item.IDCT);
+                hd.TENCT = ct.TENCT;
+                hd.IDTD = nv.IDTD;
+                var td = db.TRINHDOes.FirstOrDefault(n => n.IDTD == nv.IDTD);
+                hd.TENTD = td.TENTD;
+                listDTO.Add(hd);
+            }
+            return listDTO;
         }
         public List<HOPDONG> getList()
         {
