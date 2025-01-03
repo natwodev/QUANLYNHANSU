@@ -80,7 +80,12 @@ namespace QLNHANSU
             string username = textEdit1.Text;
             string password1 = textEdit2.Text;
             string password2 = textEdit3.Text;
-
+            if (string.IsNullOrEmpty(textEdit1.Text))
+            {
+                MessageBox.Show("Tên đăng nhập không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Dừng lại nếu text1 trống
+            }
+            
             _taikhoan = new dbTAIKHOAN();
             var listTK = _taikhoan.getList();
             var tkk = listTK.FirstOrDefault(x => x.TENDANGNHAP == username);
@@ -89,6 +94,7 @@ namespace QLNHANSU
                 MessageBox.Show("Nhập một tên đăng nhập khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+        
             if (string.IsNullOrEmpty(textEdit2.Text))
             {
                 MessageBox.Show("Mật khẩu không được để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -111,8 +117,36 @@ namespace QLNHANSU
                 MessageBox.Show("Mật khẩu không khớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (searchLookUpEdit1.EditValue == null)
+            {
+                MessageBox.Show("Chưa chọn nhân viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (comboBox6.SelectedValue == null)
+            {
+                MessageBox.Show("Chưa chọn quyền hạn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            string manv = searchLookUpEdit1.EditValue.ToString(); 
+            var nvv = listTK.FirstOrDefault(x => x.MANV == manv);
+            if (nvv != null)
+            {
+                MessageBox.Show("Nhân viên này đã có tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             TAIKHOAN tk = new TAIKHOAN();
+            tk.TENDANGNHAP = textEdit1.Text;
+            tk.MATKHAU = textEdit2.Text;
             tk.MANV = searchLookUpEdit1.EditValue.ToString();
+            tk.IDQUYEN = int.Parse(comboBox6.SelectedValue.ToString());
+            tk.TRANGTHAI = true;
+            _taikhoan.Add(tk);
+            MessageBox.Show("Tạo tài khoản thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            textEdit1.Text = "";
+            textEdit2.Text = "";
+            textEdit3.Text = "";
+
+
         }
     }
 }

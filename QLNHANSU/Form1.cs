@@ -197,7 +197,7 @@ namespace QLNHANSU
 
         private void barButtonItem28_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-
+            openForm(typeof(frmTAIKHOAN));//danh sách tài khoản
         }
 
         private void barButtonItem29_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -207,7 +207,7 @@ namespace QLNHANSU
 
         private void barButtonItem30_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            openForm(typeof(frmDANGKY));//Đổi mk
+            openForm(typeof(frmDANGKY));//Đăng ký
         }
     }
 }
