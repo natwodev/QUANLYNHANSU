@@ -143,6 +143,12 @@
     <Compile Include="frmLOAICA.Designer.cs">
       <DependentUpon>frmLOAICA.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLOAICONG.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLOAICONG.Designer.cs">
+      <DependentUpon>frmLOAICONG.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLOGIN.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLOAICA.resx">
       <DependentUpon>frmLOAICA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLOAICONG.resx">
+      <DependentUpon>frmLOAICONG.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLOGIN.resx">
       <DependentUpon>frmLOGIN.cs</DependentUpon>

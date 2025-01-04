@@ -59,6 +59,7 @@
     <Compile Include="dbHOPDONG.cs" />
     <Compile Include="dbKHENTHUONG_KYLUAT.cs" />
     <Compile Include="dbLOAICA.cs" />
+    <Compile Include="dbLOAICONG.cs" />
     <Compile Include="dbNHANVIEN.cs" />
     <Compile Include="dbPHONGBAN.cs" />
     <Compile Include="dbQUYENHAN.cs" />

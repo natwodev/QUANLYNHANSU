@@ -14,14 +14,14 @@ using DATALAYER.context;
 
 namespace QLNHANSU
 {
-    public partial class frmLOAICA : DevExpress.XtraEditors.XtraForm
+    public partial class frmLOAICONG : DevExpress.XtraEditors.XtraForm
     {
 
-        public frmLOAICA()
+        public frmLOAICONG()
         {
             InitializeComponent();
         }
-        dbLOAICA _loaica;
+        dbLOAICONG _loaicong;
         dbNHANVIEN _nhanvien;
         bool _them;
         int _id;
@@ -37,17 +37,17 @@ namespace QLNHANSU
             spinEdit2.Enabled = !kt;
 
         }
-        private void frmLOAICA_Load(object sender, EventArgs e)
+        private void frmLOAICONG_Load(object sender, EventArgs e)
         {
             _them = false;
-            _loaica = new dbLOAICA();
+            _loaicong = new dbLOAICONG();
             _showHide(true);
             loadData();
         }
 
         void loadData()
         {
-            gridControl1.DataSource = _loaica.getList();
+            gridControl1.DataSource = _loaicong.getList();
             gridView1.OptionsBehavior.Editable = false;
         }
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -78,10 +78,10 @@ namespace QLNHANSU
                 return;
             }
 
-            _loaica = new dbLOAICA();
-            var listDT = _loaica.getList();
+            _loaicong = new dbLOAICONG();
+            var listDT = _loaicong.getList();
             _nhanvien = new dbNHANVIEN();
-            int iddt = listDT.FirstOrDefault(x => x.TENLOAICA == textEdit1.Text)?.IDLOAICA ?? 0;
+            int iddt = listDT.FirstOrDefault(x => x.TENLC == textEdit1.Text)?.IDLC ?? 0;
             var listNV = _nhanvien.getList();
             bool isReferenced = listNV.Any(x => x.IDDT == iddt);
             if (isReferenced)
@@ -92,7 +92,7 @@ namespace QLNHANSU
 
             if (MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                _loaica.Delete(_id);
+                _loaicong.Delete(_id);
                 loadData();
                 textEdit1.Clear();
                 spinEdit2.Clear();
@@ -145,17 +145,17 @@ namespace QLNHANSU
         {
             if (_them)
             {
-                LOAICA lc = new LOAICA();
-                lc.TENLOAICA = textEdit1.Text;
+                LOAICONG lc = new LOAICONG();
+                lc.TENLC = textEdit1.Text;
                 lc.HESO = float.Parse(spinEdit2.EditValue.ToString());
-                _loaica.Add(lc);
+                _loaicong.Add(lc);
             }
             else
             {
-                var lc = _loaica.getItem(_id);
-                lc.TENLOAICA = textEdit1.Text;
+                var lc = _loaicong.getItem(_id);
+                lc.TENLC = textEdit1.Text;
                 lc.HESO = float.Parse(spinEdit2.EditValue.ToString());
-                _loaica.Update(lc);
+                _loaicong.Update(lc);
             }
         }
 
@@ -165,8 +165,8 @@ namespace QLNHANSU
             {
                 if (gridView1.FocusedRowHandle > -1)
                 {
-                    _id = int.Parse(gridView1.GetFocusedRowCellValue("IDLOAICA").ToString());
-                    textEdit1.Text = gridView1.GetFocusedRowCellValue("TENLOAICA").ToString();
+                    _id = int.Parse(gridView1.GetFocusedRowCellValue("IDLC").ToString());
+                    textEdit1.Text = gridView1.GetFocusedRowCellValue("TENLC").ToString();
                     spinEdit2.EditValue = gridView1.GetFocusedRowCellValue("HESO").ToString();
                 }
             }
@@ -190,6 +190,9 @@ namespace QLNHANSU
 
         }
 
-     
+        private void spinEdit2_EditValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

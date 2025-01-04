@@ -7,29 +7,29 @@ using DATALAYER;
 using DATALAYER.context;
 namespace BUSINESSLAYER
 {
-    public class dbLOAICA
+    public class dbLOAICONG
     {
         QLNHANSU db = new QLNHANSU();
 
 
 
-        public List<LOAICA> getList()
+        public List<LOAICONG> getList()
         {
-            return db.LOAICAs.ToList();
+            return db.LOAICONGs.ToList();
         }
 
 
-        public LOAICA getItem(int id)
+        public LOAICONG getItem(int id)
         {
-            return db.LOAICAs.FirstOrDefault(x => x.IDLOAICA == id);
+            return db.LOAICONGs.FirstOrDefault(x => x.IDLC == id);
         }
 
 
-        public LOAICA Add(LOAICA lc)
+        public LOAICONG Add(LOAICONG lc)
         {
             try
             {
-                db.LOAICAs.Add(lc);
+                db.LOAICONGs.Add(lc);
                 db.SaveChanges();
                 return lc;
             }
@@ -40,12 +40,12 @@ namespace BUSINESSLAYER
         }
 
 
-        public LOAICA Update(LOAICA lc)
+        public LOAICONG Update(LOAICONG lc)
         {
             try
             {
-                var _lc = db.LOAICAs.FirstOrDefault(x => x.IDLOAICA == lc.IDLOAICA);
-                _lc.TENLOAICA = lc.TENLOAICA;
+                var _lc = db.LOAICONGs.FirstOrDefault(x => x.IDLC == lc.IDLC);
+                _lc.TENLC = lc.TENLC;
                 _lc.HESO = lc.HESO;
                 db.SaveChanges();
                 return lc;
@@ -60,8 +60,8 @@ namespace BUSINESSLAYER
         {
             try
             {
-                var _lc = db.LOAICAs.FirstOrDefault(x => x.IDLOAICA == id);
-                db.LOAICAs.Remove(_lc);
+                var _lc = db.LOAICONGs.FirstOrDefault(x => x.IDLC == id);
+                db.LOAICONGs.Remove(_lc);
                 db.SaveChanges();
             }
             catch (Exception ex)

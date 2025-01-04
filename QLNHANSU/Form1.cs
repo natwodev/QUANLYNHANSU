@@ -220,5 +220,15 @@ namespace QLNHANSU
         {
             openForm(typeof(frmKYLUAT));//Kỷ luật
         }
+
+        private void barButtonItem10_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmLOAICA));//Loại ca
+        }
+
+        private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmLOAICONG));//Loại công
+        }
     }
 }
