@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BUSINESSLAYER.DATA_OBJECT;
 using DATALAYER;
 using DATALAYER.context;
 namespace BUSINESSLAYER
 {
-    public class dbTHOIVIEC
+    public class dbNHANVIEN_THOIVIEC
     {
 
 
@@ -23,6 +24,31 @@ namespace BUSINESSLAYER
             return db.NHANVIEN_THOIVIEC.ToList();
         }
 
+        public List<NHANVIEN_THOIVIEC_DTO> getListFull()
+        {
+            List<NHANVIEN_THOIVIEC> listNVTV = db.NHANVIEN_THOIVIEC.ToList();
+            List<NHANVIEN_THOIVIEC_DTO> listDTO = new List<NHANVIEN_THOIVIEC_DTO>();
+            NHANVIEN_THOIVIEC_DTO nvtv;
+            foreach (var item in listNVTV)
+            {
+                nvtv = new NHANVIEN_THOIVIEC_DTO();
+                nvtv.SOQD = item.SOQD;
+                nvtv.NGAYNOPDON = item.NGAYNOPDON;
+                nvtv.NGAYNGHI = item.NGAYNGHI;
+                nvtv.LYDO = item.LYDO;
+                nvtv.GHICHU = item.GHICHU;
+                nvtv.MANV = item.MANV;
+                nvtv.UPDATED = item.UPDATED;
+                nvtv.UPDATED_DATE = item.UPDATED_DATE;
+                nvtv.CREATED = item.CREATED;
+                nvtv.CREATED_DATE = item.CREATED_DATE;
+                nvtv.DELETED = item.DELETED;
+                nvtv.DELETED_DATE = item.DELETED_DATE;
+                nvtv.HOTEN = db.NHANVIENs.FirstOrDefault(x => x.MANV == item.MANV).HOTEN;
+                listDTO.Add(nvtv);
+            }
+            return listDTO;
+        }
 
 
         public NHANVIEN_THOIVIEC Add(NHANVIEN_THOIVIEC nvtv)
@@ -45,7 +71,7 @@ namespace BUSINESSLAYER
             try
             {
                 var _nvtv = db.NHANVIEN_THOIVIEC.FirstOrDefault(x => x.SOQD == nvtv.SOQD);
-               _nvtv.NGAYNOPDON = nvtv.NGAYNOPDON;
+                _nvtv.NGAYNOPDON = nvtv.NGAYNOPDON;
                 _nvtv.NGAYNGHI = nvtv.NGAYNGHI;
                 _nvtv.LYDO = nvtv.LYDO;
                 _nvtv.GHICHU = nvtv.GHICHU;
@@ -60,14 +86,14 @@ namespace BUSINESSLAYER
                 throw new Exception("Lỗi :" + ex.Message);
             }
         }
-      
-        public void Delete(string id,int iduser)
+
+        public void Delete(string id, string _user)
         {
             try
             {
-                var _nvtv = db.NHANVIEN_THOIVIEC.FirstOrDefault(x => x.SOQD == id); 
-                _nvtv.DETETED = iduser;
-                _nvtv.DETETED_DATE  = DateTime.Now;
+                var _nvtv = db.NHANVIEN_THOIVIEC.FirstOrDefault(x => x.SOQD == id);
+                _nvtv.DELETED = _user;
+                _nvtv.DELETED_DATE = DateTime.Now;
                 db.SaveChanges();
             }
             catch (Exception ex)

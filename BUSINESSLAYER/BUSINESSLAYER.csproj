@@ -51,6 +51,7 @@
     <Compile Include="DATA_OBJECT\HOPDONG_DTO.cs" />
     <Compile Include="DATA_OBJECT\KHENTHUONG_KYLUAT_DTO.cs" />
     <Compile Include="DATA_OBJECT\NHANVIEN_DTO.cs" />
+    <Compile Include="DATA_OBJECT\NHANVIEN_THOIVIEC_DTO.cs" />
     <Compile Include="DATA_OBJECT\TAIKHOAN_DTO.cs" />
     <Compile Include="dbBOPHAN.cs" />
     <Compile Include="dbCHUCVU.cs" />
@@ -61,10 +62,10 @@
     <Compile Include="dbLOAICA.cs" />
     <Compile Include="dbLOAICONG.cs" />
     <Compile Include="dbNHANVIEN.cs" />
+    <Compile Include="dbNHANVIEN_THOIVIEC.cs" />
     <Compile Include="dbPHONGBAN.cs" />
     <Compile Include="dbQUYENHAN.cs" />
     <Compile Include="dbTAIKHOAN.cs" />
-    <Compile Include="dbTHOIVIEC.cs" />
     <Compile Include="dbTONGIAO.cs" />
     <Compile Include="dbTRINHDO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

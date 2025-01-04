@@ -48,7 +48,14 @@ namespace BUSINESSLAYER
 
                 tkDTO.IDQUYEN = item.IDQUYEN;
                 var qh = db.QUYENHANs.FirstOrDefault(b => b.IDQUYEN == item.IDQUYEN);
-                tkDTO.TENQUYEN = qh.TENQUYEN;
+                if (qh != null)
+                {
+                    tkDTO.TENQUYEN = qh.TENQUYEN;
+                }
+                else
+                {
+                    tkDTO.TENQUYEN = null;
+                }
 
                 lstDTO.Add(tkDTO);
             }

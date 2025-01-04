@@ -1,12 +1,13 @@
-namespace DATALAYER.context
-{
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-    public partial class NHANVIEN_THOIVIEC
+namespace BUSINESSLAYER.DATA_OBJECT
+{
+    public class NHANVIEN_THOIVIEC_DTO
     {
         [Key]
         [StringLength(50)]
@@ -36,5 +37,6 @@ namespace DATALAYER.context
         [StringLength(50)]
         public string DELETED { get; set; }
         public DateTime? DELETED_DATE { get; set; }
+        public string HOTEN { get; set; }
     }
 }
