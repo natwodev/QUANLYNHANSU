@@ -59,6 +59,8 @@ namespace DATALAYER.context
 
         public int? IDCT { get; set; }
 
+        public bool? THOIVIEC { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BANGCONG> BANGCONGs { get; set; }
 

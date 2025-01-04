@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DATA_OBJECT\HOPDONG_DTO.cs" />
+    <Compile Include="DATA_OBJECT\KHENTHUONG_KYLUAT_DTO.cs" />
     <Compile Include="DATA_OBJECT\NHANVIEN_DTO.cs" />
     <Compile Include="DATA_OBJECT\TAIKHOAN_DTO.cs" />
     <Compile Include="dbBOPHAN.cs" />
@@ -56,10 +57,13 @@
     <Compile Include="dbCONGTY.cs" />
     <Compile Include="dbDANTOC.cs" />
     <Compile Include="dbHOPDONG.cs" />
+    <Compile Include="dbKHENTHUONG_KYLUAT.cs" />
+    <Compile Include="dbLOAICA.cs" />
     <Compile Include="dbNHANVIEN.cs" />
     <Compile Include="dbPHONGBAN.cs" />
     <Compile Include="dbQUYENHAN.cs" />
     <Compile Include="dbTAIKHOAN.cs" />
+    <Compile Include="dbTHOIVIEC.cs" />
     <Compile Include="dbTONGIAO.cs" />
     <Compile Include="dbTRINHDO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,7 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DATALAYER\DATALAYER.csproj">
-      <Project>{cb44f6a3-cf85-40c1-af62-9a7c4be49752}</Project>
+      <Project>{3304e157-1c66-4471-8e57-140f3a2b0ff0}</Project>
       <Name>DATALAYER</Name>
     </ProjectReference>
   </ItemGroup>

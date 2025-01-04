@@ -31,6 +31,8 @@ namespace BUSINESSLAYER.DATA_OBJECT
         public string TENTG { set; get; }
         public Nullable<int> IDCT { get; set; }
         public string TENCT { set; get; }
+        public Nullable<bool> THOIVIEC { get; set; }
+
 
     }
 }

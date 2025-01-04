@@ -24,6 +24,7 @@ namespace DATALAYER.context
         public virtual DbSet<LOAICONG> LOAICONGs { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<NHANVIEN_PHU> NHANVIEN_PHU { get; set; }
+        public virtual DbSet<NHANVIEN_THOIVIEC> NHANVIEN_THOIVIEC { get; set; }
         public virtual DbSet<PHONGBAN> PHONGBANs { get; set; }
         public virtual DbSet<PHUCAP> PHUCAPs { get; set; }
         public virtual DbSet<QUYENHAN> QUYENHANs { get; set; }
@@ -69,6 +70,10 @@ namespace DATALAYER.context
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<NHANVIEN_PHU>()
+                .Property(e => e.MANV)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<NHANVIEN_THOIVIEC>()
                 .Property(e => e.MANV)
                 .IsUnicode(false);
 

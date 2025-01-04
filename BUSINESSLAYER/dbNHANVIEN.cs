@@ -38,7 +38,7 @@ namespace BUSINESSLAYER
                 nvDTO.DIENTHOAI = item.DIENTHOAI;
                 nvDTO.DIACHI = item.DIACHI;
                 nvDTO.HINHANH = item.HINHANH;
-
+                nvDTO.THOIVIEC = item.THOIVIEC;
                 nvDTO.IDBP = item.IDBP;
                 var bp = db.BOPHANs.FirstOrDefault(b => b.IDBP == item.IDBP);
                 nvDTO.TENBP = bp?.TENBP;
@@ -100,7 +100,7 @@ namespace BUSINESSLAYER
                 _nv.CCCD = nv.CCCD;
                 _nv.DIACHI = nv.DIACHI;
                 _nv.HINHANH = nv.HINHANH;
-
+                _nv.THOIVIEC = nv.THOIVIEC;
                 _nv.IDPB = nv.IDPB;//phòng ban
                 _nv.IDTD = nv.IDTD; //trình độ
                 _nv.IDBP = nv.IDBP; //bộ phận

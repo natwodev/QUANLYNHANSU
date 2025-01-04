@@ -1,16 +1,15 @@
-namespace DATALAYER.context
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BUSINESSLAYER.DATA_OBJECT
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
-
-    public partial class KHENTHUONG_KYLUAT
+    public class KHENTHUONG_KYLUAT_DTO
     {
-        [Key]
-        [StringLength(50)]
-
         public string SOQD { get; set; }
 
         [StringLength(255)]
@@ -38,6 +37,6 @@ namespace DATALAYER.context
         public DateTime? CREATED_DATE { get; set; }
         public int? DELETED { get; set; }
         public DateTime? DELETED_DATE { get; set; }
-        public virtual NHANVIEN NHANVIEN { get; set; }
+        public string HOTEN { get; set; }
     }
 }
