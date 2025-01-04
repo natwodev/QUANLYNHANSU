@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3304E157-1C66-4471-8E57-140F3A2B0FF0}</ProjectGuid>
+    <ProjectGuid>{56CA6CE3-25EF-45AE-A3DB-12FFCA17E42A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DATALAYER</RootNamespace>
@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="context\BANGCONG.cs" />
+    <Compile Include="context\BANGCONG_NHANVIEN_CHITIET.cs" />
     <Compile Include="context\BAOHIEM.cs" />
     <Compile Include="context\BOPHAN.cs" />
     <Compile Include="context\CHUCVU.cs" />
@@ -59,9 +59,12 @@
     <Compile Include="context\DANTOC.cs" />
     <Compile Include="context\HOPDONG.cs" />
     <Compile Include="context\KHENTHUONG_KYLUAT.cs" />
+    <Compile Include="context\KYCONG.cs" />
+    <Compile Include="context\KYCONGCHITIET.cs" />
     <Compile Include="context\LOAICA.cs" />
     <Compile Include="context\LOAICONG.cs" />
     <Compile Include="context\NHANVIEN.cs" />
+    <Compile Include="context\NHANVIEN_DIEUCHUYEN.cs" />
     <Compile Include="context\NHANVIEN_PHU.cs" />
     <Compile Include="context\NHANVIEN_THOIVIEC.cs" />
     <Compile Include="context\PHONGBAN.cs" />

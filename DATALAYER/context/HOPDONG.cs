@@ -42,6 +42,7 @@ namespace DATALAYER.context
         public string UPDATED { get; set; }
 
         public DateTime? UPDATE_DATE { get; set; }
+
         [StringLength(50)]
         public string CREATED { get; set; }
 

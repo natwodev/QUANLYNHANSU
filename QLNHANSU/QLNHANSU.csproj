@@ -113,6 +113,12 @@
     <Compile Include="frmDANTOC.Designer.cs">
       <DependentUpon>frmDANTOC.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDIEUCHUYEN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDIEUCHUYEN.Designer.cs">
+      <DependentUpon>frmDIEUCHUYEN.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDOIMATKHAU.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +229,9 @@
     <EmbeddedResource Include="frmDANTOC.resx">
       <DependentUpon>frmDANTOC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmDIEUCHUYEN.resx">
+      <DependentUpon>frmDIEUCHUYEN.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDOIMATKHAU.resx">
       <DependentUpon>frmDOIMATKHAU.cs</DependentUpon>
     </EmbeddedResource>
@@ -299,7 +308,7 @@
       <Name>BUSINESSLAYER</Name>
     </ProjectReference>
     <ProjectReference Include="..\DATALAYER\DATALAYER.csproj">
-      <Project>{3304e157-1c66-4471-8e57-140f3a2b0ff0}</Project>
+      <Project>{56ca6ce3-25ef-45ae-a3db-12ffca17e42a}</Project>
       <Name>DATALAYER</Name>
     </ProjectReference>
   </ItemGroup>

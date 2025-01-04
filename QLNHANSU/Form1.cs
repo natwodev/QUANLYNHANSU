@@ -235,5 +235,10 @@ namespace QLNHANSU
         {
             openForm(typeof(frmTHOIVIEC));//Thôi việc
         }
+
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmDIEUCHUYEN));//Điều chuyển
+        }
     }
 }

@@ -10,13 +10,11 @@ namespace DATALAYER.context
     {
         [Key]
         [StringLength(50)]
-
         public string SOQD { get; set; }
 
         [StringLength(255)]
         public string NOIDUNG { get; set; }
 
-        [Column(TypeName = "date")]
         public DateTime? NGAY { get; set; }
 
         [StringLength(10)]
@@ -27,23 +25,25 @@ namespace DATALAYER.context
         [StringLength(500)]
         public string LYDO { get; set; }
 
-        [Column(TypeName = "date")]
         public DateTime? TUNGAY { get; set; }
 
-        [Column(TypeName = "date")]
         public DateTime? DENNGAY { get; set; }
 
         [StringLength(50)]
+        public string DELETED { get; set; }
+
+        public DateTime? DELETED_DATE { get; set; }
+
+        [StringLength(50)]
         public string UPDATED { get; set; }
+
         public DateTime? UPDATED_DATE { get; set; }
 
         [StringLength(50)]
         public string CREATED { get; set; }
+
         public DateTime? CREATED_DATE { get; set; }
 
-        [StringLength(50)]
-        public string DELETED { get; set; }
-        public DateTime? DELETED_DATE { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }
