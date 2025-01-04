@@ -32,11 +32,17 @@ namespace DATALAYER.context
 
         [Column(TypeName = "date")]
         public DateTime? DENNGAY { get; set; }
-        public int? UPDATED { get; set; }
+
+        [StringLength(50)]
+        public string UPDATED { get; set; }
         public DateTime? UPDATED_DATE { get; set; }
-        public int? CREATED { get; set; }
+
+        [StringLength(50)]
+        public string CREATED { get; set; }
         public DateTime? CREATED_DATE { get; set; }
-        public int? DELETED { get; set; }
+
+        [StringLength(50)]
+        public string DELETED { get; set; }
         public DateTime? DELETED_DATE { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }
     }

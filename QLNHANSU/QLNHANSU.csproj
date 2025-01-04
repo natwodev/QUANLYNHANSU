@@ -131,6 +131,12 @@
     <Compile Include="frmKHENTHUONG.Designer.cs">
       <DependentUpon>frmKHENTHUONG.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmKYLUAT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKYLUAT.Designer.cs">
+      <DependentUpon>frmKYLUAT.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLOAICA.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmKHENTHUONG.resx">
       <DependentUpon>frmKHENTHUONG.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKYLUAT.resx">
+      <DependentUpon>frmKYLUAT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLOAICA.resx">
       <DependentUpon>frmLOAICA.cs</DependentUpon>

@@ -14,9 +14,9 @@ using QLNHANSU.REPORTS;
 
 namespace QLNHANSU
 {
-    public partial class frmKHENTHUONG : Form
+    public partial class frmKYLUAT : Form
     {
-        public frmKHENTHUONG()
+        public frmKYLUAT()
         {
             InitializeComponent();
         }
@@ -29,9 +29,9 @@ namespace QLNHANSU
 
         }
 
-        private void frmKHENTHUONG_Load(object sender, EventArgs e)
+        private void frmKYLUAT_Load(object sender, EventArgs e)
         {
-            _khenthuong_kyluat = new dbKHENTHUONG_KYLUAT(); 
+            _khenthuong_kyluat = new dbKHENTHUONG_KYLUAT();
             _nhanvien = new dbNHANVIEN();
             _them = false;
             _showHide(true);
@@ -41,7 +41,7 @@ namespace QLNHANSU
         }
         void loadData()
         {
-            gridControl1.DataSource = _khenthuong_kyluat.getItemFull(1);
+            gridControl1.DataSource = _khenthuong_kyluat.getItemFull(2);
             gridView1.OptionsBehavior.Editable = false;
 
         }
@@ -184,7 +184,7 @@ namespace QLNHANSU
                 ktkl.LYDO = textEdit2.Text;
                 ktkl.NOIDUNG = textEdit3.Text;
                 ktkl.NGAY = dateTimePicker3.Value;
-                ktkl.LOAI = 1;
+                ktkl.LOAI = 2;
                 ktkl.CREATED = Program._user.MANV;
                 ktkl.CREATED_DATE = DateTime.Now;
                 _khenthuong_kyluat.Add(ktkl);
@@ -222,5 +222,7 @@ namespace QLNHANSU
         {
 
         }
+
+       
     }
 }

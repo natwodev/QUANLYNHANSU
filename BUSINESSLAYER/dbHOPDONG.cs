@@ -157,13 +157,13 @@ namespace BUSINESSLAYER
             }
         }
 
-        public void Delete(string id, int manv)
+        public void Delete(string id,string _user)
         {
             try
             {
                 var _hd = db.HOPDONGs.FirstOrDefault(x => x.SOHD == id);
 
-                _hd.DELETED = manv;
+                _hd.DELETED = _user;
                 _hd.DELETE_DATE = DateTime.Now;
                 db.SaveChanges();
             }

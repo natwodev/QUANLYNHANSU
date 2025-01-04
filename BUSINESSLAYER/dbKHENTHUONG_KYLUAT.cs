@@ -90,12 +90,12 @@ namespace BUSINESSLAYER
             }
 
         }
-        public void Delete(string id)
+        public void Delete(string id,string _user)
         {
             try
             {
                 KHENTHUONG_KYLUAT _ktkl = db.KHENTHUONG_KYLUAT.FirstOrDefault(x => x.SOQD == id);
-                _ktkl.DELETED = 1;
+                _ktkl.DELETED = _user;
                 _ktkl.DELETED_DATE = DateTime.Now;
                 db.SaveChanges();
             }

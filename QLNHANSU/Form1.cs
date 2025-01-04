@@ -213,7 +213,12 @@ namespace QLNHANSU
 
         private void barButtonItem31_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            openForm(typeof(frmKHENTHUONG));//Đăng ký
+            openForm(typeof(frmKHENTHUONG));//Khen thưởng
+        }
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmKYLUAT));//Kỷ luật
         }
     }
 }

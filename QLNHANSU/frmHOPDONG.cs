@@ -206,7 +206,7 @@ namespace QLNHANSU
 
             if (MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                _hopdong.Delete(_id,1);
+                _hopdong.Delete(_id,Program._user.MANV);
                 loadData();
                 textEdit1.Clear();
             }
@@ -257,7 +257,7 @@ namespace QLNHANSU
                 hd.LANKY = int.Parse(spinEdit2.EditValue.ToString());
                 hd.MANV = searchLookUpEdit1.EditValue.ToString();
                 hd.IDCT = 1;
-                hd.CREATED = 1;
+                hd.CREATED = Program._user.MANV;
                 hd.CREATED_DATE = DateTime.Now;
                 _hopdong.Add(hd);
             }
@@ -272,10 +272,9 @@ namespace QLNHANSU
                 hd.LANKY = int.Parse(spinEdit2.EditValue.ToString());
                 hd.MANV = searchLookUpEdit1.EditValue.ToString();
                 hd.NOIDUNG = richEditControl1.RtfText;
-
                 hd.IDCT = 1;
-                hd.CREATED = 1;
-                hd.CREATED_DATE = DateTime.Now;
+                hd.UPDATED = Program._user.MANV;
+                hd.UPDATE_DATE = DateTime.Now;
                 _hopdong.Update(hd);
             }
         }

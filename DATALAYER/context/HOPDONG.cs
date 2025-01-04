@@ -33,15 +33,17 @@ namespace DATALAYER.context
 
         public int? IDCT { get; set; }
 
-        public int? DELETED { get; set; }
+        [StringLength(50)]
+        public string DELETED { get; set; }
 
         public DateTime? DELETE_DATE { get; set; }
 
-        public int? UPDATED { get; set; }
+        [StringLength(50)]
+        public string UPDATED { get; set; }
 
         public DateTime? UPDATE_DATE { get; set; }
-
-        public int? CREATED { get; set; }
+        [StringLength(50)]
+        public string CREATED { get; set; }
 
         public DateTime? CREATED_DATE { get; set; }
 
