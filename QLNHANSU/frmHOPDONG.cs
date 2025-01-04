@@ -325,7 +325,7 @@ namespace QLNHANSU
             {
                 _listHD  = _hopdong.getItemFull(_id);
                 rpHOPDONG rpt = new rpHOPDONG(_listHD);
-                rpt.ShowPreviewDialog();
+                rpt.ShowRibbonPreview();
             }
             else
             {

@@ -69,6 +69,7 @@ namespace QLNHANSU
                 ribbonPage2.Visible = false; // Kích hoạt trang ribbonPage2
                 barButtonItem18.Enabled = false;
                 barButtonItem19.Enabled = false;
+                barButtonItem28.Enabled = false;
             }
             else
             {

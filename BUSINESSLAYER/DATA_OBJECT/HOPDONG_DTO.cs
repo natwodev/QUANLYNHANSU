@@ -30,6 +30,16 @@ namespace BUSINESSLAYER.DATA_OBJECT
         public string HOTEN { set; get; }
         public string CCCD { set; get; }
         public string DIENTHOAI { set; get; }
-        public string DIACHI { set; get; }
+        public string DIACHINV { set; get; }
+        public string DIACHICT { set; get; }
+        public string TENNVLAP { set; get; }
+        public string TENPB { set; get; }
+        public string TENCV { set; get; }
+        public string TENBP { set; get; }
+
+
+        public string DIENTHOAICT { set; get; }
+
+
     }
 }

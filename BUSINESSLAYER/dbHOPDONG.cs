@@ -12,6 +12,8 @@ namespace BUSINESSLAYER
     public class dbHOPDONG
     {
         QLNHANSU db = new QLNHANSU();
+        private dbTAIKHOAN _taikhoan;
+        public static TAIKHOAN _user;
         public HOPDONG getItem(string id)
         {
             return db.HOPDONGs.FirstOrDefault(x => x.SOHD == id);
@@ -21,12 +23,13 @@ namespace BUSINESSLAYER
             List<HOPDONG> listHD = db.HOPDONGs.Where(x =>x.SOHD == id).ToList();
             List<HOPDONG_DTO> listDTO = new List<HOPDONG_DTO>();
             HOPDONG_DTO hd;
+            _taikhoan = new dbTAIKHOAN();
             foreach (var item in listHD)
             {
                 hd = new HOPDONG_DTO();
                 hd.SOHD = item.SOHD;
-                hd.NGAYBATDAU = item.NGAYBATDAU;
-                hd.NGAYKETTHUC = item.NGAYKETTHUC;
+                hd.NGAYBATDAU = item.NGAYBATDAU?.Date;
+                hd.NGAYKETTHUC = item.NGAYKETTHUC?.Date;
                 hd.THOIHAN = item.THOIHAN;
                 hd.HESOLUONG = item.HESOLUONG;
                 hd.LANKY = item.LANKY;
@@ -37,7 +40,7 @@ namespace BUSINESSLAYER
                 hd.HOTEN = nv.HOTEN;
                 hd.CCCD = nv.CCCD;
                 hd.DIENTHOAI = nv.DIENTHOAI;
-                hd.DIACHI = nv.DIACHI;
+                hd.DIACHINV = nv.DIACHI;
                 hd.CREATED = item.CREATED;
                 hd.CREATED_DATE = item.CREATED_DATE;
                 hd.UPDATED = item.UPDATED;
@@ -50,6 +53,28 @@ namespace BUSINESSLAYER
                 hd.IDTD = nv.IDTD;
                 var td = db.TRINHDOes.FirstOrDefault(n => n.IDTD == nv.IDTD);
                 hd.TENTD = td.TENTD;
+                hd.DIACHICT = ct.DIACHI;
+                hd.DIENTHOAICT = ct.DIENTHOAI;
+                var pb = db.PHONGBANs.FirstOrDefault(n => n.IDPB == nv.IDPB);
+                hd.TENPB = pb.TENPB;
+                var bp = db.BOPHANs.FirstOrDefault(n => n.IDBP == nv.IDBP);
+                hd.TENBP = bp.TENBP;
+                var cv = db.CHUCVUs.FirstOrDefault(n => n.IDCV == nv.IDCV);
+                hd.TENCV = cv.TENCV;
+                // Tìm nhân viên dựa trên mã nhân viên
+                var nvv = db.NHANVIENs.FirstOrDefault(n => n.MANV == _user.MANV);
+                // Kiểm tra nếu nvv khác null
+                if (nvv != null)
+                {
+                    // Gán tên nhân viên lập nếu tìm thấy nhân viên
+                    hd.TENNVLAP = nvv.HOTEN;
+                }
+                else
+                {
+                    // Gán giá trị null hoặc giá trị mặc định nếu không tìm thấy nhân viên
+                    hd.TENNVLAP = null;
+                }
+
                 listDTO.Add(hd);
             }
             return listDTO;
@@ -79,7 +104,7 @@ namespace BUSINESSLAYER
                 hd.HOTEN = nv.HOTEN;
                 hd.CCCD = nv.CCCD;
                 hd.DIENTHOAI = nv.DIENTHOAI;
-                hd.DIACHI = nv.DIACHI;
+                hd.DIACHINV = nv.DIACHI;
                 hd.CREATED = item.CREATED;
                 hd.CREATED_DATE = item.CREATED_DATE;
                 hd.UPDATED = item.UPDATED;
