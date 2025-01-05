@@ -10,6 +10,7 @@ using BUSINESSLAYER;
 using BUSINESSLAYER.DATA_OBJECT;
 using DATALAYER;
 using DATALAYER.context;
+using DevExpress.XtraBars;
 
 namespace QLNHANSU
 {
@@ -70,6 +71,7 @@ namespace QLNHANSU
                 barButtonItem19.Enabled = false; //tắt phục hồi
                 barButtonItem28.Enabled = false; //tắt tài khoản (danh sách tài khoản)
                 barButtonItem30.Enabled = false; //tắt đăng ký (tạo tài khoản)
+                barButtonItem32.Enabled = false; //tắt sửa đổi quyền
                 barButtonItem21.Enabled = false; //tắt công ty
             }
             else if (_userRole == "user2")
@@ -79,6 +81,7 @@ namespace QLNHANSU
                 barButtonItem28.Enabled = false; //tắt tài khoản (danh sách tài khoản)
                 barButtonItem30.Enabled = false; //tắt đăng ký (tạo tài khoản)
                 ribbonPageGroup3.Enabled = false; //tắt nghiệp vụ (nghiệp vụ)
+                barButtonItem32.Enabled = false; //tắt sửa đổi quyền
                 barButtonItem21.Enabled = false; //tắt công ty
             }
             else if (_userRole == "user3")
@@ -90,10 +93,22 @@ namespace QLNHANSU
                 ribbonPageGroup3.Enabled = false; //tắt nghiệp vụ (nghiệp vụ)
                 ribbonPage3.Ribbon.Visible = false; //ẩn page chấm công
                 ribbonPage4.Ribbon.Visible = false; //ẩn page báo cáo
+                barButtonItem32.Enabled = false; //tắt sửa đổi quyền
                 barButtonItem21.Enabled = false; //tắt công ty
             }
-
+            else
+            {
+                // Nếu không phải là admin hoặc user1, user2, user3 thì tắt tất cả các nút
+                foreach (var item in ribbonControl1.Items)
+                {
+                    if (item is DevExpress.XtraBars.BarButtonItem)
+                    {
+                        ((DevExpress.XtraBars.BarButtonItem)item).Enabled = false;
+                    }
+                }
+            }
         }
+
         void openForm(Type typeForm)
         {
             foreach(var frm in MdiChildren)
@@ -276,12 +291,18 @@ namespace QLNHANSU
 
         private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            openForm(typeof(frmTANGCA));//Phụ cấp
+            openForm(typeof(frmTANGCA));//Tăng ca
         }
 
         private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             MessageBox.Show("Chức năng này đang được phát triển", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void barButtonItem32_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmQUYENHAN));//Quyền hạn
+
         }
     }
 }

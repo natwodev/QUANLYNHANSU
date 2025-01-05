@@ -72,6 +72,7 @@
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.barButtonItem32 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -113,10 +114,11 @@
             this.barButtonItem28,
             this.barButtonItem29,
             this.barButtonItem30,
-            this.barButtonItem31});
+            this.barButtonItem31,
+            this.barButtonItem32});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.ribbonControl1.MaxItemId = 32;
+            this.ribbonControl1.MaxItemId = 33;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.OptionsMenuMinWidth = 385;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -406,6 +408,7 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem18, true);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem19, true);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem28, true);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem32, true);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem30, true);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem27, true);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem24, true);
@@ -479,6 +482,14 @@
             this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
             // 
+            // barButtonItem32
+            // 
+            this.barButtonItem32.Caption = "Quyền";
+            this.barButtonItem32.Id = 32;
+            this.barButtonItem32.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem32.ImageOptions.SvgImage")));
+            this.barButtonItem32.Name = "barButtonItem32";
+            this.barButtonItem32.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem32_ItemClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -544,6 +555,7 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItem29;
         private DevExpress.XtraBars.BarButtonItem barButtonItem30;
         private DevExpress.XtraBars.BarButtonItem barButtonItem31;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem32;
     }
 }
 
