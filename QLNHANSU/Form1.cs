@@ -304,5 +304,11 @@ namespace QLNHANSU
             openForm(typeof(frmQUYENHAN));//Quyền hạn
 
         }
+
+        private void barButtonItem14_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            MessageBox.Show("Chức năng này đang được phát triển", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+        }
     }
 }
