@@ -51,7 +51,7 @@ namespace QLNHANSU
         }
         void loadNhanVien()
         {
-            searchLookUpEdit1.Properties.DataSource = _nhanvien.getList();
+            searchLookUpEdit1.Properties.DataSource = _nhanvien.getListFull(false);
             searchLookUpEdit1.Properties.ValueMember = "MANV";
             searchLookUpEdit1.Properties.DisplayMember = "HOTEN";
         }

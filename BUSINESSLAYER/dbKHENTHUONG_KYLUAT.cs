@@ -23,8 +23,6 @@ namespace BUSINESSLAYER
         }
 
 
-
-
         public List<KHENTHUONG_KYLUAT_DTO> getItemFull(int loai)
         {
             List<KHENTHUONG_KYLUAT> listKTKL = db.KHENTHUONG_KYLUAT.Where(x => x.LOAI == loai).ToList();

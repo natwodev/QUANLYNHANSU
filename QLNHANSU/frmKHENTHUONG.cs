@@ -8,8 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BUSINESSLAYER;
+using BUSINESSLAYER.DATA_OBJECT;
 using DATALAYER.context;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 using QLNHANSU.REPORTS;
 
 namespace QLNHANSU
@@ -22,6 +24,7 @@ namespace QLNHANSU
         }
         dbNHANVIEN _nhanvien;
         dbKHENTHUONG_KYLUAT _khenthuong_kyluat;
+        List<KHENTHUONG_KYLUAT_DTO> _khenthuong_kyluat_dto;
         bool _them;
         string _SOQD;
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
@@ -47,7 +50,7 @@ namespace QLNHANSU
         }
         void loadNhanVien()
         {
-            searchLookUpEdit1.Properties.DataSource = _nhanvien.getList();
+            searchLookUpEdit1.Properties.DataSource = _nhanvien.getListFull(false);
             searchLookUpEdit1.Properties.ValueMember = "MANV";
             searchLookUpEdit1.Properties.DisplayMember = "HOTEN";
         }
@@ -221,6 +224,11 @@ namespace QLNHANSU
         private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+          
         }
     }
 }
