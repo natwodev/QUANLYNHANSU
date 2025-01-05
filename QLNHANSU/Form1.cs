@@ -159,14 +159,14 @@ namespace QLNHANSU
 
         private void barButtonItem20_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.DialogResult = DialogResult.None; // Đặt DialogResult là None
-            this.Close();
+            //this.DialogResult = DialogResult.None; // Đặt DialogResult là None
+            Application.Exit();
         }
 
         private void barButtonItem24_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.DialogResult = DialogResult.None; // Đặt DialogResult là None
-            this.Close();
+          //  this.DialogResult = DialogResult.None; // Đặt DialogResult là None
+            Application.Exit();
         }
 
         private void barButtonItem17_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

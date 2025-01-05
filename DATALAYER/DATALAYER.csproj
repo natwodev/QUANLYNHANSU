@@ -50,7 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="context\BANGCONG_NHANVIEN_CHITIET.cs" />
     <Compile Include="context\BAOHIEM.cs" />
     <Compile Include="context\BOPHAN.cs" />

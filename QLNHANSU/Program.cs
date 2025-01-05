@@ -54,7 +54,7 @@ namespace QLNHANSU
                 {
                     ShowLoginForm(); // Quay lại form đăng nhập
                 }
-                // Nếu nhấn "Thoát" thì không làm gì và ứng dụng kết thúc
+                // Nếu nhấn "Thoát" thì ứng dụng kết thúc
             }
         }
 
