@@ -45,6 +45,8 @@
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
@@ -223,7 +225,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1261, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(1374, 30);
             // 
             // barDockControlBottom
             // 
@@ -231,7 +233,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 463);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1261, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1374, 20);
             // 
             // barDockControlLeft
             // 
@@ -245,7 +247,7 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1261, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1374, 30);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 433);
             // 
@@ -258,6 +260,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.labelControl12);
+            this.splitContainer1.Panel1.Controls.Add(this.comboBox7);
             this.splitContainer1.Panel1.Controls.Add(this.simpleButton2);
             this.splitContainer1.Panel1.Controls.Add(this.simpleButton1);
             this.splitContainer1.Panel1.Controls.Add(this.comboBox6);
@@ -290,10 +294,28 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gridControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(1261, 433);
+            this.splitContainer1.Size = new System.Drawing.Size(1374, 433);
             this.splitContainer1.SplitterDistance = 188;
             this.splitContainer1.TabIndex = 6;
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Location = new System.Drawing.Point(999, 15);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(43, 16);
+            this.labelControl12.TabIndex = 49;
+            this.labelControl12.Text = "Công ty";
+            // 
+            // comboBox7
+            // 
+            this.comboBox7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Location = new System.Drawing.Point(1066, 12);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(296, 24);
+            this.comboBox7.TabIndex = 48;
+            this.comboBox7.SelectedIndexChanged += new System.EventHandler(this.comboBox7_SelectedIndexChanged);
             // 
             // simpleButton2
             // 
@@ -541,7 +563,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1261, 241);
+            this.gridControl1.Size = new System.Drawing.Size(1374, 241);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -809,7 +831,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1261, 483);
+            this.ClientSize = new System.Drawing.Size(1374, 483);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
@@ -902,5 +924,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private System.Windows.Forms.CheckBox checkBox1;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private System.Windows.Forms.ComboBox comboBox7;
     }
 }

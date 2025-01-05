@@ -42,10 +42,13 @@ namespace QLNHANSU
         }
         private void frmCONGTY_Load(object sender, EventArgs e)
         {
+
             _them = false;
             _congty = new dbCONGTY();
             _showHide(true);
             loadData();
+            splitContainer1.Panel1Collapsed = true;
+
         }
 
         void loadData()
@@ -55,12 +58,21 @@ namespace QLNHANSU
         }
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            _them = true;
-            _showHide(false); //thêm
-            textEdit1.Text = string.Empty;
-            textEdit2.Text = string.Empty;
-            textEdit3.Text = string.Empty;
-            textEdit4.Text = string.Empty;
+
+            var listCheck = _congty.getList();
+            if (listCheck == null || !listCheck.Any()) // Kiểm tra nếu danh sách rỗng hoặc không tồn tại
+            {
+                _showHide(false); // Ẩn giao diện hoặc phần cần thiết
+                _them = false; // Gán trạng thái cho phép thêm
+                _congty = new dbCONGTY(); // Khởi tạo lại đối tượng
+                _showHide(true); // Hiển thị lại giao diện hoặc phần cần thiết
+                loadData(); // Tải lại dữ liệu
+            }
+            else
+            {
+                MessageBox.Show("Chỉ tồn tại 1 công ty!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
 
         }
 
@@ -75,6 +87,8 @@ namespace QLNHANSU
 
             _them = false;
             _showHide(false);//sửa
+            splitContainer1.Panel1Collapsed = false;
+
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -128,6 +142,8 @@ namespace QLNHANSU
                 textEdit2.Clear();
                 textEdit3.Clear();
                 textEdit4.Clear();
+                splitContainer1.Panel1Collapsed = true;
+
             }
             catch (Exception ex)
             {
@@ -141,6 +157,7 @@ namespace QLNHANSU
         {
             _them = false;
             _showHide(true);//hủy
+            splitContainer1.Panel1Collapsed = true;
 
         }
 

@@ -1,13 +1,14 @@
-namespace DATALAYER.context
-{
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-    [Table("TANGCA")]
-    public partial class TANGCA
+namespace BUSINESSLAYER.DATA_OBJECT
+{
+    public class TANGCA_DTO
     {
         [Key]
         public int IDTC { get; set; }
@@ -29,6 +30,12 @@ namespace DATALAYER.context
 
         public int? IDLOAICA { get; set; }
 
+        public string HOTEN { get; set; }
+
+        public string TENLOAICA { get; set; }
+
+        public double? HESO { get; set; }
+
         [StringLength(50)]
         public string DELETED { get; set; }
 
@@ -43,9 +50,5 @@ namespace DATALAYER.context
         public string UPDATED { get; set; }
 
         public DateTime? UPDATED_DATE { get; set; }
-
-        public virtual LOAICA LOAICA { get; set; }
-
-        public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }

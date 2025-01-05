@@ -185,6 +185,12 @@
     <Compile Include="frmTAIKHOAN.Designer.cs">
       <DependentUpon>frmTAIKHOAN.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTANGCA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTANGCA.Designer.cs">
+      <DependentUpon>frmTANGCA.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTHOIVIEC.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTAIKHOAN.resx">
       <DependentUpon>frmTAIKHOAN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTANGCA.resx">
+      <DependentUpon>frmTANGCA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTHOIVIEC.resx">
       <DependentUpon>frmTHOIVIEC.cs</DependentUpon>

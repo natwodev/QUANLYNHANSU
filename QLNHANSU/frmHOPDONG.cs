@@ -32,6 +32,7 @@ namespace QLNHANSU
         dbHOPDONG _hopdong;
         dbNHANVIEN _nhanvien;
         List<HOPDONG_DTO> _listHD;
+        dbCONGTY _congty;
         bool _them;
         string _id;
         void _showHide(bool kt)
@@ -57,9 +58,11 @@ namespace QLNHANSU
         {
             _hopdong = new dbHOPDONG();
             _nhanvien = new dbNHANVIEN();
+            _congty = new dbCONGTY();
             _them = false;
             _showHide(true);
             loadData();
+            loadcongty();
             loadNhanVien();
             splitContainer1.Panel1Collapsed = true;
         }
@@ -238,6 +241,13 @@ namespace QLNHANSU
             splitContainer1.Panel1Collapsed = true;
         }
 
+        void loadcongty()
+        {
+            comboBox1.DataSource = _congty.getList();
+            comboBox1.ValueMember = "IDCT";
+            comboBox1.DisplayMember = "TENCT";
+        }
+
         private void barButtonItem6_ItemClick_1(object sender, ItemClickEventArgs e)
         {
             this.Close();
@@ -256,7 +266,7 @@ namespace QLNHANSU
                 hd.HESOLUONG = float.Parse(spinEdit1.EditValue.ToString());
                 hd.LANKY = int.Parse(spinEdit2.EditValue.ToString());
                 hd.MANV = searchLookUpEdit1.EditValue.ToString();
-                hd.IDCT = 1;
+                hd.IDCT = int.Parse(comboBox1.SelectedValue.ToString());
                 hd.CREATED = Program._user.MANV;
                 hd.CREATED_DATE = DateTime.Now;
                 _hopdong.Add(hd);
@@ -272,7 +282,7 @@ namespace QLNHANSU
                 hd.LANKY = int.Parse(spinEdit2.EditValue.ToString());
                 hd.MANV = searchLookUpEdit1.EditValue.ToString();
                 hd.NOIDUNG = richEditControl1.RtfText;
-                hd.IDCT = 1;
+                hd.IDCT = int.Parse(comboBox1.SelectedValue.ToString());
                 hd.UPDATED = Program._user.MANV;
                 hd.UPDATE_DATE = DateTime.Now;
                 _hopdong.Update(hd);
@@ -331,6 +341,11 @@ namespace QLNHANSU
                 MessageBox.Show("Chưa có hợp đồng nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

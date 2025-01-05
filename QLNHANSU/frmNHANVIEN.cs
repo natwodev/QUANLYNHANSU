@@ -32,7 +32,8 @@ namespace QLNHANSU
         private dbTRINHDO _trinhdo;
         private dbPHONGBAN _phongban;
         private dbBOPHAN _bophan;
-       // private Image _hinh = null;
+        private dbCONGTY _congty;
+        // private Image _hinh = null;
         bool _them;
         string _id;
         List<NHANVIEN_DTO> _listNVDTO;
@@ -72,6 +73,7 @@ namespace QLNHANSU
              _trinhdo = new dbTRINHDO();
              _phongban = new dbPHONGBAN();
              _bophan = new dbBOPHAN();
+            _congty = new dbCONGTY();
             _showHide(true);
             loadData(false);
             Loadcombo();
@@ -97,6 +99,9 @@ namespace QLNHANSU
             comboBox6.DataSource = _tongiao.getList(); //tôn giáo
             comboBox6.DisplayMember = "TENTG";
             comboBox6.ValueMember = "IDTG";
+            comboBox7.DataSource = _congty.getList();
+            comboBox7.ValueMember = "IDCT";
+            comboBox7.DisplayMember = "TENCT";
         }
         void loadData(bool check)
         {
@@ -130,6 +135,8 @@ namespace QLNHANSU
             dateTimePicker1.Enabled = true;
            
         }
+    
+
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -307,7 +314,7 @@ namespace QLNHANSU
                 nv.IDCV = int.Parse(comboBox3.SelectedValue.ToString()); //chức vụ 
                 nv.IDDT = int.Parse(comboBox5.SelectedValue.ToString()); //dân tộc
                 nv.IDTG = int.Parse(comboBox6.SelectedValue.ToString()); //tôn giáo
-                nv.IDCT = 1;
+                nv.IDCT = int.Parse(comboBox1.SelectedValue.ToString());
                 _nhanvien.Add(nv);
             }
             else
@@ -327,7 +334,7 @@ namespace QLNHANSU
                 nv.IDCV = int.Parse(comboBox3.SelectedValue.ToString()); //chức vụ 
                 nv.IDDT = int.Parse(comboBox5.SelectedValue.ToString()); //dân tộc
                 nv.IDTG = int.Parse(comboBox6.SelectedValue.ToString()); //tôn giáo
-                nv.IDCT = 1;
+                nv.IDCT = int.Parse(comboBox1.SelectedValue.ToString());
                 _nhanvien.Update(nv);
             }
         }
@@ -543,6 +550,11 @@ namespace QLNHANSU
         }
 
         private void gridControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox7_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

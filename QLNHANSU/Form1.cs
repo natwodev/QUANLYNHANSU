@@ -60,21 +60,39 @@ namespace QLNHANSU
             if (_userRole == "admin")
             {
 
-
-
-            }
-            else if (_userRole == "user")
-            {
                 // Admin có thể sử dụng tất cả các nút
-                ribbonPage2.Visible = false; // Kích hoạt trang ribbonPage2
-                barButtonItem18.Enabled = false;
-                barButtonItem19.Enabled = false;
-                barButtonItem28.Enabled = false;
+
+
             }
-            else
+            else if (_userRole == "user1")
             {
-              
+                barButtonItem18.Enabled = false; //tắt sao lưu
+                barButtonItem19.Enabled = false; //tắt phục hồi
+                barButtonItem28.Enabled = false; //tắt tài khoản (danh sách tài khoản)
+                barButtonItem30.Enabled = false; //tắt đăng ký (tạo tài khoản)
+                barButtonItem21.Enabled = false; //tắt công ty
             }
+            else if (_userRole == "user2")
+            {
+                barButtonItem18.Enabled = false; //tắt sao lưu
+                barButtonItem19.Enabled = false; //tắt phục hồi
+                barButtonItem28.Enabled = false; //tắt tài khoản (danh sách tài khoản)
+                barButtonItem30.Enabled = false; //tắt đăng ký (tạo tài khoản)
+                ribbonPageGroup3.Enabled = false; //tắt nghiệp vụ (nghiệp vụ)
+                barButtonItem21.Enabled = false; //tắt công ty
+            }
+            else if (_userRole == "user3")
+            {
+                barButtonItem18.Enabled = false; //tắt sao lưu
+                barButtonItem19.Enabled = false; //tắt phục hồi
+                barButtonItem28.Enabled = false; //tắt tài khoản (danh sách tài khoản)
+                barButtonItem30.Enabled = false; //tắt đăng ký (tạo tài khoản)
+                ribbonPageGroup3.Enabled = false; //tắt nghiệp vụ (nghiệp vụ)
+                ribbonPage3.Ribbon.Visible = false; //ẩn page chấm công
+                ribbonPage4.Ribbon.Visible = false; //ẩn page báo cáo
+                barButtonItem21.Enabled = false; //tắt công ty
+            }
+
         }
         void openForm(Type typeForm)
         {
@@ -249,6 +267,21 @@ namespace QLNHANSU
         private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             openForm(typeof(frmPHUCAP));//Phụ cấp
+        }
+
+        private void barButtonItem15_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            MessageBox.Show("Chức năng này đang được phát triển", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void barButtonItem13_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmTANGCA));//Phụ cấp
+        }
+
+        private void barButtonItem16_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            MessageBox.Show("Chức năng này đang được phát triển", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

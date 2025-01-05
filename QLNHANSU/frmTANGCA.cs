@@ -12,18 +12,20 @@ using DATALAYER;
 using BUSINESSLAYER;
 using DATALAYER.context;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace QLNHANSU
 {
-    public partial class frmPHUCAP : DevExpress.XtraEditors.XtraForm
+    public partial class frmTANGCA : DevExpress.XtraEditors.XtraForm
     {
 
-        public frmPHUCAP()
+        public frmTANGCA()
         {
             InitializeComponent();
         }
-        dbNHANVIEN_PHU _nhanvienphu;
+        dbTANGCA _tangca;
         dbNHANVIEN _nhanvien;
+        dbLOAICA _loaica;
         bool _them;
         int _id;
         void _showHide(bool kt)
@@ -37,13 +39,15 @@ namespace QLNHANSU
             spinEdit1.Enabled = !kt;
 
         }
-        private void frmPHUCAP_Load(object sender, EventArgs e)
+        private void frmTANGCA_Load(object sender, EventArgs e)
         {
             _them = false;
-            _nhanvienphu = new dbNHANVIEN_PHU();
+            _tangca = new dbTANGCA();
             _nhanvien = new dbNHANVIEN();
+            _loaica = new dbLOAICA();
             _showHide(true);
             loadData();
+            loadLoaica();
             loadNhanVien(false);
             splitContainer1.Panel1Collapsed = true;
         }
@@ -54,9 +58,15 @@ namespace QLNHANSU
             searchLookUpEdit1.Properties.DisplayMember = "HOTEN";
         }
 
+        void loadLoaica()
+        {
+            comboBox1.DataSource = _loaica.getList();
+            comboBox1.ValueMember = "IDLOAICA";
+            comboBox1.DisplayMember = "TENLOAICA";
+        }
         void loadData()
         {
-            gridControl1.DataSource = _nhanvienphu.getListFull();
+            gridControl1.DataSource = _tangca.getListFull();
             gridView1.OptionsBehavior.Editable = false;
         }
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -65,12 +75,9 @@ namespace QLNHANSU
             _showHide(false); //thêm
             textEdit3.Text = string.Empty;
             textEdit1.Text = string.Empty;
-            textEdit2.Text = string.Empty;
             spinEdit1.Text = string.Empty;
             searchLookUpEdit1.Text = string.Empty;
             splitContainer1.Panel1Collapsed = false;
-
-
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -91,11 +98,10 @@ namespace QLNHANSU
             }
             if (MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                _nhanvienphu.Delete(_id,Program._user.MANV);
+                _tangca.Delete(_id, Program._user.MANV);
                 loadData();
                 textEdit3.Text = string.Empty;
                 textEdit1.Text = string.Empty;
-                textEdit2.Text = string.Empty;
                 spinEdit1.Text = string.Empty;
                 searchLookUpEdit1.Text = string.Empty;
             }
@@ -112,9 +118,9 @@ namespace QLNHANSU
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(textEdit2.Text))
+            if (string.IsNullOrWhiteSpace(comboBox1.Text))
             {
-                MessageBox.Show("Không được để trống phụ cấp nhân viên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Không được để trống loại ca nhân viên.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -130,7 +136,6 @@ namespace QLNHANSU
 
             textEdit3.Text = string.Empty;
             textEdit1.Text = string.Empty;
-            textEdit2.Text = string.Empty;
             spinEdit1.Text = string.Empty;
             searchLookUpEdit1.Text = string.Empty;
             splitContainer1.Panel1Collapsed = true;
@@ -144,10 +149,10 @@ namespace QLNHANSU
             splitContainer1.Panel1Collapsed = true;
             textEdit3.Text = string.Empty;
             textEdit1.Text = string.Empty;
-            textEdit2.Text = string.Empty;
             spinEdit1.Text = string.Empty;
             searchLookUpEdit1.Text = string.Empty;
             splitContainer1.Panel1Collapsed = true;
+
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -173,28 +178,31 @@ namespace QLNHANSU
         {
             if (_them)
             {
-                NHANVIEN_PHU pc = new NHANVIEN_PHU();
-                pc.NGAY = DateTime.Now;
-                pc.GHICHU = textEdit3.Text;
-                pc.TENPC = textEdit2.Text;
-                pc.SOTIEN = float.Parse(spinEdit1.EditValue.ToString());
-                pc.MANV = searchLookUpEdit1.EditValue.ToString();
-                pc.CREATED = Program._user.MANV;
-                pc.CREATED_DATE = DateTime.Now;
-                _nhanvienphu.Add(pc);
+                TANGCA tc = new TANGCA();
+                tc.IDLOAICA = int.Parse(comboBox1.SelectedValue.ToString());
+                tc.SOGIO = int.Parse(spinEdit1.Text);
+                tc.MANV = searchLookUpEdit1.EditValue.ToString();
+                tc.GHICHU = textEdit3.Text;
+                tc.NGAY = DateTime.Now.Day;
+                tc.THANG = DateTime.Now.Month;
+                tc.NAM = DateTime.Now.Year;
+                tc.CREATED = Program._user.MANV;
+                tc.CREATED_DATE = DateTime.Now;
+                _tangca.Add(tc);
             }
             else
             {
-                var pc = _nhanvienphu.getItem(_id);
-                pc.SOTIEN = float.Parse(spinEdit1.EditValue.ToString());
-                pc.NGAY = DateTime.Now;
-                pc.GHICHU = textEdit3.Text;
-                pc.TENPC = textEdit2.Text;
-                pc.SOTIEN = float.Parse(spinEdit1.EditValue.ToString());
-                pc.MANV = searchLookUpEdit1.EditValue.ToString();
-                pc.UPDATED = Program._user.MANV;
-                pc.UPDATED_DATE = DateTime.Now;
-                _nhanvienphu.Update(pc);
+                var tc = _tangca.getItem(_id);
+                tc.IDLOAICA = int.Parse(comboBox1.SelectedValue.ToString());
+                tc.SOGIO = int.Parse(spinEdit1.Text);
+                tc.MANV = searchLookUpEdit1.EditValue.ToString();
+                tc.GHICHU = textEdit3.Text;
+                tc.NGAY = DateTime.Now.Day;
+                tc.THANG = DateTime.Now.Month;
+                tc.NAM = DateTime.Now.Year;
+                tc.UPDATED = Program._user.MANV;
+                tc.UPDATED_DATE = DateTime.Now;
+                _tangca.Update(tc);
             }
         }
 
@@ -204,12 +212,12 @@ namespace QLNHANSU
             {
                 if (gridView1.FocusedRowHandle > -1)
                 {
-                    _id = int.Parse(gridView1.GetFocusedRowCellValue("IDNVP").ToString());
-                    textEdit1.Text = gridView1.GetFocusedRowCellValue("IDNVP").ToString();
-                    textEdit2.Text = gridView1.GetFocusedRowCellValue("TENPC").ToString();
+                    _id = int.Parse(gridView1.GetFocusedRowCellValue("IDTC").ToString());
+                    textEdit1.Text = gridView1.GetFocusedRowCellValue("IDTC").ToString();
                     textEdit3.Text = gridView1.GetFocusedRowCellValue("GHICHU").ToString();
-                    spinEdit1.EditValue = gridView1.GetFocusedRowCellValue("SOTIEN");
+                    spinEdit1.EditValue = gridView1.GetFocusedRowCellValue("SOGIO");
                     searchLookUpEdit1.EditValue = gridView1.GetFocusedRowCellValue("MANV");
+                    comboBox1.SelectedValue = int.Parse(gridView1.GetFocusedRowCellValue("IDLOAICA").ToString());
                 }
             }
             catch (NullReferenceException)
@@ -242,7 +250,7 @@ namespace QLNHANSU
 
         }
 
-        
+
 
         private void searchLookUpEdit1_EditValueChanged(object sender, EventArgs e)
         {
@@ -260,6 +268,16 @@ namespace QLNHANSU
         }
 
         private void textEdit2_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textEdit3_EditValueChanged_1(object sender, EventArgs e)
         {
 
         }

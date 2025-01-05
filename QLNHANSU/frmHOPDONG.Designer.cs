@@ -76,6 +76,8 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -385,6 +387,8 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.labelControl10);
+            this.splitContainer1.Panel1.Controls.Add(this.comboBox1);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl9);
             this.splitContainer1.Panel1.Controls.Add(this.richEditControl1);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl7);
@@ -414,7 +418,7 @@
             // 
             // labelControl9
             // 
-            this.labelControl9.Location = new System.Drawing.Point(102, 247);
+            this.labelControl9.Location = new System.Drawing.Point(626, 39);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(50, 16);
             this.labelControl9.TabIndex = 45;
@@ -432,7 +436,7 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(389, 207);
+            this.labelControl7.Location = new System.Drawing.Point(376, 207);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(56, 16);
             this.labelControl7.TabIndex = 44;
@@ -464,7 +468,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(102, 207);
+            this.labelControl3.Location = new System.Drawing.Point(102, 210);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(44, 16);
             this.labelControl3.TabIndex = 40;
@@ -602,6 +606,28 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Số hợp đồng";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "3 tháng ",
+            "6 tháng ",
+            "12 tháng"});
+            this.comboBox1.Location = new System.Drawing.Point(174, 259);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(517, 24);
+            this.comboBox1.TabIndex = 46;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Location = new System.Drawing.Point(103, 267);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(43, 16);
+            this.labelControl10.TabIndex = 47;
+            this.labelControl10.Text = "Công ty";
+            // 
             // frmHOPDONG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -681,5 +707,7 @@
         private DevExpress.XtraRichEdit.RichEditControl richEditControl1;
         private DevExpress.XtraGrid.Columns.GridColumn colMANV;
         private DevExpress.XtraGrid.Columns.GridColumn colHOTEN;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

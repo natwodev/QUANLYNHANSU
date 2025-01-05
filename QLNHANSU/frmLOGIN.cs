@@ -23,8 +23,7 @@ namespace QLNHANSU
 
         private void frmLOGIN_Load(object sender, EventArgs e)
         {
-            textEdit1.Text = "admin";
-            textEdit2.Text = "123";
+           
 
         }
 
