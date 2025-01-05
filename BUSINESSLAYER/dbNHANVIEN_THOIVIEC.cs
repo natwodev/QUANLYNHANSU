@@ -24,6 +24,8 @@ namespace BUSINESSLAYER
             return db.NHANVIEN_THOIVIEC.ToList();
         }
 
+        
+
         public List<NHANVIEN_THOIVIEC_DTO> getListFull()
         {
             List<NHANVIEN_THOIVIEC> listNVTV = db.NHANVIEN_THOIVIEC.ToList();

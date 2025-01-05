@@ -29,7 +29,6 @@ namespace DATALAYER.context
         public virtual DbSet<NHANVIEN_PHU> NHANVIEN_PHU { get; set; }
         public virtual DbSet<NHANVIEN_THOIVIEC> NHANVIEN_THOIVIEC { get; set; }
         public virtual DbSet<PHONGBAN> PHONGBANs { get; set; }
-        public virtual DbSet<PHUCAP> PHUCAPs { get; set; }
         public virtual DbSet<QUYENHAN> QUYENHANs { get; set; }
         public virtual DbSet<TAIKHOAN> TAIKHOANs { get; set; }
         public virtual DbSet<TANGCA> TANGCAs { get; set; }

@@ -67,7 +67,6 @@
     <Compile Include="context\NHANVIEN_PHU.cs" />
     <Compile Include="context\NHANVIEN_THOIVIEC.cs" />
     <Compile Include="context\PHONGBAN.cs" />
-    <Compile Include="context\PHUCAP.cs" />
     <Compile Include="context\QLNHANSU.cs" />
     <Compile Include="context\QUYENHAN.cs" />
     <Compile Include="context\TAIKHOAN.cs" />

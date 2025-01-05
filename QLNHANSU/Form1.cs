@@ -245,5 +245,10 @@ namespace QLNHANSU
         {
             MessageBox.Show("Chức năng này đang được phát triển", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void barButtonItem12_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            openForm(typeof(frmPHUCAP));//Phụ cấp
+        }
     }
 }

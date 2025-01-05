@@ -249,5 +249,10 @@ namespace QLNHANSU
         {
 
         }
+
+        private void gridControl1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
