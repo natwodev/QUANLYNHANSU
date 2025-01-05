@@ -359,6 +359,8 @@
             // 
             // IDTC
             // 
+            this.IDTC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.IDTC.AppearanceHeader.Options.UseFont = true;
             this.IDTC.Caption = "ID";
             this.IDTC.FieldName = "IDTC";
             this.IDTC.MaxWidth = 100;
@@ -370,6 +372,8 @@
             // 
             // TENLOAICA
             // 
+            this.TENLOAICA.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.TENLOAICA.AppearanceHeader.Options.UseFont = true;
             this.TENLOAICA.Caption = "TÊN LOẠI CA";
             this.TENLOAICA.FieldName = "TENLOAICA";
             this.TENLOAICA.MinWidth = 25;
@@ -380,6 +384,8 @@
             // 
             // SOGIO
             // 
+            this.SOGIO.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.SOGIO.AppearanceHeader.Options.UseFont = true;
             this.SOGIO.Caption = "SỐ GIỜ";
             this.SOGIO.FieldName = "SOGIO";
             this.SOGIO.MinWidth = 25;
@@ -390,6 +396,8 @@
             // 
             // GHICHU
             // 
+            this.GHICHU.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.GHICHU.AppearanceHeader.Options.UseFont = true;
             this.GHICHU.Caption = "GHI CHÚ";
             this.GHICHU.FieldName = "GHICHU";
             this.GHICHU.MinWidth = 25;
@@ -400,6 +408,8 @@
             // 
             // HOTEN
             // 
+            this.HOTEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.HOTEN.AppearanceHeader.Options.UseFont = true;
             this.HOTEN.Caption = "TÊN NHÂN VIÊN";
             this.HOTEN.FieldName = "HOTEN";
             this.HOTEN.MinWidth = 25;
@@ -410,6 +420,8 @@
             // 
             // HESO
             // 
+            this.HESO.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.HESO.AppearanceHeader.Options.UseFont = true;
             this.HESO.Caption = "HỆ SỐ";
             this.HESO.FieldName = "HESO";
             this.HESO.MinWidth = 25;

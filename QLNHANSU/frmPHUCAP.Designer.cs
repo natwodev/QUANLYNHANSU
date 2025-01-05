@@ -404,6 +404,8 @@
             // 
             // IDNVP
             // 
+            this.IDNVP.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.IDNVP.AppearanceHeader.Options.UseFont = true;
             this.IDNVP.Caption = "ID";
             this.IDNVP.FieldName = "IDNVP";
             this.IDNVP.MaxWidth = 100;
@@ -415,6 +417,8 @@
             // 
             // TENPC
             // 
+            this.TENPC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.TENPC.AppearanceHeader.Options.UseFont = true;
             this.TENPC.Caption = "TÊN PHỤ CẤP";
             this.TENPC.FieldName = "TENPC";
             this.TENPC.MinWidth = 25;
@@ -425,6 +429,8 @@
             // 
             // SOTIEN
             // 
+            this.SOTIEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.SOTIEN.AppearanceHeader.Options.UseFont = true;
             this.SOTIEN.Caption = "SỐ TIỀN";
             this.SOTIEN.FieldName = "SOTIEN";
             this.SOTIEN.MinWidth = 25;
@@ -435,6 +441,8 @@
             // 
             // GHICHU
             // 
+            this.GHICHU.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.GHICHU.AppearanceHeader.Options.UseFont = true;
             this.GHICHU.Caption = "GHI CHÚ";
             this.GHICHU.FieldName = "GHICHU";
             this.GHICHU.MinWidth = 25;
@@ -445,6 +453,8 @@
             // 
             // HOTEN
             // 
+            this.HOTEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.HOTEN.AppearanceHeader.Options.UseFont = true;
             this.HOTEN.Caption = "TÊN NHÂN VIÊN";
             this.HOTEN.FieldName = "HOTEN";
             this.HOTEN.MinWidth = 25;

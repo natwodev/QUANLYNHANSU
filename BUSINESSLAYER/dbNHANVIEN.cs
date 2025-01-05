@@ -68,6 +68,9 @@ namespace BUSINESSLAYER
                 var tg = db.TONGIAOs.FirstOrDefault(b => b.IDTG == item.IDTG);
                 nvDTO.TENTG = tg?.TENTG;
 
+                nvDTO.IDCT = item.IDCT;
+                var ct = db.CONGTies.FirstOrDefault(b => b.IDCT == item.IDCT);
+                nvDTO.TENCT = ct?.TENCT;
 
                 lstDTO.Add(nvDTO);
             }
@@ -113,6 +116,8 @@ namespace BUSINESSLAYER
                 _nv.IDDT = nv.IDDT; //dân tộc
                 _nv.IDTG = nv.IDTG; //tôn giáo
                 _nv.IDCT = nv.IDCT; //công ty
+                _nv.THOIVIEC = nv.THOIVIEC;
+
 
                 db.SaveChanges();
                 return nv;

@@ -16,6 +16,7 @@ using QLNHANSU.REPORTS;
 using BUSINESSLAYER.DATA_OBJECT;
 using DevExpress.XtraReports.UI;
 using DATALAYER.context;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 namespace QLNHANSU
 {
     public partial class frmNHANVIEN : DevExpress.XtraEditors.XtraForm
@@ -117,7 +118,9 @@ namespace QLNHANSU
             _reset();
             splitContainer1.Panel1Collapsed = false;
             barButtonItem2.Enabled = false;
-
+            textEdit5.Enabled = false;
+            button1.Enabled = false;
+            textEdit5.Clear();
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -133,9 +136,11 @@ namespace QLNHANSU
             _showHide(false);//sửa
            // pictureBox1.Image = _hinh;
             dateTimePicker1.Enabled = true;
-           
+            textEdit5.Enabled = true;
+            button1.Enabled = true;
+            textEdit5.Clear();
         }
-    
+
 
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -259,14 +264,19 @@ namespace QLNHANSU
             _showHide(true); //lưu
             textEdit1.Clear();
             splitContainer1.Panel1Collapsed = true;
+            textEdit5.Clear();
+
 
         }
-     
+
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             _them = false;
             _showHide(true);//hủy
+            loadData(false);
             splitContainer1.Panel1Collapsed = true;
+            textEdit5.Clear();
+
         }
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -314,7 +324,7 @@ namespace QLNHANSU
                 nv.IDCV = int.Parse(comboBox3.SelectedValue.ToString()); //chức vụ 
                 nv.IDDT = int.Parse(comboBox5.SelectedValue.ToString()); //dân tộc
                 nv.IDTG = int.Parse(comboBox6.SelectedValue.ToString()); //tôn giáo
-                nv.IDCT = int.Parse(comboBox1.SelectedValue.ToString());
+                nv.IDCT = int.Parse(comboBox7.SelectedValue.ToString());
                 _nhanvien.Add(nv);
             }
             else
@@ -334,7 +344,7 @@ namespace QLNHANSU
                 nv.IDCV = int.Parse(comboBox3.SelectedValue.ToString()); //chức vụ 
                 nv.IDDT = int.Parse(comboBox5.SelectedValue.ToString()); //dân tộc
                 nv.IDTG = int.Parse(comboBox6.SelectedValue.ToString()); //tôn giáo
-                nv.IDCT = int.Parse(comboBox1.SelectedValue.ToString());
+                nv.IDCT = int.Parse(comboBox7.SelectedValue.ToString());
                 _nhanvien.Update(nv);
             }
         }
@@ -558,5 +568,53 @@ namespace QLNHANSU
         {
 
         }
+        
+
+        private void barButtonItem8_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(textEdit5.Text))
+            {
+                MessageBox.Show("Mã không thể để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Dừng lại nếu text1 trống
+            }
+            string maNhanVien = textEdit5.Text;
+
+            _listNVDTO = _nhanvien.getListFull(false);
+            var nhanVienLoc = _listNVDTO.Where(nv => nv.MANV == maNhanVien).ToList();
+
+            // Kiểm tra nếu danh sách lọc trống
+            if (nhanVienLoc.Count == 0)
+            {
+                MessageBox.Show("Không tìm thấy nhân viên với mã: " + maNhanVien, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            _them = false;
+            // Hiển thị thông tin nhân viên lên gridControl1
+            _id = nhanVienLoc[0].MANV;
+            gridControl1.DataSource = nhanVienLoc;
+            textEdit1.Text = nhanVienLoc[0].HOTEN;
+            checkBox1.Checked = (bool)nhanVienLoc[0].GIOITINH;
+            dateTimePicker1.Value = (DateTime)nhanVienLoc[0].NGAYSINH;
+            textEdit3.Text = nhanVienLoc[0].DIENTHOAI;
+            textEdit2.Text = nhanVienLoc[0].CCCD;
+            textEdit4.Text = nhanVienLoc[0].DIACHI;
+            pictureBox1.Image = Base64ToImage(nhanVienLoc[0].HINHANH);
+            comboBox1.SelectedValue = nhanVienLoc[0].IDPB;
+            comboBox4.SelectedValue = nhanVienLoc[0].IDTD;
+            comboBox2.SelectedValue = nhanVienLoc[0].IDBP;
+            comboBox3.SelectedValue = nhanVienLoc[0].IDCV;
+            comboBox5.SelectedValue = nhanVienLoc[0].IDDT;
+            comboBox6.SelectedValue = nhanVienLoc[0].IDTG;
+            comboBox7.SelectedValue = nhanVienLoc[0].IDCT;
+
+
+        }
+
+
     }
 }

@@ -299,6 +299,8 @@
             // 
             // IDLC
             // 
+            this.IDLC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.IDLC.AppearanceHeader.Options.UseFont = true;
             this.IDLC.Caption = "ID";
             this.IDLC.FieldName = "IDLC";
             this.IDLC.MaxWidth = 30;
@@ -310,6 +312,8 @@
             // 
             // TENLC
             // 
+            this.TENLC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.TENLC.AppearanceHeader.Options.UseFont = true;
             this.TENLC.Caption = "TÊN CÔNG";
             this.TENLC.FieldName = "TENLC";
             this.TENLC.MinWidth = 25;
@@ -320,6 +324,8 @@
             // 
             // HESO
             // 
+            this.HESO.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.HESO.AppearanceHeader.Options.UseFont = true;
             this.HESO.Caption = "HỆ SỐ";
             this.HESO.FieldName = "HESO";
             this.HESO.MinWidth = 25;

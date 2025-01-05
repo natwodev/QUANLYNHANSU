@@ -56,6 +56,8 @@
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.comboBox6 = new System.Windows.Forms.ComboBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.richEditControl1 = new DevExpress.XtraRichEdit.RichEditControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -76,8 +78,6 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
@@ -123,8 +123,8 @@
             // 
             // SOHD
             // 
-            this.SOHD.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.SOHD.AppearanceCell.Options.UseFont = true;
+            this.SOHD.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.SOHD.AppearanceHeader.Options.UseFont = true;
             this.SOHD.Caption = "SỐ HĐ";
             this.SOHD.FieldName = "SOHD";
             this.SOHD.MaxWidth = 230;
@@ -136,8 +136,8 @@
             // 
             // NGAYBATDAU
             // 
-            this.NGAYBATDAU.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.NGAYBATDAU.AppearanceCell.Options.UseFont = true;
+            this.NGAYBATDAU.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.NGAYBATDAU.AppearanceHeader.Options.UseFont = true;
             this.NGAYBATDAU.Caption = "NGÀY Bắt Đầu";
             this.NGAYBATDAU.FieldName = "NGAYBATDAU";
             this.NGAYBATDAU.MaxWidth = 230;
@@ -149,8 +149,8 @@
             // 
             // NGAYKETTHUC
             // 
-            this.NGAYKETTHUC.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.NGAYKETTHUC.AppearanceCell.Options.UseFont = true;
+            this.NGAYKETTHUC.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.NGAYKETTHUC.AppearanceHeader.Options.UseFont = true;
             this.NGAYKETTHUC.Caption = "NGÀY Kết Thúc";
             this.NGAYKETTHUC.FieldName = "NGAYKETTHUC";
             this.NGAYKETTHUC.MaxWidth = 230;
@@ -162,8 +162,8 @@
             // 
             // THOIHAN
             // 
-            this.THOIHAN.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.THOIHAN.AppearanceCell.Options.UseFont = true;
+            this.THOIHAN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.THOIHAN.AppearanceHeader.Options.UseFont = true;
             this.THOIHAN.Caption = "THỜI HẠN";
             this.THOIHAN.FieldName = "THOIHAN";
             this.THOIHAN.MaxWidth = 230;
@@ -175,8 +175,8 @@
             // 
             // HESOLUONG
             // 
-            this.HESOLUONG.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.HESOLUONG.AppearanceCell.Options.UseFont = true;
+            this.HESOLUONG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.HESOLUONG.AppearanceHeader.Options.UseFont = true;
             this.HESOLUONG.Caption = "HỆ SỐ LƯƠNG";
             this.HESOLUONG.FieldName = "HESOLUONG";
             this.HESOLUONG.MaxWidth = 230;
@@ -188,8 +188,8 @@
             // 
             // LANKY
             // 
-            this.LANKY.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.LANKY.AppearanceCell.Options.UseFont = true;
+            this.LANKY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.LANKY.AppearanceHeader.Options.UseFont = true;
             this.LANKY.Caption = "LẦN KÝ";
             this.LANKY.FieldName = "LANKY";
             this.LANKY.MaxWidth = 230;
@@ -212,8 +212,8 @@
             // 
             // HOTEN
             // 
-            this.HOTEN.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.HOTEN.AppearanceCell.Options.UseFont = true;
+            this.HOTEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.HOTEN.AppearanceHeader.Options.UseFont = true;
             this.HOTEN.Caption = "NHÂN VIÊN";
             this.HOTEN.FieldName = "HOTEN";
             this.HOTEN.MaxWidth = 230;
@@ -416,6 +416,28 @@
             this.splitContainer1.SplitterDistance = 624;
             this.splitContainer1.TabIndex = 7;
             // 
+            // labelControl10
+            // 
+            this.labelControl10.Location = new System.Drawing.Point(103, 267);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(43, 16);
+            this.labelControl10.TabIndex = 47;
+            this.labelControl10.Text = "Công ty";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "3 tháng ",
+            "6 tháng ",
+            "12 tháng"});
+            this.comboBox1.Location = new System.Drawing.Point(174, 259);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(517, 24);
+            this.comboBox1.TabIndex = 46;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // labelControl9
             // 
             this.labelControl9.Location = new System.Drawing.Point(626, 39);
@@ -605,28 +627,6 @@
             this.labelControl1.Size = new System.Drawing.Size(72, 16);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Số hợp đồng";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "3 tháng ",
-            "6 tháng ",
-            "12 tháng"});
-            this.comboBox1.Location = new System.Drawing.Point(174, 259);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(517, 24);
-            this.comboBox1.TabIndex = 46;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Location = new System.Drawing.Point(103, 267);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(43, 16);
-            this.labelControl10.TabIndex = 47;
-            this.labelControl10.Text = "Công ty";
             // 
             // frmHOPDONG
             // 

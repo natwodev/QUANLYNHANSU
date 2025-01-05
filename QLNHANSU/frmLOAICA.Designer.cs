@@ -68,6 +68,8 @@
             // 
             // TENLOAICA
             // 
+            this.TENLOAICA.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.TENLOAICA.AppearanceHeader.Options.UseFont = true;
             this.TENLOAICA.Caption = "TÊN CA";
             this.TENLOAICA.FieldName = "TENLOAICA";
             this.TENLOAICA.MinWidth = 25;
@@ -89,6 +91,8 @@
             // 
             // IDLOAICA
             // 
+            this.IDLOAICA.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.IDLOAICA.AppearanceHeader.Options.UseFont = true;
             this.IDLOAICA.Caption = "ID";
             this.IDLOAICA.FieldName = "IDLOAICA";
             this.IDLOAICA.MaxWidth = 30;
@@ -100,6 +104,8 @@
             // 
             // HESO
             // 
+            this.HESO.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.HESO.AppearanceHeader.Options.UseFont = true;
             this.HESO.Caption = "HỆ SỐ";
             this.HESO.FieldName = "HESO";
             this.HESO.MinWidth = 25;

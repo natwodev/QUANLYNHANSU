@@ -390,8 +390,8 @@
             // 
             // SOQD
             // 
-            this.SOQD.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.SOQD.AppearanceCell.Options.UseFont = true;
+            this.SOQD.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.SOQD.AppearanceHeader.Options.UseFont = true;
             this.SOQD.Caption = "SỐ QUYẾT ĐỊNH";
             this.SOQD.FieldName = "SOQD";
             this.SOQD.MaxWidth = 230;
@@ -403,8 +403,8 @@
             // 
             // NGAY
             // 
-            this.NGAY.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.NGAY.AppearanceCell.Options.UseFont = true;
+            this.NGAY.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.NGAY.AppearanceHeader.Options.UseFont = true;
             this.NGAY.Caption = "NGÀY";
             this.NGAY.FieldName = "NGAY";
             this.NGAY.MaxWidth = 230;
@@ -416,8 +416,8 @@
             // 
             // LYDO
             // 
-            this.LYDO.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.LYDO.AppearanceCell.Options.UseFont = true;
+            this.LYDO.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.LYDO.AppearanceHeader.Options.UseFont = true;
             this.LYDO.Caption = "LÝ DO";
             this.LYDO.FieldName = "LYDO";
             this.LYDO.MaxWidth = 230;
@@ -429,8 +429,8 @@
             // 
             // NOIDUNG
             // 
-            this.NOIDUNG.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.NOIDUNG.AppearanceCell.Options.UseFont = true;
+            this.NOIDUNG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.NOIDUNG.AppearanceHeader.Options.UseFont = true;
             this.NOIDUNG.Caption = "NỘI DUNG";
             this.NOIDUNG.FieldName = "NOIDUNG";
             this.NOIDUNG.MaxWidth = 230;
@@ -453,8 +453,8 @@
             // 
             // HOTEN
             // 
-            this.HOTEN.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.HOTEN.AppearanceCell.Options.UseFont = true;
+            this.HOTEN.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.HOTEN.AppearanceHeader.Options.UseFont = true;
             this.HOTEN.Caption = "NHÂN VIÊN";
             this.HOTEN.FieldName = "HOTEN";
             this.HOTEN.MaxWidth = 230;
