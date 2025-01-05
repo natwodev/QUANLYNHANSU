@@ -44,6 +44,7 @@ namespace BUSINESSLAYER
                 nvtv.CREATED_DATE = item.CREATED_DATE;
                 nvtv.DELETED = item.DELETED;
                 nvtv.DELETED_DATE = item.DELETED_DATE;
+
                 nvtv.HOTEN = db.NHANVIENs.FirstOrDefault(x => x.MANV == item.MANV).HOTEN;
                 listDTO.Add(nvtv);
             }

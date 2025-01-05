@@ -37,7 +37,7 @@ namespace QLNHANSU
             _them = false;
             _showHide(true);
             loadData();
-            loadNhanVien();
+            loadNhanVien(false);
             splitContainer1.Panel1Collapsed = true;
         }
         void loadData()
@@ -46,9 +46,9 @@ namespace QLNHANSU
             gridView1.OptionsBehavior.Editable = false;
 
         }
-        void loadNhanVien()
+        void loadNhanVien(bool check)
         {
-            searchLookUpEdit1.Properties.DataSource = _nhanvien.getList();
+            searchLookUpEdit1.Properties.DataSource = _nhanvien.getListFalse(check);
             searchLookUpEdit1.Properties.ValueMember = "MANV";
             searchLookUpEdit1.Properties.DisplayMember = "HOTEN";
         }
@@ -118,6 +118,11 @@ namespace QLNHANSU
                 textEdit1.Clear();
             }
 
+            string _manv = searchLookUpEdit1.EditValue.ToString();
+            _nhanvien = new dbNHANVIEN();
+            var nv = _nhanvien.getItem(_manv);
+            nv.THOIVIEC = false;
+            _nhanvien.Update(nv);
 
             //xóa
         }

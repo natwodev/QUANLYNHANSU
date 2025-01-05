@@ -73,7 +73,7 @@ namespace QLNHANSU
              _phongban = new dbPHONGBAN();
              _bophan = new dbBOPHAN();
             _showHide(true);
-            loadData();
+            loadData(false);
             Loadcombo();
             splitContainer1.Panel1Collapsed = true; 
         }
@@ -98,11 +98,11 @@ namespace QLNHANSU
             comboBox6.DisplayMember = "TENTG";
             comboBox6.ValueMember = "IDTG";
         }
-        void loadData()
+        void loadData(bool check)
         {
-            gridControl1.DataSource = _nhanvien.getListFull();
+            gridControl1.DataSource = _nhanvien.getListFull(check);
             gridView1.OptionsBehavior.Editable = false;
-            _listNVDTO = _nhanvien.getListFull();
+            _listNVDTO = _nhanvien.getListFull(check);
         }
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -143,7 +143,7 @@ namespace QLNHANSU
             if (MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 _nhanvien.Delete(_id);
-                loadData();
+                loadData(false);
                 textEdit1.Clear();
             }
 
@@ -247,7 +247,7 @@ namespace QLNHANSU
                 return;
             }
             SaveData();
-            loadData();
+            loadData(false);
             _them = false;
             _showHide(true); //lưu
             textEdit1.Clear();
@@ -300,7 +300,7 @@ namespace QLNHANSU
                 nv.CCCD = textEdit2.Text;
                 nv.DIACHI = textEdit4.Text;
                 nv.HINHANH = ImageToBase64(pictureBox1.Image,pictureBox1.Image.RawFormat);
-
+                nv.THOIVIEC = false;
                 nv.IDPB = int.Parse(comboBox1.SelectedValue.ToString());//phòng ban
                 nv.IDTD = int.Parse(comboBox4.SelectedValue.ToString()); //trình độ
                 nv.IDBP = int.Parse(comboBox2.SelectedValue.ToString()); //bộ phận
@@ -320,7 +320,7 @@ namespace QLNHANSU
                 nv.CCCD = textEdit2.Text;
                 nv.DIACHI = textEdit4.Text;
                 nv.HINHANH = ImageToBase64(pictureBox1.Image, pictureBox1.Image.RawFormat);
-
+                nv.THOIVIEC = false;
                 nv.IDPB = int.Parse(comboBox1.SelectedValue.ToString());//phòng ban
                 nv.IDTD = int.Parse(comboBox4.SelectedValue.ToString()); //trình độ
                 nv.IDBP = int.Parse(comboBox2.SelectedValue.ToString()); //bộ phận

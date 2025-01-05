@@ -21,10 +21,14 @@ namespace BUSINESSLAYER
         {
             return db.NHANVIENs.ToList();
         }
-
-        public List<NHANVIEN_DTO> getListFull()
+        public List<NHANVIEN> getListFalse(bool check)
         {
-            var lstNV = db.NHANVIENs.ToList();
+            return db.NHANVIENs.Where(x => x.THOIVIEC == false).ToList();
+        }
+
+        public List<NHANVIEN_DTO> getListFull(bool check)
+        {
+            var lstNV = db.NHANVIENs.Where(x =>x.THOIVIEC == false).ToList();
             List<NHANVIEN_DTO> lstDTO = new List<NHANVIEN_DTO>();
             NHANVIEN_DTO nvDTO;
             foreach (var item in lstNV)
@@ -40,6 +44,7 @@ namespace BUSINESSLAYER
                 nvDTO.HINHANH = item.HINHANH;
                 nvDTO.THOIVIEC = item.THOIVIEC;
                 nvDTO.IDBP = item.IDBP;
+                nvDTO.THOIVIEC = item.THOIVIEC;
                 var bp = db.BOPHANs.FirstOrDefault(b => b.IDBP == item.IDBP);
                 nvDTO.TENBP = bp?.TENBP;
 

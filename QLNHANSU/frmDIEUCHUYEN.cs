@@ -127,7 +127,12 @@ namespace QLNHANSU
                 loadData();
                 textEdit1.Clear();
             }
-
+            string _manv = searchLookUpEdit1.EditValue.ToString();
+            int _mapb2 = (int)_nhanvien_dieuchuyen.getItem(_SOQD).MAPB2;
+            _nhanvien = new dbNHANVIEN();
+            var nv = _nhanvien.getItem(_manv);
+            nv.IDPB = _mapb2;
+            _nhanvien.Update(nv);
 
             //xóa
         }
@@ -176,6 +181,7 @@ namespace QLNHANSU
                 textEdit3.Text = hd.GHICHU;
                 dateTimePicker3.Value = hd.NGAY.Value;
                 searchLookUpEdit1.EditValue = hd.MANV;
+                comboBox2.SelectedValue = hd.MAPB2;
             }
         }
         void Loadcombo()

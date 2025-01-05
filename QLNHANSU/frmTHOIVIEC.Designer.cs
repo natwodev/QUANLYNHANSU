@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTHOIVIEC));
             this.HOTEN = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.NOIDUNG = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.GHICHU = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAYNGHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NGAYNOPDON = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SOQD = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -47,12 +47,12 @@
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.colHOTEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMANV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -96,18 +96,18 @@
             this.HOTEN.VisibleIndex = 5;
             this.HOTEN.Width = 263;
             // 
-            // NOIDUNG
+            // GHICHU
             // 
-            this.NOIDUNG.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.NOIDUNG.AppearanceHeader.Options.UseFont = true;
-            this.NOIDUNG.Caption = "NỘI DUNG";
-            this.NOIDUNG.FieldName = "NOIDUNG";
-            this.NOIDUNG.MaxWidth = 263;
-            this.NOIDUNG.MinWidth = 263;
-            this.NOIDUNG.Name = "NOIDUNG";
-            this.NOIDUNG.Visible = true;
-            this.NOIDUNG.VisibleIndex = 4;
-            this.NOIDUNG.Width = 263;
+            this.GHICHU.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.GHICHU.AppearanceHeader.Options.UseFont = true;
+            this.GHICHU.Caption = "GHI CHÚ";
+            this.GHICHU.FieldName = "GHICHU";
+            this.GHICHU.MaxWidth = 263;
+            this.GHICHU.MinWidth = 263;
+            this.GHICHU.Name = "GHICHU";
+            this.GHICHU.Visible = true;
+            this.GHICHU.VisibleIndex = 4;
+            this.GHICHU.Width = 263;
             // 
             // NGAYNGHI
             // 
@@ -154,7 +154,7 @@
             this.SOQD,
             this.NGAYNOPDON,
             this.NGAYNGHI,
-            this.NOIDUNG,
+            this.GHICHU,
             this.MANV,
             this.HOTEN,
             this.LYDO});
@@ -287,13 +287,6 @@
             this.barButtonItem6.Name = "barButtonItem6";
             this.barButtonItem6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem6_ItemClick);
             // 
-            // barButtonItem7
-            // 
-            this.barButtonItem7.Caption = "In";
-            this.barButtonItem7.Id = 6;
-            this.barButtonItem7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem7.ImageOptions.SvgImage")));
-            this.barButtonItem7.Name = "barButtonItem7";
-            // 
             // bar3
             // 
             this.bar3.BarName = "Status bar";
@@ -337,6 +330,13 @@
             this.barDockControlRight.Location = new System.Drawing.Point(1528, 30);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 484);
+            // 
+            // barButtonItem7
+            // 
+            this.barButtonItem7.Caption = "In";
+            this.barButtonItem7.Id = 6;
+            this.barButtonItem7.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem7.ImageOptions.SvgImage")));
+            this.barButtonItem7.Name = "barButtonItem7";
             // 
             // colHOTEN
             // 
@@ -539,7 +539,7 @@
         #endregion
 
         private DevExpress.XtraGrid.Columns.GridColumn HOTEN;
-        private DevExpress.XtraGrid.Columns.GridColumn NOIDUNG;
+        private DevExpress.XtraGrid.Columns.GridColumn GHICHU;
         private DevExpress.XtraGrid.Columns.GridColumn NGAYNGHI;
         private DevExpress.XtraGrid.Columns.GridColumn NGAYNOPDON;
         private DevExpress.XtraGrid.Columns.GridColumn SOQD;
