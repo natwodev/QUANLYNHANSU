@@ -38,7 +38,6 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
@@ -46,7 +45,7 @@
             // 
             // textEdit1
             // 
-            this.textEdit1.Location = new System.Drawing.Point(191, 155);
+            this.textEdit1.Location = new System.Drawing.Point(372, 182);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Size = new System.Drawing.Size(171, 22);
             this.textEdit1.TabIndex = 2;
@@ -54,7 +53,8 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(132, 302);
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button1.Location = new System.Drawing.Point(313, 329);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(116, 30);
             this.button1.TabIndex = 4;
@@ -64,7 +64,7 @@
             // 
             // textEdit2
             // 
-            this.textEdit2.Location = new System.Drawing.Point(191, 229);
+            this.textEdit2.Location = new System.Drawing.Point(372, 256);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Properties.PasswordChar = '*';
             this.textEdit2.Size = new System.Drawing.Size(171, 22);
@@ -76,7 +76,7 @@
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(97, 158);
+            this.labelControl1.Location = new System.Drawing.Point(278, 185);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(61, 16);
             this.labelControl1.TabIndex = 6;
@@ -88,7 +88,7 @@
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(97, 232);
+            this.labelControl2.Location = new System.Drawing.Point(278, 259);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(60, 16);
             this.labelControl2.TabIndex = 7;
@@ -97,7 +97,8 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.button2.Location = new System.Drawing.Point(294, 302);
+            this.button2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button2.Location = new System.Drawing.Point(475, 329);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(116, 30);
             this.button2.TabIndex = 8;
@@ -108,7 +109,7 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(191, 266);
+            this.checkBox1.Location = new System.Drawing.Point(372, 293);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(111, 20);
             this.checkBox1.TabIndex = 9;
@@ -128,31 +129,22 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
-            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.LavenderBlush;
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 15F, System.Drawing.FontStyle.Bold);
+            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.LightCyan;
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Appearance.Options.UseForeColor = true;
-            this.labelControl4.Location = new System.Drawing.Point(238, 45);
+            this.labelControl4.Location = new System.Drawing.Point(258, 63);
             this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(364, 29);
+            this.labelControl4.Size = new System.Drawing.Size(374, 30);
             this.labelControl4.TabIndex = 13;
             this.labelControl4.Text = "PHẦN MỀM QUẢN LÍ NHÂN SỰ";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.White;
-            this.labelControl5.Appearance.Options.UseForeColor = true;
-            this.labelControl5.Location = new System.Drawing.Point(647, 302);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(97, 16);
-            this.labelControl5.TabIndex = 14;
-            this.labelControl5.Text = "Đăng nhập ngay ";
+            this.labelControl4.Click += new System.EventHandler(this.labelControl4_Click);
             // 
             // labelControl6
             // 
             this.labelControl6.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl6.Appearance.Options.UseForeColor = true;
-            this.labelControl6.Location = new System.Drawing.Point(191, 207);
+            this.labelControl6.Location = new System.Drawing.Point(372, 234);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(0, 16);
             this.labelControl6.TabIndex = 15;
@@ -163,9 +155,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
             this.BackgroundImageStore = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImageStore")));
-            this.ClientSize = new System.Drawing.Size(830, 480);
+            this.ClientSize = new System.Drawing.Size(900, 510);
             this.Controls.Add(this.labelControl6);
-            this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.checkBox1);
@@ -197,7 +188,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl6;
     }
 }

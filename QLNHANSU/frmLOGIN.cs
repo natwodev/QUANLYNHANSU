@@ -92,5 +92,9 @@ namespace QLNHANSU
             }
         }
 
+        private void labelControl4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
