@@ -192,8 +192,10 @@ namespace QLNHANSU
                 int day = DateTime.Now.Day;
                 int month = DateTime.Now.Month;
                 int year = DateTime.Now.Year;
+                string lastTwoDigits = year.ToString().Substring(2, 2);
+
                 // Nếu danh sách trống, mã nhân viên đầu tiên là 0000000001
-                maHD = day.ToString("D2") + month.ToString("D2") + year.ToString("D2") + "00001QD1";
+                maHD = day.ToString("D2") + month.ToString("D2") + lastTwoDigits + "00001QD1";
             }
             else
             {
@@ -201,14 +203,14 @@ namespace QLNHANSU
                 // Lấy mã nhân viên cuối cùng theo thứ tự số học
                 var lastEmployee = listKT.OrderBy(x => x.SOQD).Last(); // Sắp xếp dựa trên giá trị chuỗi
                 string st = lastEmployee.SOQD;
-                maHD = st.Substring(0, st.Length - 3);
+                maHD = st.Substring(6, st.Length - 9); // Bỏ 6 ký tự đầu và 3 ký tự cuối
                 // Chuyển mã cuối cùng sang số và tăng lên 1
                 long newCode = long.Parse(maHD) + 1;
                 int day = DateTime.Now.Day;
                 int month = DateTime.Now.Month;
                 int year = DateTime.Now.Year;
                 // Định dạng mã mới thành 10 ký tự
-                maHD = day.ToString("D2") + month.ToString("D2") + year.ToString("D2") + newCode.ToString("D10") + "QD1";
+                maHD = day.ToString("D2") + month.ToString("D2") + year.ToString("D2") + newCode.ToString("D5") + "QD1";
             }
 
             return maHD;
