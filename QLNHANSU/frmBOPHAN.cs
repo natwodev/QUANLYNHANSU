@@ -44,7 +44,10 @@ namespace QLNHANSU
             _showHide(true);
             loadData();
         }
-
+        //NGUYỄN HUỲNH NAM
+        //TRẦN NHƯ KHÁNH
+        //LÂM QUỐC ĐẠT 
+        //NGUYÊN QUANG VINH
         void loadData()
         {
             gridControl1.DataSource = _bophan.getList();

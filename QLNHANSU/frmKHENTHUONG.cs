@@ -31,7 +31,10 @@ namespace QLNHANSU
         {
 
         }
-
+        //NGUYỄN HUỲNH NAM
+        //TRẦN NHƯ KHÁNH
+        //LÂM QUỐC ĐẠT 
+        //NGUYÊN QUANG VINH
         private void frmKHENTHUONG_Load(object sender, EventArgs e)
         {
             _khenthuong_kyluat = new dbKHENTHUONG_KYLUAT(); 

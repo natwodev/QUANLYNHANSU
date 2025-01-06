@@ -36,7 +36,10 @@ namespace QLNHANSU
         {
 
         }
-
+        //NGUYỄN HUỲNH NAM
+        //TRẦN NHƯ KHÁNH
+        //LÂM QUỐC ĐẠT 
+        //NGUYÊN QUANG VINH
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
@@ -88,3 +91,17 @@ namespace QLNHANSU
        
     }
 }
+
+
+
+
+
+
+
+
+
+
+//NGUYỄN HUỲNH NAM
+//TRẦN NHƯ KHÁNH
+//LÂM QUỐC ĐẠT 
+//NGUYÊN QUANG VINH

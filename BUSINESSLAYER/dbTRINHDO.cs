@@ -36,7 +36,10 @@ namespace BUSINESSLAYER
                 throw new Exception("Lỗi :" + ex.Message);
             }
         }
-
+        //NGUYỄN HUỲNH NAM
+        //TRẦN NHƯ KHÁNH
+        //LÂM QUỐC ĐẠT 
+        //NGUYÊN QUANG VINH
 
         public TRINHDO Update(TRINHDO td)
         {

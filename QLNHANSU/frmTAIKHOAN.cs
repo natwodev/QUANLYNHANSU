@@ -70,6 +70,11 @@ namespace QLNHANSU
             barButtonItem6.Enabled = kt;
             barButtonItem7.Enabled = kt;
         }
+
+        //NGUYỄN HUỲNH NAM
+        //TRẦN NHƯ KHÁNH
+        //LÂM QUỐC ĐẠT 
+        //NGUYÊN QUANG VINH
         void loadCombo()
         {
             comboBox6.DataSource = _quyenhan.getList();
@@ -218,3 +223,19 @@ namespace QLNHANSU
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+//NGUYỄN HUỲNH NAM
+//TRẦN NHƯ KHÁNH
+//LÂM QUỐC ĐẠT 
+//NGUYÊN QUANG VINH

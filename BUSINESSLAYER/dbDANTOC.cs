@@ -20,7 +20,10 @@ namespace BUSINESSLAYER
             return db.DANTOCs.ToList();
         }
 
-
+        //NGUYỄN HUỲNH NAM
+        //TRẦN NHƯ KHÁNH
+        //LÂM QUỐC ĐẠT 
+        //NGUYÊN QUANG VINH
 
         public DANTOC Add(DANTOC dt)
         {
