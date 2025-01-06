@@ -216,25 +216,26 @@ namespace QLNHANSU
             // Lấy danh sách nhân viên
             var listKT = _nhanvien_thoiviec.getList();
 
-            string maHD = "ABCDEFGH";
-            maHD = maHD.Substring(0, maHD.Length - 2);
+            string maHD;
             if (listKT == null || listKT.Count == 0)
             {
                 // Nếu danh sách trống, mã nhân viên đầu tiên là 0000000001
-                maHD = "0000000001";
+                maHD = "0000000001QD";
             }
             else
             {
+
                 // Lấy mã nhân viên cuối cùng theo thứ tự số học
-                var lastEmployee = listKT
-                    .OrderBy(x => long.Parse(x.SOQD)) // Sắp xếp dựa trên giá trị số
-                    .Last();
-
+                var lastEmployee = listKT.OrderBy(x => x.SOQD).Last(); // Sắp xếp dựa trên giá trị chuỗi
+                string st = lastEmployee.SOQD;
+                maHD = st.Substring(0, st.Length - 2);
                 // Chuyển mã cuối cùng sang số và tăng lên 1
-                long newCode = long.Parse(lastEmployee.SOQD) + 1;
-
+                long newCode = long.Parse(maHD) + 1;
+                int day = DateTime.Now.Day;
+                int month = DateTime.Now.Month;
+                int year = DateTime.Now.Year;
                 // Định dạng mã mới thành 10 ký tự
-                maHD = newCode.ToString("D10") + "QD";
+                maHD = day.ToString("D2") + month.ToString("D2") + year.ToString("D2") + newCode.ToString("D10") + "QD";
             }
 
             return maHD;
