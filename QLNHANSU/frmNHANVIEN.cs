@@ -17,6 +17,7 @@ using BUSINESSLAYER.DATA_OBJECT;
 using DevExpress.XtraReports.UI;
 using DATALAYER.context;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
+using DevExpress.Office.Utils;
 namespace QLNHANSU
 {
     public partial class frmNHANVIEN : DevExpress.XtraEditors.XtraForm
@@ -34,6 +35,7 @@ namespace QLNHANSU
         private dbPHONGBAN _phongban;
         private dbBOPHAN _bophan;
         private dbCONGTY _congty;
+        private string _tempMANV;
         // private Image _hinh = null;
         bool _them;
         string _id;
@@ -147,26 +149,22 @@ namespace QLNHANSU
         }
 
 
-
-        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            // Kiểm tra xem textEdit1 có trống không
-            if (string.IsNullOrEmpty(textEdit1.Text))
-            {
-                MessageBox.Show("Chưa có id cần xóa. Vui lòng chọn thông tin!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return; // Dừng việc xóa nếu textEdit1 trống
-            }
 
-            if (MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (MessageBox.Show("Có muốn xóa không nhân viên vừa thêm không ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                _nhanvien.Delete(_id);
+                _nhanvien.Delete(_tempMANV);
                 loadData(false);
                 textEdit1.Clear();
             }
-
-
+            MessageBox.Show("Xóa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            textEdit1.Clear();
+            _showHide(true);//sửa
+            splitContainer1.Panel1Collapsed = true;
             //xóa
         }
+      
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -318,6 +316,7 @@ namespace QLNHANSU
             {
                 NHANVIEN nv = new NHANVIEN();
                 nv.MANV = code();
+                _tempMANV = nv.MANV;
                 nv.HOTEN = textEdit1.Text;
                 nv.GIOITINH = checkBox1.Checked;
                 nv.NGAYSINH = dateTimePicker1.Value;
@@ -678,6 +677,43 @@ namespace QLNHANSU
 
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
 
+            var listNV = _nhanvien.getList();
+            var lastEmployee = listNV.Where(x => x.MANV == _tempMANV).ToList(); // Sắp xếp dựa trên giá trị chuỗi
+
+            // Kiểm tra nếu danh sách lọc trống
+            if (lastEmployee.Count == 0 && _tempMANV == null)
+            {
+                MessageBox.Show("Không tìm thấy nhân viên vừa thêm ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            _them = false;
+            // Hiển thị thông tin nhân viên lên gridControl1
+            _id = lastEmployee[0].MANV;
+            gridControl1.DataSource = lastEmployee;
+            textEdit1.Text = lastEmployee[0].HOTEN;
+            checkBox1.Checked = (bool)lastEmployee[0].GIOITINH;
+            dateTimePicker1.Value = (DateTime)lastEmployee[0].NGAYSINH;
+            textEdit3.Text = lastEmployee[0].DIENTHOAI;
+            textEdit2.Text = lastEmployee[0].CCCD;
+            textEdit4.Text = lastEmployee[0].DIACHI;
+            pictureBox1.Image = Base64ToImage(lastEmployee[0].HINHANH);
+            comboBox1.SelectedValue = lastEmployee[0].IDPB;
+            comboBox4.SelectedValue = lastEmployee[0].IDTD;
+            comboBox2.SelectedValue = lastEmployee[0].IDBP;
+            comboBox3.SelectedValue = lastEmployee[0].IDCV;
+            comboBox5.SelectedValue = lastEmployee[0].IDDT;
+            comboBox6.SelectedValue = lastEmployee[0].IDTG;
+            comboBox7.SelectedValue = lastEmployee[0].IDCT;
+
+
+        }
+
+        private void textEdit6_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
