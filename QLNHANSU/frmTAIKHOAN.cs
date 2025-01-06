@@ -23,8 +23,10 @@ namespace QLNHANSU
             InitializeComponent();
         }
         dbTAIKHOAN _taikhoan;
-        dbQUYENHAN _quyenhan;   
+        dbQUYENHAN _quyenhan;
+        dbNHANVIEN _nhanvien;
         string _id;
+        int _idtk = 0;
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -35,6 +37,7 @@ namespace QLNHANSU
         {
             _taikhoan = new dbTAIKHOAN();
             _quyenhan = new dbQUYENHAN();
+            _nhanvien = new dbNHANVIEN();
             loadData();
             loadCombo();
             splitContainer1.Panel1Collapsed = true;
@@ -82,6 +85,7 @@ namespace QLNHANSU
                 if (gridView1.FocusedRowHandle >= -1)
                 {
                     _id = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IDTK").ToString();
+                    _idtk = (int)gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "IDTK");
                     int idd = int.Parse(_id);
                     var tkk = _taikhoan.getItem(idd);
                     var manvValue = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "MANV");
@@ -117,13 +121,14 @@ namespace QLNHANSU
             if (!string.IsNullOrEmpty(textEdit1.Text))
             {
                 resultList = resultList.Where(tk => tk.MANV != null && tk.MANV.Contains(textEdit1.Text)).ToList();
+                _idtk = resultList[0].IDTK;
             }
             if (comboBox6.SelectedIndex != -1)
             {
                 int quyenhan = (int)comboBox6.SelectedValue;
                 resultList = resultList.Where(tk => tk.IDQUYEN == quyenhan).ToList();
             }
-
+          
             gridControl1.DataSource = resultList;
             //dataGridView1.Columns["MAK"].Visible = false; 
         }
@@ -189,6 +194,27 @@ namespace QLNHANSU
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (_idtk < 0)
+            {
+                MessageBox.Show("Không không có tài khoản", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (string.IsNullOrEmpty(textEdit2.Text))
+            {
+                MessageBox.Show("Mật khẩu mới không thể để trống", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // Dừng lại nếu text1 trống
+            }
+            var tk = _taikhoan.getItem(_idtk);
+            tk.MATKHAU = textEdit2.Text;
+            _taikhoan.Update(tk);
+            var nv = _nhanvien.getItem(tk.MANV);
+            string ten = nv != null ? nv.HOTEN : string.Empty;
+            MessageBox.Show("Tạo lại mật khẩu mới cho nhân viên " + ten + " thành công thành công " + textEdit2.Text.ToString() , "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            loadData(); // Refresh the data grid
         }
     }
 }
