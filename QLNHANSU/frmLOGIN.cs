@@ -70,5 +70,20 @@ namespace QLNHANSU
         {
             this.Close();
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                // Hiển thị mật khẩu rõ ràng
+                textEdit2.Properties.PasswordChar = '\0'; // Không có ký tự thay thế
+            }
+            else
+            {
+                // Ẩn mật khẩu với dấu '*'
+                textEdit2.Properties.PasswordChar = '*'; // Dấu '*' thay thế
+            }
+        }
+
     }
 }
