@@ -110,19 +110,24 @@ namespace QLNHANSU
             gridView1.OptionsBehavior.Editable = false;
             _listNVDTO = _nhanvien.getListFull(check);
         }
+        /*
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+     
+        */
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             _them = true;
             _showHide(false); //thêm
-          //  textEdit1.Text = string.Empty;
+                              //  textEdit1.Text = string.Empty;
             _reset();
             splitContainer1.Panel1Collapsed = false;
             barButtonItem2.Enabled = false;
             textEdit5.Enabled = false;
             button1.Enabled = false;
             textEdit5.Clear();
-        }
 
+
+        }
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         { 
             // Kiểm tra xem textEdit1 có trống không
@@ -258,9 +263,10 @@ namespace QLNHANSU
                 MessageBox.Show("Ngày bạn chọn vượt quá ngày hiện tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+           
             SaveData();
-            loadData(false);
             _them = false;
+            loadData(false);   
             _showHide(true); //lưu
             textEdit1.Clear();
             splitContainer1.Panel1Collapsed = true;
@@ -304,12 +310,14 @@ namespace QLNHANSU
         {
 
         }
+
+        
         void SaveData()
         {
             if (_them)
             {
                 NHANVIEN nv = new NHANVIEN();
-                nv.MANV = GenerateEmployeeCode(dateTimePicker1.Value);
+                nv.MANV = code();
                 nv.HOTEN = textEdit1.Text;
                 nv.GIOITINH = checkBox1.Checked;
                 nv.NGAYSINH = dateTimePicker1.Value;
@@ -396,10 +404,21 @@ namespace QLNHANSU
             textEdit3.Clear();
             textEdit4.Clear();
             checkBox1.Checked = false;
-            pictureBox1.Image = Image.FromFile("C:\\Users\\nam\\Desktop\\avatar_trang_1_cd729c335b.jpg");
 
+            // Lấy đường dẫn đến hình ảnh trong thư mục Image
+            string imagePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "1.jpg");
 
+            // Kiểm tra nếu file tồn tại
+            if (System.IO.File.Exists(imagePath))
+            {
+                pictureBox1.Image = Image.FromFile(imagePath);
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy file hình ảnh mặc định!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
+
         // Hàm chuyển đổi hình ảnh sang Base64 nếu có hình ảnh
         public byte[] ImageToBase64(Image image, System.Drawing.Imaging.ImageFormat format)
         {
@@ -431,21 +450,36 @@ namespace QLNHANSU
             return image;
         }
 
-        static string GenerateEmployeeCode(DateTime ngaySinh)
+        public string code()
         {
-            // Lấy 2 số cuối của năm hiện tại
-            string yearSuffix = DateTime.Now.Year.ToString().Substring(2, 2);
+            // Tạo instance kết nối cơ sở dữ liệu
+            _nhanvien = new dbNHANVIEN();
 
-            // Lấy ngày giờ phút hiện tại
-            string timeNow = DateTime.Now.ToString("ddHHmm").Substring(0, 6); // Lấy 6 ký tự (Ngày + Giờ + Phút)
+            // Lấy danh sách nhân viên
+            var listNV = _nhanvien.getList();
 
-            // Lấy 2 ký tự đầu của ngày sinh từ DateTime
-            string dayOfBirth = ngaySinh.Day.ToString("D2"); // Đảm bảo luôn có 2 chữ số (ví dụ: 01, 02)
+            string maNV;
 
-            // Kết hợp các thành phần để tạo mã nhân viên (tổng cộng 10 ký tự)
-            string code = $"{yearSuffix}{timeNow}{dayOfBirth}";
+            if (listNV == null || listNV.Count == 0)
+            {
+                // Nếu danh sách trống, mã nhân viên đầu tiên là 0000000001
+                maNV = "0000000001";
+            }
+            else
+            {
+                // Lấy mã nhân viên cuối cùng theo thứ tự số học
+                var lastEmployee = listNV
+                    .OrderBy(x => long.Parse(x.MANV)) // Sắp xếp dựa trên giá trị số
+                    .Last();
 
-            return code;
+                // Chuyển mã cuối cùng sang số và tăng lên 1
+                long newCode = long.Parse(lastEmployee.MANV) + 1;
+
+                // Định dạng mã mới thành 10 ký tự
+                maNV = newCode.ToString("D10");
+            }
+
+            return maNV;
         }
 
 
@@ -544,6 +578,34 @@ namespace QLNHANSU
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
+            // Lấy đường dẫn tương đối đến thư mục Image
+            string imagePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Image", "1.jpg");
+
+            // Kiểm tra nếu file tồn tại
+            if (System.IO.File.Exists(imagePath))
+            {
+                // Đặt hình ảnh vào PictureBox
+                pictureBox1.Image = Image.FromFile(imagePath);
+            }
+            else
+            {
+                MessageBox.Show("Không tìm thấy file hình ảnh trong thư mục Image!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+
+        /*
+         * private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            // Loại bỏ hình ảnh hiện tại trong PictureBox
+            if (pictureBox1.Image != null)
+            {
+                pictureBox1.Image.Dispose();
+                pictureBox1.Image = null; // Gán null để xóa hình ảnh
+            }
+        }
+            private void simpleButton2_Click(object sender, EventArgs e)
+        {
             // Đường dẫn đến hình ảnh
             string imagePath = @"C:\Users\nam\Desktop\avatar_trang_1_cd729c335b.jpg";
 
@@ -558,6 +620,7 @@ namespace QLNHANSU
                 MessageBox.Show("Không tìm thấy file hình ảnh!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+         */
 
         private void gridControl1_Click(object sender, EventArgs e)
         {

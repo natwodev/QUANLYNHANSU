@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNHANVIEN));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
@@ -45,7 +44,12 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
+            this.button1 = new System.Windows.Forms.Button();
+            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.comboBox7 = new System.Windows.Forms.ComboBox();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
@@ -97,15 +101,12 @@
             this.TENDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IDTG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TENTG = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.button1 = new System.Windows.Forms.Button();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
@@ -113,7 +114,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // barManager1
@@ -157,15 +157,6 @@
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
-            // 
-            // barButtonItem8
-            // 
-            this.barButtonItem8.Caption = "Tìm nhân viên";
-            this.barButtonItem8.Id = 7;
-            this.barButtonItem8.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem8.ImageOptions.SvgImage")));
-            this.barButtonItem8.Name = "barButtonItem8";
-            this.barButtonItem8.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
-            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
             // 
             // barButtonItem1
             // 
@@ -267,6 +258,15 @@
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 560);
             // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "Tìm nhân viên";
+            this.barButtonItem8.Id = 7;
+            this.barButtonItem8.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem8.ImageOptions.SvgImage")));
+            this.barButtonItem8.Name = "barButtonItem8";
+            this.barButtonItem8.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
+            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -315,9 +315,43 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gridControl1);
             this.splitContainer1.Size = new System.Drawing.Size(1526, 560);
-            this.splitContainer1.SplitterDistance = 243;
+            this.splitContainer1.SplitterDistance = 271;
             this.splitContainer1.TabIndex = 6;
             this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
+            // 
+            // labelControl14
+            // 
+            this.labelControl14.Location = new System.Drawing.Point(979, 54);
+            this.labelControl14.Name = "labelControl14";
+            this.labelControl14.Size = new System.Drawing.Size(81, 16);
+            this.labelControl14.TabIndex = 53;
+            this.labelControl14.Text = "Tim nhân viên";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1287, 94);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 52;
+            this.button1.Text = "Tìm";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textEdit5
+            // 
+            this.textEdit5.Location = new System.Drawing.Point(1066, 94);
+            this.textEdit5.MenuManager = this.barManager1;
+            this.textEdit5.Name = "textEdit5";
+            this.textEdit5.Size = new System.Drawing.Size(198, 22);
+            this.textEdit5.TabIndex = 51;
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Location = new System.Drawing.Point(979, 97);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(76, 16);
+            this.labelControl13.TabIndex = 50;
+            this.labelControl13.Text = "Mã nhân viên";
             // 
             // labelControl12
             // 
@@ -583,7 +617,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.MenuManager = this.barManager1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1526, 313);
+            this.gridControl1.Size = new System.Drawing.Size(1526, 285);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -847,40 +881,6 @@
             this.TENTG.VisibleIndex = 13;
             this.TENTG.Width = 130;
             // 
-            // textEdit5
-            // 
-            this.textEdit5.Location = new System.Drawing.Point(1066, 94);
-            this.textEdit5.MenuManager = this.barManager1;
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Size = new System.Drawing.Size(198, 22);
-            this.textEdit5.TabIndex = 51;
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Location = new System.Drawing.Point(979, 97);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(76, 16);
-            this.labelControl13.TabIndex = 50;
-            this.labelControl13.Text = "Mã nhân viên";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1287, 94);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 52;
-            this.button1.Text = "Tìm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Location = new System.Drawing.Point(979, 54);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(81, 16);
-            this.labelControl14.TabIndex = 53;
-            this.labelControl14.Text = "Tim nhân viên";
-            // 
             // frmNHANVIEN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -900,6 +900,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
@@ -907,7 +908,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

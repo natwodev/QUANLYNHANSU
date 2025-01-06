@@ -21,6 +21,11 @@ namespace BUSINESSLAYER
             var result = db.KHENTHUONG_KYLUAT.Where(x => x.LOAI == loai).ToList();
             return result.Any() ? result : null;
         }
+        public List<KHENTHUONG_KYLUAT> getList()
+        {
+            var result = db.KHENTHUONG_KYLUAT.ToList();
+            return result.Any() ? result : null;
+        }
 
 
         public List<KHENTHUONG_KYLUAT_DTO> getItemFull(int loai)

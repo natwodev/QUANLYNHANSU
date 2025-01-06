@@ -130,23 +130,37 @@ namespace QLNHANSU
             searchLookUpEdit1.Clear();
         }
 
-        static string GenerateEmployeeCode(DateTime ngaySinh)
+        public string code()
         {
-            // Lấy 2 số cuối của năm hiện tại
-            string yearSuffix = DateTime.Now.Year.ToString().Substring(2, 2);
+            // Tạo instance kết nối cơ sở dữ liệu
+            _nhanvien = new dbNHANVIEN();
 
-            // Lấy ngày giờ phút hiện tại
-            string timeNow = DateTime.Now.ToString("ddHHmm").Substring(0, 6); // Lấy 6 ký tự (Ngày + Giờ + Phút)
+            // Lấy danh sách nhân viên
+            var listHD = _hopdong.getList();
 
-            // Lấy 2 ký tự đầu của ngày sinh từ DateTime
-            string dayOfBirth = ngaySinh.Day.ToString("D2"); // Đảm bảo luôn có 2 chữ số (ví dụ: 01, 02)
+            string maHD;
 
-            // Kết hợp các thành phần để tạo mã nhân viên (tổng cộng 10 ký tự)
-            string code = $"{yearSuffix}{timeNow}{dayOfBirth}";
+            if (listHD == null || listHD.Count == 0)
+            {
+                // Nếu danh sách trống, mã nhân viên đầu tiên là 0000000001
+                maHD = "0000000001";
+            }
+            else
+            {
+                // Lấy mã nhân viên cuối cùng theo thứ tự số học
+                var lastEmployee = listHD
+                    .OrderBy(x => long.Parse(x.SOHD)) // Sắp xếp dựa trên giá trị số
+                    .Last();
 
-            return code;
+                // Chuyển mã cuối cùng sang số và tăng lên 1
+                long newCode = long.Parse(lastEmployee.SOHD) + 1;
+
+                // Định dạng mã mới thành 10 ký tự
+                maHD = newCode.ToString("D10");
+            }
+
+            return maHD;
         }
-
 
 
         private void textEdit1_EditValueChanged_2(object sender, EventArgs e)
@@ -227,8 +241,9 @@ namespace QLNHANSU
                 return;
             }
             SaveData();
-            loadData();
             _them = false;
+            loadData();
+        
             _showHide(true);//lưu
             textEdit1.Clear();
             splitContainer1.Panel1Collapsed = true;
@@ -257,7 +272,7 @@ namespace QLNHANSU
             if (_them)
             {
                 HOPDONG hd = new HOPDONG();
-                hd.SOHD = GenerateEmployeeCode(dateTimePicker1.Value);
+                hd.SOHD = code();
                 hd.NGAYBATDAU = dateTimePicker1.Value;
                 hd.NGAYKETTHUC = dateTimePicker2.Value;
                 hd.NGAYKY = dateTimePicker3.Value;

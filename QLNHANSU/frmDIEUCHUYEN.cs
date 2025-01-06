@@ -195,7 +195,7 @@ namespace QLNHANSU
             if (_them)
             {
                 NHANVIEN_DIEUCHUYEN nvdc = new NHANVIEN_DIEUCHUYEN();
-                nvdc.SOQD = GenerateEmployeeCode(dateTimePicker3.Value);
+                nvdc.SOQD = code();
                 nvdc.MANV = searchLookUpEdit1.EditValue.ToString();
                 nvdc.NGAY = dateTimePicker3.Value;
                 nvdc.LYDO = textEdit2.Text;
@@ -226,23 +226,37 @@ namespace QLNHANSU
             nv.IDPB = _mapb;
             _nhanvien.Update(nv);
         }
-        static string GenerateEmployeeCode(DateTime ngay)
+        public string code()
         {
-            // Lấy 2 số cuối của năm hiện tại
-            string yearSuffix = DateTime.Now.Year.ToString().Substring(2, 2);
+            // Tạo instance kết nối cơ sở dữ liệu
+            _nhanvien = new dbNHANVIEN();
 
-            // Lấy ngày giờ phút hiện tại
-            string timeNow = DateTime.Now.ToString("ddHHmm").Substring(0, 6); // Lấy 6 ký tự (Ngày + Giờ + Phút)
+            // Lấy danh sách nhân viên
+            var listKT = _nhanvien_dieuchuyen.getList();
 
-            // Lấy 2 ký tự đầu của ngày sinh từ DateTime
-            string dayOfBirth = ngay.Day.ToString("D2"); // Đảm bảo luôn có 2 chữ số (ví dụ: 01, 02)
+            string maHD = "ABCDEFGH";
+            maHD = maHD.Substring(0, maHD.Length - 2);
+            if (listKT == null || listKT.Count == 0)
+            {
+                // Nếu danh sách trống, mã nhân viên đầu tiên là 0000000001
+                maHD = "0000000001";
+            }
+            else
+            {
+                // Lấy mã nhân viên cuối cùng theo thứ tự số học
+                var lastEmployee = listKT
+                    .OrderBy(x => long.Parse(x.SOQD)) // Sắp xếp dựa trên giá trị số
+                    .Last();
 
-            // Kết hợp các thành phần để tạo mã nhân viên (tổng cộng 10 ký tự) và thêm "QD" ở cuối
-            string code = $"{yearSuffix}{timeNow}{dayOfBirth}QD";
+                // Chuyển mã cuối cùng sang số và tăng lên 1
+                long newCode = long.Parse(lastEmployee.SOQD) + 1;
 
-            return code;
+                // Định dạng mã mới thành 10 ký tự
+                maHD = newCode.ToString("D10") + "QD";
+            }
+
+            return maHD;
         }
-
         private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
         {
 

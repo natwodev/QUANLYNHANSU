@@ -177,12 +177,44 @@ namespace QLNHANSU
                 searchLookUpEdit1.EditValue = hd.MANV;
             }
         }
+
+        public string code()
+        {
+            // Tạo instance kết nối cơ sở dữ liệu
+            _nhanvien = new dbNHANVIEN();
+
+            // Lấy danh sách nhân viên
+            var listKT = _khenthuong_kyluat.getList();
+
+            string maHD = "ABCDEFGH";
+            maHD = maHD.Substring(0, maHD.Length - 2);
+            if (listKT == null || listKT.Count == 0)
+            {
+                // Nếu danh sách trống, mã nhân viên đầu tiên là 0000000001
+                maHD = "0000000001";
+            }
+            else
+            {
+                // Lấy mã nhân viên cuối cùng theo thứ tự số học
+                var lastEmployee = listKT
+                    .OrderBy(x => long.Parse(x.SOQD)) // Sắp xếp dựa trên giá trị số
+                    .Last();
+
+                // Chuyển mã cuối cùng sang số và tăng lên 1
+                long newCode = long.Parse(lastEmployee.SOQD) + 1;
+
+                // Định dạng mã mới thành 10 ký tự
+                maHD = newCode.ToString("D10") + "QD";
+            }
+
+            return maHD;
+        }
         void SaveData()
         {
             if (_them)
             {
                 KHENTHUONG_KYLUAT ktkl = new KHENTHUONG_KYLUAT();
-                ktkl.SOQD = GenerateEmployeeCode(DateTime.Now);
+                ktkl.SOQD = code();
                 ktkl.MANV = searchLookUpEdit1.EditValue.ToString();
                 ktkl.LYDO = textEdit2.Text;
                 ktkl.NOIDUNG = textEdit3.Text;
@@ -204,22 +236,7 @@ namespace QLNHANSU
                 _khenthuong_kyluat.Update(ktkl);
             }
         }
-        static string GenerateEmployeeCode(DateTime ngay)
-        {
-            // Lấy 2 số cuối của năm hiện tại
-            string yearSuffix = DateTime.Now.Year.ToString().Substring(2, 2);
-
-            // Lấy ngày giờ phút hiện tại
-            string timeNow = DateTime.Now.ToString("ddHHmm").Substring(0, 6); // Lấy 6 ký tự (Ngày + Giờ + Phút)
-
-            // Lấy 2 ký tự đầu của ngày sinh từ DateTime
-            string dayOfBirth = ngay.Day.ToString("D2"); // Đảm bảo luôn có 2 chữ số (ví dụ: 01, 02)
-
-            // Kết hợp các thành phần để tạo mã nhân viên (tổng cộng 10 ký tự) và thêm "QD" ở cuối
-            string code = $"{yearSuffix}{timeNow}{dayOfBirth}QD";
-
-            return code;
-        }
+     
 
         private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
         {
