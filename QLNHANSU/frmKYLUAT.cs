@@ -212,8 +212,11 @@ namespace QLNHANSU
             string maHD;
             if (listKT == null || listKT.Count == 0)
             {
+                int day = DateTime.Now.Day;
+                int month = DateTime.Now.Month;
+                int year = DateTime.Now.Year;
                 // Nếu danh sách trống, mã nhân viên đầu tiên là 0000000001
-                maHD = "00001QD";
+                maHD = day.ToString("D2") + month.ToString("D2") + year.ToString("D2") + "00001QD2";
             }
             else
             {
