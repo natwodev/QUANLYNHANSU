@@ -29,6 +29,11 @@ namespace QLNHANSU
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(string.IsNullOrEmpty(textEdit1.Text) || string.IsNullOrEmpty(textEdit2.Text))
+            {
+                label2.Text = "Tên đăng nhập hoặc mật khẩu không được để trống"; // Thay đổi text của label
+                return;
+            }
             // Lấy thông tin từ textbox
             string username = textEdit1.Text.Trim();
             string password = textEdit2.Text.Trim();
@@ -40,7 +45,8 @@ namespace QLNHANSU
                 if (user.TRANGTHAI == true) // Assuming TRANGTHAI is a boolean indicating active status
                 {
                     // Đăng nhập thành công
-                    MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //MessageBox.Show("Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    label2.Text = "Đăng nhập thành công"; // Thay đổi text của label
                     // Trả về DialogResult.OK
                     Program._user = user;
                     dbHOPDONG._user = user;
@@ -58,7 +64,8 @@ namespace QLNHANSU
             else
             {
                 // Đăng nhập thất bại
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                // MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                label2.Text = "Tên đăng nhập hoặc mật khẩu không đúng."; // Thay đổi text của label
             }
         }
 
