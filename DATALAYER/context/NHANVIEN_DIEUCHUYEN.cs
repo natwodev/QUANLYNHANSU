@@ -41,6 +41,7 @@ namespace DATALAYER.context
         public string UPDATED { get; set; }
 
         public DateTime? UPDATED_DATE { get; set; }
+
         public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }

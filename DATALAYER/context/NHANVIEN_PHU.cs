@@ -8,7 +8,6 @@ namespace DATALAYER.context
 
     public partial class NHANVIEN_PHU
     {
-       
         [Key]
         public int IDNVP { get; set; }
 
@@ -27,9 +26,9 @@ namespace DATALAYER.context
         public double? SOTIEN { get; set; }
 
         [StringLength(50)]
-        public string DELETED { get; set; }
+        public string UPDATED { get; set; }
 
-        public DateTime? DELETED_DATE { get; set; }
+        public DateTime? UPDATED_DATE { get; set; }
 
         [StringLength(50)]
         public string CREATED { get; set; }
@@ -37,11 +36,10 @@ namespace DATALAYER.context
         public DateTime? CREATED_DATE { get; set; }
 
         [StringLength(50)]
-        public string UPDATED { get; set; }
+        public string DELETED { get; set; }
 
-        public DateTime? UPDATED_DATE { get; set; }
+        public DateTime? DELETED_DATE { get; set; }
 
         public virtual NHANVIEN NHANVIEN { get; set; }
-
     }
 }

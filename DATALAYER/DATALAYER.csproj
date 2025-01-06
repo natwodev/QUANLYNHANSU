@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{56CA6CE3-25EF-45AE-A3DB-12FFCA17E42A}</ProjectGuid>
+    <ProjectGuid>{BBC155DD-12B4-4362-9565-3153BDB0914B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DATALAYER</RootNamespace>
@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class1.cs" />
     <Compile Include="context\BANGCONG_NHANVIEN_CHITIET.cs" />
     <Compile Include="context\BAOHIEM.cs" />
     <Compile Include="context\BOPHAN.cs" />

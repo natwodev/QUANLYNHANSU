@@ -23,16 +23,15 @@ namespace DATALAYER.context
         [StringLength(500)]
         public string GHICHU { get; set; }
 
-
         [StringLength(10)]
         public string MANV { get; set; }
 
         public int? IDLOAICA { get; set; }
 
         [StringLength(50)]
-        public string DELETED { get; set; }
+        public string UPDATED { get; set; }
 
-        public DateTime? DELETED_DATE { get; set; }
+        public DateTime? UPDATED_DATE { get; set; }
 
         [StringLength(50)]
         public string CREATED { get; set; }
@@ -40,9 +39,9 @@ namespace DATALAYER.context
         public DateTime? CREATED_DATE { get; set; }
 
         [StringLength(50)]
-        public string UPDATED { get; set; }
+        public string DELETED { get; set; }
 
-        public DateTime? UPDATED_DATE { get; set; }
+        public DateTime? DELETED_DATE { get; set; }
 
         public virtual LOAICA LOAICA { get; set; }
 

@@ -17,6 +17,7 @@ namespace DATALAYER.context
             HOPDONGs = new HashSet<HOPDONG>();
             KHENTHUONG_KYLUAT = new HashSet<KHENTHUONG_KYLUAT>();
             KYCONGCHITIETs = new HashSet<KYCONGCHITIET>();
+            NHANVIEN_DIEUCHUYEN = new HashSet<NHANVIEN_DIEUCHUYEN>();
             NHANVIEN_PHU = new HashSet<NHANVIEN_PHU>();
             NHANVIEN_THOIVIEC = new HashSet<NHANVIEN_THOIVIEC>();
             TAIKHOANs = new HashSet<TAIKHOAN>();
@@ -85,6 +86,9 @@ namespace DATALAYER.context
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<KYCONGCHITIET> KYCONGCHITIETs { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<NHANVIEN_DIEUCHUYEN> NHANVIEN_DIEUCHUYEN { get; set; }
 
         public virtual PHONGBAN PHONGBAN { get; set; }
 
